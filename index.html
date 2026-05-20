@@ -3,176 +3,493 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - UNIFY EQ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Privacy Policy & Terms — UNIFY EQ</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><defs><linearGradient id='g' x1='0.1' y1='0.05' x2='0.9' y2='0.95'><stop offset='0%25' stop-color='%2300E0FF'/><stop offset='22%25' stop-color='%2300B7FF'/><stop offset='50%25' stop-color='%23A865F0'/><stop offset='78%25' stop-color='%23FF3D9A'/><stop offset='100%25' stop-color='%23FF2477'/></linearGradient></defs><rect width='96' height='96' rx='22' fill='%23070410'/><path d='M22 26 V58 a26 26 0 0 0 52 0 V26' stroke='url(%23g)' stroke-width='13' stroke-linecap='round' fill='none'/><rect x='44' y='30' width='8' height='24' rx='4' fill='%23fff'/><path d='M78 80 L86 85 L78 90 Z' fill='%23fff' opacity='0.55'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Cài đặt nền và font chữ chính */
+        :root {
+            --gold:        #EBCF7A;
+            --gold-deep:   #C9A84C;
+            --cyan:        #00E5FF;
+            --rose:        #D08540;
+            --bg-base:     #050507;
+            --bg-card:     #0F0F14;
+            --bg-card-hi:  #16161E;
+            --text-primary: #F2EEE8;
+            --text-secondary: #B8B8C4;
+            --text-muted:  #6B7080;
+            --border:      rgba(235, 207, 122, 0.18);
+        }
+        * { box-sizing: border-box; }
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0a0a0a; /* Nền đen sâu */
-            /* Tạo hiệu ứng nền ánh sáng không gian âm nhạc */
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 229, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(0, 91, 255, 0.15) 0%, transparent 40%);
-            color: #e0e0e0; /* Màu chữ xám sáng dễ đọc */
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-base);
+            background-image:
+                radial-gradient(ellipse at top, rgba(235, 207, 122, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(0, 229, 255, 0.04) 0%, transparent 50%);
+            color: var(--text-primary);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Hộp chứa nội dung chính - Hiệu ứng Glassmorphism */
-        .container {
-            background: rgba(25, 25, 25, 0.7); /* Nền bán trong suốt */
-            backdrop-filter: blur(15px); /* Hiệu ứng kính mờ */
-            -webkit-backdrop-filter: blur(15px); /* Hỗ trợ Safari */
-            border-radius: 24px;
-            padding: 40px;
-            max-width: 800px;
-            width: 100%;
-            box-shadow: 
-                0 8px 32px 0 rgba(0, 0, 0, 0.5),
-                inset 0 0 2px rgba(0, 229, 255, 0.2); /* Viền sáng nhẹ bên trong */
-            border: 1px solid rgba(0, 229, 255, 0.1); /* Viền ngoài tinh tế */
-        }
-
-        /* Tiêu đề chính */
-        h1 {
-            text-align: center;
-            color: #00E5FF; /* Màu Neon Cyan */
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 15px rgba(0, 229, 255, 0.4); /* Hiệu ứng phát sáng */
-        }
-
-        /* Dòng cập nhật ngày tháng */
-        .last-updated {
-            text-align: center;
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 40px;
-            font-style: italic;
-        }
-
-        /* Các tiêu đề mục (H2) */
-        h2 {
-            color: #00E5FF;
-            font-size: 1.3em;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Tạo thanh kẹo sáng nhỏ trước mỗi tiêu đề H2 */
-        h2::before {
-            content: '';
-            display: inline-block;
-            width: 4px;
-            height: 20px;
-            background: #00E5FF;
-            margin-right: 12px;
-            border-radius: 4px;
-            box-shadow: 0 0 10px #00E5FF;
-        }
-
-        /* Định dạng đoạn văn và danh sách */
-        p, li {
             line-height: 1.7;
-            color: #cccccc;
-        }
-        
-        strong {
-            color: #fff; /* Từ khóa quan trọng màu trắng sáng */
-            font-weight: 500;
-        }
-
-        ul {
-            padding-left: 20px;
-            list-style-type: none; /* Ẩn dấu chấm tròn mặc định */
-        }
-        
-        /* Tạo dấu đầu dòng tùy chỉnh */
-        ul li {
-            margin-bottom: 10px;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
             position: relative;
+            overflow-x: hidden;
         }
-        
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: repeating-linear-gradient(90deg, transparent 0, transparent 38px,
+                rgba(235, 207, 122, 0.018) 38px, rgba(235, 207, 122, 0.018) 40px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .wrap { max-width: 880px; margin: 0 auto; padding: 60px 28px; position: relative; z-index: 1; }
+
+        /* Hero */
+        .hero {
+            text-align: center; margin-bottom: 56px; padding-bottom: 40px;
+            border-bottom: 1px solid var(--border); position: relative;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+            width: 80px; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            box-shadow: 0 0 12px var(--gold);
+        }
+        .logo {
+            width: 96px; height: 96px; border-radius: 22px; margin-bottom: 24px;
+            box-shadow: 0 0 0 1px var(--border), 0 20px 60px rgba(235, 207, 122, 0.12),
+                0 8px 24px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+        }
+        h1 {
+            font-size: 2.1em; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 10px;
+            background: linear-gradient(135deg, var(--gold) 0%, #FFE9A8 50%, var(--gold) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-sub { color: var(--text-secondary); font-size: 0.95em; font-weight: 400; margin: 0; }
+        .meta-line {
+            margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.75em;
+            color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase;
+        }
+        .meta-line .dot { color: var(--gold); margin: 0 8px; }
+
+        /* Waveform animation */
+        .waveform {
+            display: flex; justify-content: center; align-items: flex-end; gap: 3px;
+            height: 28px; margin: 20px auto 0; max-width: 220px; opacity: 0.55;
+        }
+        .waveform span {
+            display: block; width: 3px;
+            background: linear-gradient(180deg, var(--gold), var(--gold-deep));
+            border-radius: 2px;
+            animation: pulse 1.6s ease-in-out infinite;
+        }
+        .waveform span:nth-child(1)  { height: 30%;  animation-delay: 0s; }
+        .waveform span:nth-child(2)  { height: 55%;  animation-delay: .1s; }
+        .waveform span:nth-child(3)  { height: 80%;  animation-delay: .2s; }
+        .waveform span:nth-child(4)  { height: 100%; animation-delay: .3s; }
+        .waveform span:nth-child(5)  { height: 75%;  animation-delay: .4s; }
+        .waveform span:nth-child(6)  { height: 60%;  animation-delay: .5s; }
+        .waveform span:nth-child(7)  { height: 90%;  animation-delay: .6s; }
+        .waveform span:nth-child(8)  { height: 100%; animation-delay: .7s; }
+        .waveform span:nth-child(9)  { height: 70%;  animation-delay: .8s; }
+        .waveform span:nth-child(10) { height: 45%;  animation-delay: .9s; }
+        .waveform span:nth-child(11) { height: 65%;  animation-delay: 1.0s; }
+        .waveform span:nth-child(12) { height: 85%;  animation-delay: 1.1s; }
+        .waveform span:nth-child(13) { height: 50%;  animation-delay: 1.2s; }
+        .waveform span:nth-child(14) { height: 30%;  animation-delay: 1.3s; }
+        @keyframes pulse {
+            0%, 100% { transform: scaleY(0.5); opacity: 0.55; }
+            50%      { transform: scaleY(1.0); opacity: 1; }
+        }
+
+        section {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-hi) 100%);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: var(--gold); font-size: 1.15em; font-weight: 600;
+            letter-spacing: 0.02em; margin: 0 0 16px;
+            display: flex; align-items: baseline; gap: 12px;
+        }
+        h2 .num {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.7em;
+            color: var(--gold-deep); opacity: 0.85; font-weight: 500; letter-spacing: 0;
+        }
+        h3 {
+            color: var(--text-primary); font-size: 0.95em; font-weight: 600;
+            margin: 24px 0 10px; letter-spacing: 0.01em;
+        }
+        p, li { color: var(--text-secondary); font-size: 0.93em; line-height: 1.75; }
+        strong { color: var(--text-primary); font-weight: 600; }
+        ul { padding-left: 0; list-style: none; margin: 12px 0; }
+        ul li { position: relative; padding-left: 22px; margin-bottom: 8px; }
         ul li::before {
-            content: '•';
-            color: #00E5FF;
-            font-size: 1.2em;
-            position: absolute;
-            left: -20px;
-            top: -2px;
+            content: ''; position: absolute; left: 4px; top: 12px;
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--gold); box-shadow: 0 0 6px rgba(235, 207, 122, 0.5);
         }
-
-        /* Liên kết */
         a {
-            color: #00E5FF;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-bottom: 1px dotted rgba(0, 229, 255, 0.5);
+            color: var(--cyan); text-decoration: none;
+            border-bottom: 1px dotted rgba(0, 229, 255, 0.4);
+            transition: all .2s;
         }
-        a:hover {
-            text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
-            border-bottom: 1px solid #00E5FF;
+        a:hover { color: #66F1FF; border-bottom-color: var(--cyan); text-shadow: 0 0 8px rgba(0, 229, 255, 0.4); }
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(235, 207, 122, 0.08); color: var(--gold);
+            padding: 1px 7px; border-radius: 4px; font-size: 0.85em;
         }
 
-        /* Responsive cho màn hình nhỏ */
-        @media (max-width: 600px) {
-            .container {
-                padding: 25px;
-            }
-            h1 {
-                font-size: 1.8em;
-            }
+        .callout { border-radius: 12px; padding: 16px 20px; margin: 18px 0; border-left: 3px solid; font-size: 0.91em; }
+        .callout p { margin: 0; font-size: 0.93em; }
+        .callout p + p { margin-top: 8px; }
+        .callout-warn { background: linear-gradient(90deg, rgba(255, 165, 0, 0.1), rgba(255, 165, 0, 0.02)); border-left-color: #FFB000; }
+        .callout-warn strong { color: #FFD86B; }
+        .callout-critical { background: linear-gradient(90deg, rgba(232, 92, 92, 0.12), rgba(232, 92, 92, 0.02)); border-left-color: #E85C5C; }
+        .callout-critical strong { color: #FF9999; }
+        .callout-info { background: linear-gradient(90deg, rgba(0, 229, 255, 0.08), rgba(0, 229, 255, 0.02)); border-left-color: var(--cyan); }
+        .callout-info strong { color: #66F1FF; }
+
+        .plans { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0 8px; }
+        .badge {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 5px 12px; border-radius: 999px;
+            font-size: 0.78em; font-weight: 600; letter-spacing: 0.04em;
+            text-transform: uppercase; font-family: 'JetBrains Mono', monospace;
+        }
+        .badge::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; }
+        .badge-monthly  { background: rgba(208, 133, 64, 0.15); color: var(--rose); border: 1px solid rgba(208, 133, 64, 0.3); }
+        .badge-monthly::before  { background: var(--rose); }
+        .badge-yearly   { background: rgba(235, 207, 122, 0.12); color: var(--gold); border: 1px solid rgba(235, 207, 122, 0.3); }
+        .badge-yearly::before   { background: var(--gold); }
+        .badge-lifetime { background: rgba(232, 201, 106, 0.12); color: #FFD86B; border: 1px solid rgba(255, 216, 107, 0.4); }
+        .badge-lifetime::before { background: #FFD86B; box-shadow: 0 0 6px rgba(255, 216, 107, 0.7); }
+
+        footer {
+            text-align: center; margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--border);
+        }
+        footer p { font-size: 0.82em; color: var(--text-muted); font-style: italic; line-height: 1.6; }
+        footer .copyright {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.7em;
+            letter-spacing: 0.1em; text-transform: uppercase; margin-top: 16px;
+        }
+        @media (max-width: 640px) {
+            .wrap { padding: 36px 18px; }
+            .hero { margin-bottom: 36px; padding-bottom: 28px; }
+            .logo { width: 80px; height: 80px; }
+            h1 { font-size: 1.55em; }
+            section { padding: 22px 20px; border-radius: 14px; }
+            h2 { font-size: 1.05em; gap: 8px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>PRIVACY POLICY & TERMS</h1>
-        <p class="last-updated">Last updated: January 2026</p>
+<div class="wrap">
 
-        <h2>1. INTRODUCTION</h2>
-        <p>Welcome to <strong>UNIFY EQ</strong>. By using this application, you agree to the terms and conditions outlined below.</p>
-
-        <h2>2. PERMISSIONS & DATA</h2>
-        <ul>
-            <li><strong>Microphone (Audio Recording):</strong> Used solely to analyze audio waves for visual effects (Visualizer). We do <strong>NOT</strong> record, store, or transmit your audio data.</li>
-            <li><strong>Storage:</strong> Used to save your personal sound presets on your device.</li>
-            <li><strong>Data Collection:</strong> We do not collect personally identifiable information (PII).</li>
-        </ul>
-
-        <h2>3. PAYMENT & PREMIUM</h2>
-        <p>The app offers a "Premium" version via In-App Purchase (IAP).</p>
-        <p>All transactions are securely processed by the <strong>Google Play Store</strong>. We do not store your credit card or bank account information.</p>
-
-        <h2>4. SUBSCRIPTION & RENEWAL</h2>
-        <p>If you choose a recurring subscription (Monthly/Yearly):</p>
-        <ul>
-            <li><strong>Auto-renewal:</strong> Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
-            <li><strong>Cancellation:</strong> You can manage or cancel your subscription at any time in your <strong>Google Play Account Settings</strong>.</li>
-        </ul>
-
-        <h2>5. REFUND POLICY</h2>
-        <p>We adhere to Google Play's standard refund policy. If you are not satisfied, you can request a refund directly via Google Play within 48 hours of purchase.</p>
-
-        <h2>6. ADVERTISING</h2>
-        <p>The free version contains ads from partner networks (e.g., AdMob). These entities may use anonymous device IDs to serve relevant advertisements.</p>
-
-        <h2>7. DISCLAIMER</h2>
-        <p>Listening to music at high volumes for extended periods may damage your hearing or device equipment. Please use with caution.</p>
-
-        <h2>8. CONTACT US</h2>
-        <p>For technical support & inquiries, please contact: <a href="mailto:support@unifyeq.com">support@unifyeq.com</a></p>
+    <div class="hero">
+        <svg class="logo" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UNIFY EQ">
+            <defs>
+                <linearGradient id="uniGrad" x1="0.1" y1="0.05" x2="0.9" y2="0.95">
+                    <stop offset="0%" stop-color="#00E0FF"/>
+                    <stop offset="22%" stop-color="#00B7FF"/>
+                    <stop offset="50%" stop-color="#A865F0"/>
+                    <stop offset="78%" stop-color="#FF3D9A"/>
+                    <stop offset="100%" stop-color="#FF2477"/>
+                </linearGradient>
+                <radialGradient id="bgGlow" cx="0.35" cy="0.25" r="0.9">
+                    <stop offset="0%" stop-color="#1A1428"/>
+                    <stop offset="55%" stop-color="#070410"/>
+                    <stop offset="100%" stop-color="#000"/>
+                </radialGradient>
+                <filter id="uGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="2" result="blur"/>
+                    <feMerge>
+                        <feMergeNode in="blur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <!-- Background rounded square -->
+            <rect width="96" height="96" rx="22" fill="url(#bgGlow)"/>
+            <!-- The U letter (rounded U-shape) -->
+            <path d="M 22 26 V 58 a 26 26 0 0 0 52 0 V 26"
+                  stroke="url(#uniGrad)" stroke-width="13" stroke-linecap="round"
+                  fill="none" filter="url(#uGlow)"/>
+            <!-- Inner white capsule (the "I") -->
+            <rect x="44" y="30" width="8" height="24" rx="4" fill="#FFFFFF"/>
+            <!-- Tiny play triangle bottom-right -->
+            <path d="M 78 80 L 86 85 L 78 90 Z" fill="#FFFFFF" opacity="0.55"/>
+        </svg>
+        <h1>Privacy Policy &amp; Terms</h1>
+        <p class="hero-sub">UNIFY EQ &mdash; Equalizer, Bass Booster &amp; Audio Enhancer</p>
+        <div class="meta-line">
+            <span>Last updated</span>
+            <span class="dot">&bull;</span>
+            <span>May 2026</span>
+            <span class="dot">&bull;</span>
+            <span>Version 2.0</span>
+        </div>
+        <div class="waveform" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
     </div>
+
+    <section>
+        <h2><span class="num">01</span>Introduction</h2>
+        <p>Welcome to <strong>UNIFY EQ</strong> (the "App"), an audio equalizer and sound enhancement utility. This Privacy Policy explains how we collect, use, store, and share information when you use the App.</p>
+        <p>UNIFY EQ is <strong>not a social network</strong>. It is an audio tool with an optional <strong>preset-sharing library</strong> where users can publish their custom equalizer settings and audio configurations for other audiophiles to discover and apply. By using UNIFY EQ, you agree to the practices described below.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">02</span>Permissions &amp; On-Device Data</h2>
+        <ul>
+            <li><strong>Microphone</strong> (<code>RECORD_AUDIO</code> / <code>CAPTURE_AUDIO_OUTPUT</code>): used <strong>only</strong> to analyze audio waves for the visualizer and equalizer processing on-device. We do <strong>NOT</strong> record, store, or transmit your audio.</li>
+            <li><strong>Storage</strong>: saves personal sound presets, cached avatars, and exported share-card images on your device.</li>
+            <li><strong>Notifications</strong>: used for in-app notifications about likes, comments, follows, and admin actions.</li>
+            <li><strong>System Alert Window, Foreground Service, Wake Lock, Exact Alarms</strong>: keep the audio effect service running across other apps.</li>
+            <li><strong>Accessibility Service</strong>: detects audio events from other apps so the equalizer adapts in real-time. We do <strong>NOT</strong> read text, capture screens, or collect anything outside our equalizer logic.</li>
+            <li><strong>Billing</strong>: verifies Premium subscriptions purchased via Google Play.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="num">03</span>Accounts &amp; Online Data</h2>
+        <p>Most of the App works <strong>without</strong> an account. If you choose to sign in (Google or Facebook OAuth), the following data is collected and stored on our servers (Firebase):</p>
+
+        <h3>3.1. Account &amp; profile data (required if you sign in)</h3>
+        <ul>
+            <li>Name and email address (from Google / Facebook profile)</li>
+            <li>Profile photo URL (from Google / Facebook)</li>
+            <li>A unique user ID</li>
+            <li>Country code (e.g. "VN") for displaying a flag</li>
+            <li>Sign-in provider, account creation time, last login time</li>
+        </ul>
+
+        <h3>3.2. Profile content (optional, you can leave blank)</h3>
+        <ul>
+            <li>Bio / short description</li>
+            <li>Username (display handle)</li>
+            <li>Attribution handles: Instagram, Facebook, YouTube, TikTok, GitHub (optional username field, used so other audio enthusiasts can find you on the platform where you primarily share audio content &mdash; not used for in-app social interactions)</li>
+        </ul>
+
+        <h3>3.3. Preset-sharing content (optional, only if you publish presets)</h3>
+        <ul>
+            <li><strong>Creator cards</strong> &mdash; a public preview tied to your published preset (creator name, avatar, audio tier) so other users can attribute the preset to you</li>
+            <li><strong>Feedback messages</strong> on shared presets (short notes about how a preset sounds, suggested usage, etc.)</li>
+            <li><strong>Saves &amp; creator subscriptions</strong> &mdash; users can save presets they like and subscribe to creators whose audio profiles they enjoy</li>
+            <li><strong>Activity notifications</strong> generated when others save or comment on your published presets</li>
+        </ul>
+        <p>This functionality exists solely to help audio enthusiasts discover quality presets and configurations. It is not designed for general-purpose social messaging.</p>
+
+        <h3>3.4. Technical &amp; usage data</h3>
+        <ul>
+            <li>Anonymous device ID (Android ID) used to <strong>prevent trial abuse</strong> (e.g. uninstall-reinstall to reset trial)</li>
+            <li>Total listening time and basic engagement counts for in-app stats</li>
+            <li>App version, basic diagnostic info needed for the equalizer service</li>
+        </ul>
+
+        <p>We do <strong>NOT</strong> collect: phone numbers, contacts, calendar, precise location, browsing history, financial info, health data, or audio recordings.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">04</span>How Data Is Used</h2>
+        <ul>
+            <li><strong>App functionality</strong> &mdash; rendering your creator profile, published presets, feedback messages, save/subscribe actions, activity notifications</li>
+            <li><strong>Account management</strong> &mdash; authenticating you across sessions and devices</li>
+            <li><strong>Personalization</strong> &mdash; showing your name, avatar, country, audio tier badge, attribution handles</li>
+            <li><strong>Analytics</strong> &mdash; aggregate engagement metrics</li>
+            <li><strong>Fraud prevention</strong> &mdash; detecting trial abuse and spam through device ID + dedup keys</li>
+        </ul>
+        <p>We do <strong>NOT</strong> sell your personal data. We do <strong>NOT</strong> use it for advertising or marketing.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">05</span>Data Sharing</h2>
+        <p>Data is stored on <strong>Google Firebase</strong> infrastructure (Realtime Database, Authentication), a processor on our behalf governed by Google's data processing terms.</p>
+        <p>Public profile fields (name, avatar, bio, attribution handles, published presets, feedback messages) are visible to <strong>other users of the App</strong>. Email address, billing details, and device ID are <strong>never</strong> public.</p>
+        <p>We do not share data with third parties beyond Firebase (Google) and the standard Google Play billing flow.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">06</span>Payments &amp; Premium Plans</h2>
+        <p>UNIFY EQ offers three Premium tiers via Google Play In-App Purchase:</p>
+        <div class="plans">
+            <span class="badge badge-monthly">Monthly</span>
+            <span class="badge badge-yearly">Yearly</span>
+            <span class="badge badge-lifetime">&#9733; Lifetime</span>
+        </div>
+        <p>All transactions are securely processed by the <strong>Google Play Store</strong>. We do <strong>NOT</strong> store your credit card or bank details.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">07</span>Subscriptions &amp; Renewal</h2>
+        <ul>
+            <li><strong>Auto-renewal</strong>: Monthly / Yearly subscriptions auto-renew unless cancelled at least 24 hours before the period ends.</li>
+            <li><strong>Cancellation</strong>: cancel anytime via your <strong>Google Play Account &rarr; Subscriptions</strong>.</li>
+            <li><strong>Lifetime</strong>: one-time payment, no auto-renewal.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="num">08</span>Refund Policy</h2>
+        <p>We follow Google Play's standard refund policy. Refund requests are handled through Google Play within their refund window (typically 48 hours of purchase).</p>
+    </section>
+
+    <section>
+        <h2><span class="num">09</span>Advertising</h2>
+        <p>The free version may show ads from partner ad networks (e.g. AdMob). These networks may use anonymous identifiers to deliver relevant ads. Premium users do not see ads.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">10</span>Premium Plans &mdash; Scope &amp; Limitations</h2>
+
+        <div class="callout callout-critical">
+            <p><strong>Important &mdash; please read before purchasing any Premium tier.</strong></p>
+            <p>Premium tiers (Monthly / Yearly / Lifetime) primarily unlock <strong>offline audio features</strong> on your device. <strong>Online preset-sharing features depend on server infrastructure</strong> and are provided on a best-effort basis &mdash; not guaranteed forever or indefinitely.</p>
+        </div>
+
+        <h3>10.1. What every Premium tier INCLUDES</h3>
+        <p>All three tiers (Monthly, Yearly, Lifetime) grant access to the same Premium feature set, differing only in <strong>billing duration</strong>:</p>
+        <ul>
+            <li>All premium equalizer bands, DSP effects, visualizers</li>
+            <li>Custom presets and personalization</li>
+            <li>Bass booster, virtualizer, stereo enhancer</li>
+            <li>Ad-free experience</li>
+            <li>Premium tier badge on share cards (visible to community)</li>
+            <li>Increased limits for preset publishing (attribution handles, extra preset slots)</li>
+        </ul>
+
+        <h3>10.2. What "Premium" does NOT promise</h3>
+        <div class="callout callout-warn">
+            <p>Online preset-sharing features &mdash; the public preset library, creator cards, feedback messages, save/subscribe actions, activity notifications &mdash; <strong>require a backend server</strong> that we operate at our own cost. These services are <strong>not</strong> guaranteed for the entire duration of any subscription.</p>
+        </div>
+        <ul>
+            <li><strong>Preset-sharing features may be discontinued, paused, modified, or rate-limited at any time</strong> for any tier &mdash; including Lifetime &mdash; if hosting becomes unsustainable, if features are abused, or if we redesign them.</li>
+            <li>We will provide at least <strong>30 days' notice</strong> (in-app or via the Play Store listing) before permanently shutting down a major preset-sharing feature.</li>
+            <li>If preset-sharing features are permanently shut down, this is <strong>not grounds for a refund</strong> &mdash; because the Premium tier's primary value is the offline equalizer + DSP feature set, which continues to work on your device.</li>
+            <li>No subscription &mdash; including Lifetime &mdash; carries an obligation on us to operate cloud / server infrastructure indefinitely. Server availability depends on hosting cost, user count, and ongoing operating capacity.</li>
+        </ul>
+
+        <h3>10.3. Plan-specific scope</h3>
+        <p><span class="badge badge-monthly">Monthly</span></p>
+        <ul>
+            <li>Recurring billing every month via Google Play.</li>
+            <li>Access to all Premium features only while the subscription is active.</li>
+            <li>Preset-sharing access available during active period, subject to section 10.2.</li>
+        </ul>
+
+        <p><span class="badge badge-yearly">Yearly</span></p>
+        <ul>
+            <li>Recurring billing every year via Google Play (better value than monthly).</li>
+            <li>Access to all Premium features only while the subscription is active.</li>
+            <li>Preset-sharing access available during active period, subject to section 10.2.</li>
+        </ul>
+
+        <p><span class="badge badge-lifetime">&#9733; Lifetime</span></p>
+        <ul>
+            <li>One-time payment. No recurring charges.</li>
+            <li>Access to all Premium <strong>offline</strong> features for as long as the App remains published and installable from Google Play.</li>
+            <li><strong>"Lifetime" refers to the lifetime of the App, not eternity, and not the lifetime of the preset-sharing server.</strong></li>
+            <li>If we stop publishing the App on Google Play (e.g. business closure), Lifetime users may lose access without refund. We will give as much advance notice as practicable.</li>
+            <li>Preset-sharing access for Lifetime users is subject to the same best-effort terms as Monthly/Yearly &mdash; see section 10.2.</li>
+        </ul>
+
+        <h3>10.4. Why we have to say this</h3>
+        <p>Servers, databases, and cloud bandwidth cost money every month. A one-time Lifetime payment cannot fund cloud hosting forever. By choosing <strong>any</strong> Premium tier, you acknowledge that:</p>
+        <ul>
+            <li>You are paying for the <strong>offline Premium app</strong> functionality during the relevant billing period (or for life of the app, in the case of Lifetime).</li>
+            <li>Preset-sharing features are a <strong>bonus</strong> that may evolve, change, or end.</li>
+            <li>This is industry-standard practice for apps with optional cloud / preset-sharing features.</li>
+        </ul>
+        <p>If you are uncomfortable with this, choose the Monthly plan, which can be cancelled at any time.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">11</span>Preset Library &amp; Content Rules</h2>
+        <p>When you publish presets, creator cards, or post preset feedback, you agree to the following:</p>
+        <ul>
+            <li>You will <strong>not</strong> post offensive, hateful, harassing, illegal, sexually explicit, or copyrighted content.</li>
+            <li>You will <strong>not</strong> impersonate others or use misleading profile information.</li>
+            <li>You will <strong>not</strong> spam, scam, or solicit other users.</li>
+            <li>You will <strong>not</strong> link to malicious, phishing, or unsafe external URLs in your social handles.</li>
+            <li>All share cards are <strong>reviewed by moderators</strong> before becoming publicly visible.</li>
+            <li>We reserve the right to remove content, block users, or terminate accounts that violate these rules &mdash; <strong>without refund</strong>.</li>
+            <li>You can <strong>block</strong> any user from within the App.</li>
+            <li>Report mechanisms are provided for inappropriate content.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="num">12</span>Account &amp; Data Deletion</h2>
+        <p>You can request deletion of your account and associated data at any time.</p>
+        <div class="callout callout-info">
+            <p><strong>How to delete:</strong> visit <a href="https://buitruyenpro.github.io/unify-eq-policy/delete-data.html">our data deletion page</a> and follow the instructions, or email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>UNIFY EQ &mdash; Account Deletion Request</code>.</p>
+        </div>
+
+        <h3>What is deleted</h3>
+        <ul>
+            <li>Profile (name, email, avatar, bio, attribution handles, country, username)</li>
+            <li>Your published presets and creator cards (pending and approved)</li>
+            <li>Your preset feedback messages and saves</li>
+            <li>Your creator subscriptions</li>
+            <li>Notifications addressed to you</li>
+        </ul>
+
+        <h3>What is retained</h3>
+        <ul>
+            <li>Anonymized engagement counts on other users' content (your identity is removed)</li>
+            <li>Billing / transaction records (retained for up to 5 years for tax and accounting compliance, not linked to your personal identity)</li>
+            <li>Diagnostic logs (anonymized, up to 90 days)</li>
+        </ul>
+        <p>Requests are processed within <strong>30 days</strong>. Most are completed within 7 business days.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">13</span>Children's Privacy</h2>
+        <p>UNIFY EQ is not directed at children under 13. If we learn that we have inadvertently collected data from a child under 13, we will delete it promptly. Parents who believe their child has provided data should contact us at <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a>.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">14</span>Security</h2>
+        <p>All network traffic between the App and our servers is encrypted in transit (HTTPS/TLS). Firebase enforces server-side validation rules to prevent unauthorized data access. We follow industry best practices, but no system can be 100% secure &mdash; users acknowledge this inherent risk.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">15</span>Disclaimer of Warranties</h2>
+        <p>The App is provided <strong>"as is"</strong> without warranty of any kind. We do not guarantee uninterrupted availability of preset-sharing features or that the App will be free from errors. Listening to music at high volumes for extended periods may damage your hearing or device equipment &mdash; please use with caution.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">16</span>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy as the App evolves. Material changes will be announced in-app or via the Play Store listing. Continued use of the App after an update constitutes acceptance of the revised policy.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">17</span>Contact</h2>
+        <p>For privacy questions, data requests, or technical support:</p>
+        <ul>
+            <li>Email: <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a></li>
+            <li>Data deletion: <a href="https://buitruyenpro.github.io/unify-eq-policy/delete-data.html">https://buitruyenpro.github.io/unify-eq-policy/delete-data.html</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>By using UNIFY EQ, you acknowledge that you have read and understood this Privacy Policy &amp; Terms.</p>
+        <p class="copyright">&copy; 2026 UNIFY EQ &nbsp;&bull;&nbsp; All rights reserved</p>
+    </footer>
+
+</div>
 
 </body>
 </html>
