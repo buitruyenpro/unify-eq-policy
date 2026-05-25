@@ -169,17 +169,14 @@
         .badge-lifetime { background: rgba(232, 201, 106, 0.12); color: #FFD86B; border: 1px solid rgba(255, 216, 107, 0.4); }
         .badge-lifetime::before { background: #FFD86B; box-shadow: 0 0 6px rgba(255, 216, 107, 0.7); }
 
-        .preview-wrap {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
-            margin: 22px 0 8px;
-        }
-        @media (max-width: 720px) { .preview-wrap { grid-template-columns: 1fr; } }
+        /* Welcome mock */
         .preview-card {
             background: #0A0A12;
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 18px;
             position: relative;
+            max-width: 380px; margin: 22px auto 8px;
         }
         .preview-card::before {
             content: attr(data-tag);
@@ -224,20 +221,27 @@
         .terms-text a {
             color: var(--gold); border-bottom: 1px dotted rgba(235, 207, 122, 0.4);
         }
-        .mock-btn-big {
-            width: 100%; padding: 14px;
+        .mock-actions {
+            display: flex; gap: 10px;
+        }
+        .mock-btn {
+            flex: 1; padding: 12px;
             border-radius: 12px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-deep));
-            color: #1A1410;
-            font-size: 0.9em; font-weight: 700;
+            font-size: 0.85em; font-weight: 700;
             border: none; cursor: pointer;
             font-family: inherit;
             transition: all .2s;
         }
-        .mock-btn-big:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(235, 207, 122, 0.3);
+        .mock-btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+            color: #1A1410;
         }
+        .mock-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(235, 207, 122, 0.3); }
+        .mock-btn-ghost {
+            background: transparent; color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .mock-btn-ghost:hover { background: rgba(255, 255, 255, 0.04); color: var(--text-primary); }
         .mock-status {
             margin-top: 14px; padding: 10px 14px; border-radius: 8px;
             font-size: 0.78em; line-height: 1.5;
@@ -246,41 +250,10 @@
             text-align: left;
         }
         .mock-status.show { opacity: 1; }
-
-        .email-mock {
-            background: #FAFAF7; color: #1A1A20;
-            border-radius: 14px; padding: 18px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        .mock-status.declined {
+            background: rgba(184, 184, 196, 0.06); border-left-color: var(--text-muted);
+            color: var(--text-muted);
         }
-        .email-header {
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            padding-bottom: 12px; margin-bottom: 14px;
-        }
-        .email-from { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
-        .email-avatar {
-            width: 32px; height: 32px; border-radius: 8px;
-            background: linear-gradient(135deg, #00B7FF, #FF2477);
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-weight: 700; font-size: 0.85em;
-        }
-        .email-from-info { flex: 1; }
-        .email-name { font-size: 0.84em; font-weight: 600; color: #1A1A20; }
-        .email-addr { font-size: 0.72em; color: #888; }
-        .email-subj { font-size: 0.92em; font-weight: 700; color: #1A1A20; margin: 8px 0 0; }
-        .email-body p { color: #444; font-size: 0.8em; margin: 0 0 10px; line-height: 1.55; }
-        .email-cta {
-            display: inline-block; margin-top: 8px;
-            padding: 8px 16px; border-radius: 8px;
-            background: linear-gradient(135deg, #C9A84C, #EBCF7A);
-            color: #1A1410; font-size: 0.78em; font-weight: 600;
-            text-decoration: none; border-bottom: none;
-        }
-        .email-footer {
-            margin-top: 14px; padding-top: 10px;
-            border-top: 1px solid rgba(0,0,0,0.06);
-            font-size: 0.7em; color: #999; line-height: 1.5;
-        }
-        .email-footer a { color: #6B6B6B; border-bottom: 1px dotted #ccc; }
 
         .promise-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
@@ -328,19 +301,6 @@
             font-weight: 600; letter-spacing: 0.01em;
         }
         .right-card p { margin: 0; font-size: 0.83em; color: var(--text-secondary); line-height: 1.55; }
-
-        .changelog {
-            font-family: 'JetBrains Mono', monospace; font-size: 0.78em;
-            background: rgba(0, 0, 0, 0.3); border-radius: 10px;
-            padding: 16px 18px; margin: 14px 0; line-height: 1.65;
-        }
-        .changelog .ver { color: var(--gold); font-weight: 600; }
-        .changelog .date { color: var(--text-muted); margin-left: 8px; }
-        .changelog ul { margin: 6px 0 12px; padding-left: 16px; }
-        .changelog ul li {
-            color: var(--text-secondary); font-size: 0.95em; padding-left: 12px; margin-bottom: 3px;
-        }
-        .changelog ul li::before { top: 9px; width: 4px; height: 4px; background: var(--gold-deep); }
 
         footer {
             text-align: center; margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--border);
@@ -401,7 +361,7 @@
             <span class="dot">&bull;</span>
             <span>May 2026</span>
             <span class="dot">&bull;</span>
-            <span>Version 4.0</span>
+            <span>Version 5.0</span>
         </div>
         <div class="waveform" aria-hidden="true">
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -413,8 +373,8 @@
         <h2><span class="num">01</span>Introduction</h2>
         <p>Welcome to <strong>UNIFY EQ</strong> (the "App"), an audio equalizer and sound enhancement utility operated by an independent developer based in <strong>Vietnam</strong>. This Privacy Policy explains how we collect, use, store, and share information when you use the App.</p>
         <p>UNIFY EQ is <strong>not a social network</strong>. It is an audio tool with an optional <strong>preset-sharing library</strong> where users can publish their custom equalizer settings and audio configurations for other audiophiles to discover and apply.</p>
-        <div class="callout callout-info">
-            <p><strong>Your agreement.</strong> When you first open the App, you are shown a welcome screen with a link to this Privacy Policy and our Terms. By tapping <strong>Continue</strong>, you agree to everything described here. You can review or change communication preferences anytime in <code>Settings → Notifications</code>.</p>
+        <div class="callout callout-good">
+            <p><strong>Privacy-first commitment.</strong> We do <strong>NOT</strong> send marketing or promotional emails. We do <strong>NOT</strong> sell, rent, or trade your data. The only emails you may receive from us are transactional (purchase receipts, security alerts, important policy changes). Nothing else, ever.</p>
         </div>
     </section>
 
@@ -423,25 +383,26 @@
         <ul>
             <li><strong>Microphone</strong> (<code>RECORD_AUDIO</code> / <code>CAPTURE_AUDIO_OUTPUT</code>): used <strong>only</strong> to analyze audio waves for the visualizer and equalizer processing on-device. We do <strong>NOT</strong> record, store, or transmit your audio.</li>
             <li><strong>Storage</strong>: saves personal sound presets, cached avatars, and exported share-card images on your device.</li>
-            <li><strong>Notifications</strong>: used for in-app notifications about likes, comments, follows, admin actions, and product communications from our team (new features, app launches, audio tips, special offers). You can disable any notification category in <code>Settings → Notifications</code>.</li>
+            <li><strong>Notifications</strong>: used only for in-app notifications about likes, comments, follows, and admin actions related to your preset-sharing activity. No promotional or marketing notifications are ever sent.</li>
             <li><strong>System Alert Window, Foreground Service, Wake Lock, Exact Alarms</strong>: keep the audio effect service running across other apps.</li>
-            <li><strong>Accessibility Service</strong>: declared with <code>isAccessibilityTool=true</code>. Used solely to detect audio session events from other media apps so the equalizer can adapt DSP processing in real-time. We do <strong>NOT</strong> read screen text, capture screen content, log keystrokes, or perform any action outside our equalizer DSP pipeline. A justification video has been submitted to Google Play in compliance with the Accessibility API policy.</li>
+            <li><strong>Accessibility Service</strong>: declared with <code>isAccessibilityTool=true</code>. Used solely to detect audio session events from other media apps so the equalizer can adapt DSP processing in real-time. We do <strong>NOT</strong> read screen text, capture screen content, log keystrokes, or perform any action outside our equalizer DSP pipeline.</li>
             <li><strong>Billing</strong>: verifies Premium subscriptions purchased via Google Play.</li>
         </ul>
     </section>
 
     <section>
         <h2><span class="num">03</span>Accounts &amp; Online Data</h2>
-        <p>Most of the App works <strong>without</strong> an account. If you choose to sign in (Google or Facebook OAuth), the following data is collected and stored on our servers (Firebase):</p>
+        <p>UNIFY EQ requires sign-in (Google or Facebook OAuth) to enable cloud features such as preset publishing, save/subscribe actions, and cross-device sync. The following data is collected and stored on our servers (Firebase):</p>
 
-        <h3>3.1. Account &amp; profile data (required if you sign in)</h3>
+        <h3>3.1. Account &amp; profile data</h3>
         <ul>
             <li>Name and email address (from Google / Facebook profile)</li>
             <li>Profile photo URL (from Google / Facebook)</li>
             <li>A unique user ID</li>
-            <li>Country code for displaying a flag and determining applicable regional regulations</li>
+            <li>Country code for displaying a flag</li>
             <li>Sign-in provider, account creation time, last login time</li>
         </ul>
+        <p><strong>Your email is used only for transactional purposes</strong> (account verification, security alerts, purchase receipts, important policy updates). It is never used for marketing, never shared with third-party marketers, and never sold.</p>
 
         <h3>3.2. Profile content (optional, you can leave blank)</h3>
         <ul>
@@ -463,10 +424,8 @@
         <ul>
             <li>Anonymous device ID (Android ID) used to <strong>prevent trial abuse</strong> (e.g. uninstall-reinstall to reset trial)</li>
             <li>Total listening time and basic engagement counts for in-app stats</li>
-            <li>Feature usage patterns (which equalizer bands, DSP effects, or presets you use most) for product improvement and personalizing content we send you</li>
-            <li>Premium <strong>status flag</strong> (true/false) for marketing segmentation. Full purchase history (amounts, dates, transaction IDs) is used <em>only</em> for billing, accounting, and customer support &mdash; never for marketing personalization</li>
+            <li>Premium status flag (true/false) for unlocking paid features</li>
             <li>App version, basic diagnostic info needed for the equalizer service</li>
-            <li>Last engagement date (last open, last email click) for re-engagement timing and inactive account cleanup</li>
         </ul>
 
         <p>We do <strong>NOT</strong> collect: phone numbers, contacts, calendar, precise location, browsing history, financial info (card numbers, bank details), health data, or audio recordings.</p>
@@ -478,206 +437,85 @@
             <li><strong>App functionality</strong> &mdash; rendering your creator profile, published presets, feedback messages, save/subscribe actions, activity notifications</li>
             <li><strong>Account management</strong> &mdash; authenticating you across sessions and devices</li>
             <li><strong>Personalization</strong> &mdash; showing your name, avatar, country, audio tier badge, attribution handles</li>
-            <li><strong>Analytics</strong> &mdash; aggregate, pseudonymous engagement metrics</li>
+            <li><strong>Analytics</strong> &mdash; aggregate, pseudonymous engagement metrics for product improvement</li>
             <li><strong>Fraud prevention</strong> &mdash; detecting trial abuse and spam through device ID + dedup keys</li>
-            <li><strong>Product communications</strong> &mdash; sending you updates, tips, app launches, and offers from our team via email and push, as described in Section 4A</li>
-            <li><strong>Behavioral personalization</strong> &mdash; using your in-app activity (features used, listening time, Premium flag, last login) to tailor which messages we send. You can object to this without unsubscribing from messages &mdash; see Section 4B</li>
+            <li><strong>Transactional communications</strong> &mdash; sending purchase receipts, security alerts, and important policy updates via email (see Section 4A)</li>
         </ul>
         <div class="callout callout-good">
-            <p><strong>Our promise.</strong> We do <strong>NOT</strong> sell your personal data. We do <strong>NOT</strong> share your email with advertisers, data brokers, or any third-party marketers. Every marketing email or push you receive is from us, about audio apps and content we built ourselves &mdash; and you can opt out anytime in one tap.</p>
+            <p><strong>What we will NEVER do with your data:</strong></p>
+            <p>✕ Send you marketing or promotional emails of any kind<br>
+            ✕ Send you marketing or promotional push notifications<br>
+            ✕ Sell, rent, or trade your personal data<br>
+            ✕ Share your email with advertisers, data brokers, or any third party for marketing<br>
+            ✕ Use your data for behavioral profiling or targeted advertising<br>
+            ✕ Promote other apps to you, even our own</p>
         </div>
     </section>
 
     <section>
-        <h2><span class="num">4A</span>Product Communications</h2>
+        <h2><span class="num">4A</span>Email &amp; Notifications &mdash; Strictly Transactional</h2>
 
-        <p>Product communications &mdash; email and push notifications about UNIFY EQ and our other audio apps &mdash; are how we stay in touch with the people who use our software. We keep them useful, infrequent, and easy to turn off.</p>
+        <p>We take a <strong>minimalist approach</strong> to communications. You will only ever receive messages that are <em>necessary</em> for your account or your safety &mdash; nothing else.</p>
 
-        <h3>How consent is established</h3>
-
-        <p>When you first open the App, you see a welcome screen that links to this Privacy Policy and our Terms. By tapping <strong>Continue</strong>, you accept both documents and acknowledge that we may send you product communications. There is no separate checkbox &mdash; the welcome screen acceptance is your consent, given before you start using the App. This is the industry-standard click-through consent model used by major audio apps.</p>
-
-        <p>We rely on different lawful bases depending on your region and circumstances. See Section 4C for region-specific rules.</p>
-
-        <h3>Categories of communication</h3>
+        <h3>What we send</h3>
 
         <div class="promise-grid">
             <div class="promise-cell do">
-                <h5><span class="icon">!</span>Transactional (always sent)</h5>
+                <h5><span class="icon">✓</span>Email (transactional only)</h5>
                 <ul>
                     <li>Purchase receipts &amp; subscription confirmations</li>
-                    <li>Account security alerts (new login, password reset)</li>
-                    <li>Important policy or pricing changes that affect you</li>
-                    <li>Account deletion confirmations</li>
+                    <li>Subscription renewal reminders (legally required)</li>
+                    <li>Account security alerts (new device login, password reset)</li>
+                    <li>Account deletion confirmation</li>
+                    <li>Critical policy or pricing changes that affect you</li>
                     <li>Data breach notifications (per Section 14A)</li>
                 </ul>
             </div>
-            <div class="promise-cell do">
-                <h5><span class="icon">✦</span>Product (managed by you)</h5>
-                <ul>
-                    <li>New features &amp; major updates to UNIFY EQ</li>
-                    <li>New apps we release in the audio space</li>
-                    <li>Audio tips, EQ guides, headphone tuning tutorials</li>
-                    <li>Premium discounts &amp; limited-time offers</li>
-                </ul>
-            </div>
-        </div>
-
-        <h3>Here's exactly what you see when you first open the App</h3>
-
-        <div class="preview-wrap">
-            <div class="preview-card" data-tag="Welcome screen">
-                <h4>First-launch screen</h4>
-                <div class="phone-mock">
-                    <div class="phone-logo">U</div>
-                    <p class="mock-title">Welcome to UNIFY EQ</p>
-                    <p class="mock-sub">Studio-grade equalizer, bass booster &amp; audio enhancer &mdash; tuned for your headphones.</p>
-
-                    <p class="terms-text">
-                        By tapping <strong>Continue</strong>, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, and to receive occasional product communications from our team (you can opt out anytime in Settings).
-                    </p>
-
-                    <button class="mock-btn-big" id="continueBtn">Continue</button>
-
-                    <div class="mock-status" id="mockStatus"></div>
-                </div>
-            </div>
-
-            <div class="preview-card" data-tag="Sample email">
-                <h4>What a product email looks like</h4>
-                <div class="email-mock">
-                    <div class="email-header">
-                        <div class="email-from">
-                            <div class="email-avatar">U</div>
-                            <div class="email-from-info">
-                                <div class="email-name">UNIFY EQ Team</div>
-                                <div class="email-addr">hello@unifyeq.app</div>
-                            </div>
-                        </div>
-                        <p class="email-subj">New: Spatial Audio is here 🎧</p>
-                    </div>
-                    <div class="email-body">
-                        <p>Hi there,</p>
-                        <p>We just rolled out <strong>Spatial Audio</strong> in UNIFY EQ &mdash; a new DSP layer that widens your soundstage by 40% on any pair of headphones. Free to try this week.</p>
-                        <a href="#" class="email-cta">Open in UNIFY EQ →</a>
-                    </div>
-                    <div class="email-footer">
-                        You're receiving this because you accepted our Terms when you installed UNIFY EQ.<br>
-                        <a href="#">Unsubscribe</a> &nbsp;·&nbsp; <a href="#">Email preferences</a> &nbsp;·&nbsp; UNIFY EQ, Vietnam
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h3>Frequency</h3>
-        <ul>
-            <li><strong>Typical month</strong>: 2 to 4 product emails</li>
-            <li><strong>Major product launch or seasonal promotion</strong>: occasionally up to 6 emails in a month, then back to normal</li>
-            <li><strong>Push notifications</strong> for product news: at most 2&ndash;3 per month, independent of email</li>
-        </ul>
-
-        <h3>Our hard rules &mdash; what we will and won't do</h3>
-
-        <div class="promise-grid">
-            <div class="promise-cell do">
-                <h5><span class="icon">✓</span>We will</h5>
-                <ul>
-                    <li>Honor unsubscribe requests within 48 hours</li>
-                    <li>Include a one-tap unsubscribe link in every product email</li>
-                    <li>Only promote apps and content we built ourselves</li>
-                    <li>Let you change preferences anytime in Settings</li>
-                    <li>Tailor what we send based on what you actually use</li>
-                    <li>Permanently suppress contact for anyone who deleted their account</li>
-                </ul>
-            </div>
             <div class="promise-cell dont">
-                <h5><span class="icon">✕</span>We will never</h5>
+                <h5><span class="icon">✕</span>What we will never send</h5>
                 <ul>
-                    <li>Sell, rent, or trade your email to anyone</li>
-                    <li>Share your email with advertisers or data brokers</li>
-                    <li>Forward third-party sponsored emails to you</li>
-                    <li>Bury the unsubscribe link or make it require login</li>
-                    <li>Send you anything unrelated to audio or our products</li>
-                    <li>Email EU/UK/Swiss users without explicit opt-in</li>
+                    <li>Marketing or promotional emails</li>
+                    <li>"New features" announcements via email</li>
+                    <li>"New app from us" promotions</li>
+                    <li>Tips, tutorials, newsletters</li>
+                    <li>Premium discount offers</li>
+                    <li>Re-engagement / "we miss you" emails</li>
+                    <li>Third-party sponsored content</li>
                 </ul>
             </div>
         </div>
 
-        <h3>How to opt out at any time</h3>
+        <h3>In-app push notifications</h3>
+        <p>Push notifications are used only for <strong>activity related to your account</strong>:</p>
         <ul>
-            <li>Tap <strong>Unsubscribe</strong> at the bottom of any product email &mdash; one tap, no login required</li>
-            <li>Inside the App, go to <strong>Settings → Notifications → Email preferences</strong> and toggle off</li>
-            <li>Email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>Unsubscribe</code> &mdash; processed within 48 hours</li>
+            <li>Someone saved or commented on your published preset</li>
+            <li>Someone subscribed to your creator profile</li>
+            <li>A moderator action affecting your content</li>
+            <li>Critical security alerts (new login, password change)</li>
         </ul>
-        <p>Opting out of product communications will <strong>not</strong> stop transactional emails (receipts, security alerts), which are required for your account to function. If you also want to stop those, you'll need to delete your account &mdash; see Section 12.</p>
-    </section>
+        <p>You can disable any notification category in <code>Settings → Notifications</code>, or disable all notifications via Android System Settings.</p>
 
-    <section>
-        <h2><span class="num">4B</span>Right to Object to Personalization</h2>
-        <p>Even if you are happy to receive product communications, you have a separate right to <strong>object</strong> to how we personalize them. If you object, we will continue sending you product messages (assuming you have not unsubscribed), but at default frequency and content &mdash; without tailoring based on your in-app behavior.</p>
-        <p>To exercise this right:</p>
-        <ul>
-            <li>Toggle <strong>"Personalize communications"</strong> off in <code>Settings → Notifications</code>, <strong>or</strong></li>
-            <li>Email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>Disable Personalization</code></li>
-        </ul>
-        <p>This right is recognized under GDPR Article 21, CPRA, and similar laws. It is honored globally regardless of region.</p>
-    </section>
-
-    <section>
-        <h2><span class="num">4C</span>Regional Rules &mdash; Region Detection &amp; EU/UK/EEA Exception</h2>
-
-        <div class="callout callout-info">
-            <p><strong>If you are in the European Union, United Kingdom, Switzerland, Norway, Iceland, or Liechtenstein:</strong> we <strong>do not</strong> rely on Terms acceptance alone for marketing consent. You will only receive product emails or push if you explicitly opt in inside the App (<code>Settings → Notifications → Email preferences</code>). Transactional messages are sent normally. The "soft opt-in" and "one-time re-engagement" exceptions described elsewhere do <strong>not</strong> apply to you.</p>
-        </div>
-
-        <h3>How we determine your region</h3>
-        <p>To apply the right legal regime to your account, we evaluate <strong>three independent signals</strong> at account creation and re-check periodically:</p>
-        <ul>
-            <li><strong>Country code</strong> from your Google or Facebook account</li>
-            <li><strong>IP geolocation</strong> at sign-in time (country level only &mdash; we do not store IP addresses long-term)</li>
-            <li><strong>Device locale</strong> from your phone's language &amp; region settings</li>
-        </ul>
-        <p>If <strong>any</strong> of these three signals indicates an EU / UK / EEA / Swiss country, you are placed in the EU regime by default. This is a <strong>fail-safe</strong> design &mdash; we err on the side of stricter protection. You can correct your region in <code>Settings → Account → Region</code> if our detection is wrong (e.g. you are travelling).</p>
-
-        <h3>EU Representative (Article 27 GDPR)</h3>
-        <p>For users in the EU, our designated GDPR representative is engaged through a third-party service. Contact details are made available on request via <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>GDPR Representative Request</code>. We will provide updated representative details within 7 days of request.</p>
-
-        <h3>U.S. State Privacy Laws (CCPA / CPRA, VCDPA, CPA, CTDPA, UCPA)</h3>
-        <p>If you are a resident of California, Virginia, Colorado, Connecticut, Utah, or other U.S. states with comprehensive privacy laws, you have the following rights:</p>
-        <ul>
-            <li><strong>Right to know</strong> what personal information we collect about you</li>
-            <li><strong>Right to delete</strong> your personal information (see Section 12)</li>
-            <li><strong>Right to correct</strong> inaccurate personal information</li>
-            <li><strong>Right to opt out</strong> of sale or sharing of personal information &mdash; we do <strong>not</strong> sell personal information, so this is effectively pre-honored</li>
-            <li><strong>Right to limit use of sensitive personal information</strong></li>
-            <li><strong>Right to non-discrimination</strong> for exercising these rights</li>
-        </ul>
-        <p>To exercise any of these rights, email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>U.S. Privacy Rights Request</code>. We will respond within 45 days.</p>
+        <h3>How to stop receiving emails</h3>
+        <p>Because all our emails are transactional and required for account functionality, the only way to stop receiving them is to <strong>delete your account</strong>. See Section 12 for instructions. After deletion, your email is added to a permanent suppression list so we never contact you again.</p>
     </section>
 
     <section>
         <h2><span class="num">05</span>Data Sharing &amp; Sub-Processors</h2>
-        <p>Data is stored on <strong>Google Firebase</strong> infrastructure, a processor on our behalf governed by Google's Data Processing Terms. Server regions are chosen to comply with applicable data residency laws.</p>
+        <p>Data is stored on <strong>Google Firebase</strong> infrastructure, a processor on our behalf governed by Google's Data Processing Terms.</p>
         <p>Public profile fields (name, avatar, bio, attribution handles, published presets, feedback messages) are visible to <strong>other users of the App</strong>. Email address, billing details, and device ID are <strong>never</strong> public.</p>
 
         <h3>Trusted service providers (processors)</h3>
-        <p>To deliver the service, we use a small number of trusted vendors who process data <strong>only on our behalf</strong>, under Data Processing Agreements (DPAs) that require them to protect your data and use it only for the purposes we specify. A copy of any active DPA is available on request via <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a>.</p>
+        <p>To deliver the service, we use a small number of trusted vendors who process data <strong>only on our behalf</strong>, under Data Processing Agreements (DPAs):</p>
         <ul>
-            <li><strong>Google Firebase</strong> (Google LLC, USA) &mdash; account authentication, database, server infrastructure. Operates under Google's standard Data Processing Addendum.</li>
-            <li><strong>Google Play Billing</strong> (Google LLC, USA) &mdash; subscription &amp; in-app purchase processing.</li>
-            <li><strong>Email service provider</strong> (e.g. SendGrid by Twilio, Brevo, or Mailchimp by Intuit) &mdash; used to deliver transactional and product emails. Operates under their respective DPAs. They never use your email for their own purposes.</li>
-            <li><strong>Analytics provider</strong> (Firebase Analytics by Google) &mdash; aggregate, pseudonymous usage data only.</li>
+            <li><strong>Google Firebase</strong> (Google LLC, USA) &mdash; account authentication, database, server infrastructure</li>
+            <li><strong>Google Play Billing</strong> (Google LLC, USA) &mdash; subscription &amp; in-app purchase processing</li>
+            <li><strong>Transactional email service</strong> (e.g. SendGrid by Twilio, Brevo, or Amazon SES) &mdash; used solely to deliver transactional emails (receipts, security alerts). They never use your email for their own purposes and we never use them for marketing.</li>
+            <li><strong>Analytics provider</strong> (Firebase Analytics by Google) &mdash; aggregate, pseudonymous usage data only</li>
         </ul>
         <p>We do <strong>not</strong> share your data with anyone else &mdash; no advertisers, no data brokers, no analytics resellers, no third-party marketers.</p>
 
         <h3>International data transfers</h3>
-        <p>Because our sub-processors are based in the United States, your data may be transferred outside your country of residence. Such transfers are protected by:</p>
-        <ul>
-            <li><strong>Standard Contractual Clauses (SCCs)</strong> approved by the European Commission for EU/EEA users</li>
-            <li><strong>UK International Data Transfer Addendum</strong> for UK users</li>
-            <li><strong>EU&ndash;U.S. Data Privacy Framework</strong> certification where applicable</li>
-        </ul>
-        <p>Sub-processors used for marketing email delivery are configured to <strong>exclude EU/UK/EEA users</strong> from marketing campaigns by default, in addition to the consent-based controls in Section 4C.</p>
+        <p>Because our sub-processors are based in the United States, your data may be transferred outside your country of residence. Such transfers are protected by Standard Contractual Clauses (SCCs) approved by the European Commission for EU/EEA users and the UK International Data Transfer Addendum for UK users.</p>
     </section>
 
     <section>
@@ -708,7 +546,7 @@
     <section>
         <h2><span class="num">09</span>Advertising</h2>
         <p>The free version may show ads from partner ad networks (e.g. AdMob). These networks may use anonymous identifiers to deliver relevant ads. Premium users do not see ads.</p>
-        <p>These in-app ads are separate from email and push communications &mdash; ad networks do not receive your email address from us.</p>
+        <p>These in-app ads are separate from email and push communications &mdash; ad networks do not receive your email address from us. We do not send marketing emails of any kind.</p>
     </section>
 
     <section>
@@ -772,7 +610,6 @@
             <li>Preset-sharing features are a bonus that may evolve, change, or end.</li>
             <li>This is industry-standard practice for apps with optional cloud / preset-sharing features.</li>
         </ul>
-        <p>If you are uncomfortable with this, choose the Monthly plan, which can be cancelled at any time.</p>
     </section>
 
     <section>
@@ -792,7 +629,7 @@
 
     <section>
         <h2><span class="num">12</span>Your Rights &amp; Account Deletion</h2>
-        <p>You have a range of rights over your personal data. The exact list depends on your region (see Section 4C), but the core rights below are honored <strong>globally</strong>:</p>
+        <p>You have a range of rights over your personal data. The core rights below are honored <strong>globally</strong>, regardless of region:</p>
 
         <div class="rights-grid">
             <div class="right-card">
@@ -812,10 +649,6 @@
                 <p>Have your account and associated data erased.</p>
             </div>
             <div class="right-card">
-                <h5>Right to object</h5>
-                <p>Object to specific processing (e.g. personalization) without unsubscribing.</p>
-            </div>
-            <div class="right-card">
                 <h5>Right to restrict</h5>
                 <p>Pause processing of your data while a dispute is resolved.</p>
             </div>
@@ -825,7 +658,11 @@
             </div>
             <div class="right-card">
                 <h5>Right to lodge a complaint</h5>
-                <p>With your local data protection authority (e.g. CNIL in France, ICO in the UK).</p>
+                <p>With your local data protection authority.</p>
+            </div>
+            <div class="right-card">
+                <h5>Right to non-discrimination</h5>
+                <p>For exercising any of the rights above.</p>
             </div>
         </div>
 
@@ -841,8 +678,6 @@
             <li>Your preset feedback messages and saves</li>
             <li>Your creator subscriptions</li>
             <li>Notifications addressed to you</li>
-            <li>Your communication preferences and behavioral data used for personalization</li>
-            <li>Region detection signals</li>
         </ul>
 
         <h3>What is retained</h3>
@@ -850,22 +685,44 @@
             <li>Anonymized engagement counts on other users' content (your identity is removed)</li>
             <li>Billing / transaction records (retained for up to 5 years for tax and accounting compliance under Vietnamese law, not linked to your personal identity after deletion)</li>
             <li>Diagnostic logs (anonymized, up to 90 days)</li>
-            <li>Suppression list entry &mdash; a hashed (SHA-256) record of your email on a "do not contact" list, so we are sure to never email you again, even by accident</li>
+            <li>Suppression list entry &mdash; a hashed (SHA-256) record of your email so we never contact you again</li>
         </ul>
         <p>Requests are processed within <strong>30 days</strong>. Most are completed within 7 business days.</p>
     </section>
 
     <section>
         <h2><span class="num">13</span>Children's Privacy</h2>
-        <p>UNIFY EQ is not directed at children under <strong>13</strong>. If we learn that we have inadvertently collected data from a child under 13, we will delete it promptly. Parents who believe their child has provided data should contact us at <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a>.</p>
-        <p>In jurisdictions where the minimum digital consent age is higher (e.g. 16 in parts of the EU under Article 8 GDPR), local law applies and we treat the higher threshold as the minimum.</p>
-        <p><strong>Enhanced protections for users 13&ndash;17:</strong> Users aged 13&ndash;17 (as indicated by their account or self-declared age) have stricter defaults regardless of region:</p>
+        <p>UNIFY EQ is not directed at children under <strong>13</strong>. We require an account to use the App, and account creation requires age verification.</p>
+
+        <h3>How we verify age</h3>
         <ul>
-            <li>Product marketing communications are <strong>off by default</strong>, even outside the EU</li>
-            <li>Behavioral personalization is <strong>off by default</strong></li>
-            <li>Preset publishing requires moderator pre-approval (already standard, but emphasized for minors)</li>
+            <li>Google "Family Link" / child-account flag is checked automatically &mdash; if true, signup is blocked</li>
+            <li>Facebook <code>age_range</code> API is checked automatically (if signed in via Facebook)</li>
+            <li>For users where no automatic signal is available, a self-declared age confirmation is required at signup</li>
+            <li>Behavioral signals are reviewed by moderators</li>
+            <li>A parent/guardian report channel is available (Section 17)</li>
+        </ul>
+
+        <h3>Users under 13</h3>
+        <p>Account creation is blocked for users we identify as being under 13. If we discover that we have inadvertently created an account for a child under 13, we will:</p>
+        <ul>
+            <li>Suspend the account within 24 hours</li>
+            <li>Delete all associated personal data within 30 days</li>
+            <li>Add the email to a permanent suppression list to prevent re-registration</li>
+        </ul>
+        <p>Parents who believe their child has provided data should contact us at <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>Child Account Report</code>.</p>
+
+        <h3>Enhanced protections for users 13&ndash;17</h3>
+        <p>Users aged 13&ndash;17 receive stricter privacy defaults regardless of region:</p>
+        <ul>
+            <li>Profile is private by default (not visible to other users)</li>
+            <li>Preset publishing requires moderator pre-approval</li>
+            <li>Cannot be contacted via in-app messaging by users they don't follow</li>
         </ul>
         <p>This aligns with the UK Age Appropriate Design Code (Children's Code) and similar frameworks.</p>
+
+        <h3>Regional minimum age</h3>
+        <p>In jurisdictions where the minimum digital consent age is higher (e.g. 16 in parts of the EU under Article 8 GDPR), local law applies and we treat the higher threshold as the minimum for account creation.</p>
     </section>
 
     <section>
@@ -878,9 +735,9 @@
         <p>In the event of a data breach affecting your personal information, we will:</p>
         <ul>
             <li>Notify the relevant supervisory authority within <strong>72 hours</strong> of becoming aware of the breach, as required by GDPR Article 33 and similar laws</li>
-            <li>Notify affected users <strong>without undue delay</strong> via email and an in-app banner when the breach is likely to result in high risk to your rights and freedoms (GDPR Article 34)</li>
+            <li>Notify affected users <strong>without undue delay</strong> via the email registered to your account and an in-app banner when the breach is likely to result in high risk to your rights and freedoms</li>
             <li>Provide clear information on what happened, what data was affected, what we are doing, and what you can do to protect yourself</li>
-            <li>Maintain an internal breach register documenting every incident, even those not requiring notification</li>
+            <li>Maintain an internal breach register documenting every incident</li>
         </ul>
     </section>
 
@@ -891,69 +748,54 @@
 
     <section>
         <h2><span class="num">16</span>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy as the App evolves. Material changes &mdash; especially changes that expand how we use your data &mdash; will be announced in-app or via the Play Store listing <strong>at least 14 days before they take effect</strong>. If a change requires fresh consent in your region (for example, sharing data with a new category of third party, or marketing to EU/UK users), we will ask you separately. Continued use of the App after a non-consent-requiring update constitutes acceptance of the revised policy.</p>
+        <p>We may update this Privacy Policy as the App evolves. Material changes will be announced in-app or via the Play Store listing <strong>at least 14 days before they take effect</strong>. If a future change would introduce marketing communications or any new use of your data beyond what is described above, we will request <strong>fresh, explicit consent</strong> from you separately &mdash; we will not silently expand the scope of how we use your data. Continued use of the App after a non-consent-requiring update constitutes acceptance of the revised policy.</p>
     </section>
 
     <section>
-        <h2><span class="num">17</span>Governing Law &amp; Dispute Resolution</h2>
-        <p>This Privacy Policy and our Terms of Service are governed by the <strong>laws of the Socialist Republic of Vietnam</strong>, without regard to conflict-of-law principles. Any dispute arising out of or relating to this Privacy Policy that cannot be resolved informally will be submitted to the competent courts of Vietnam.</p>
-        <p><strong>Exceptions for consumer protection:</strong></p>
-        <ul>
-            <li><strong>EU / UK / EEA / Swiss users</strong> retain the right to bring claims under the consumer protection laws of their country of residence, and to lodge complaints with their local data protection authority.</li>
-            <li><strong>U.S. users</strong> retain the right to exercise statutory privacy rights (CCPA, CPRA, VCDPA, etc.) regardless of governing-law clause.</li>
-            <li>This clause does <strong>not</strong> limit any non-waivable consumer rights granted to you by mandatory local law.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2><span class="num">18</span>Contact</h2>
+        <h2><span class="num">17</span>Contact</h2>
         <p>For privacy questions, data requests, or technical support:</p>
         <ul>
             <li>Email: <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a></li>
             <li>Data rights &amp; deletion: <a href="https://buitruyenpro.github.io/unify-eq-policy/delete-data.html">https://buitruyenpro.github.io/unify-eq-policy/delete-data.html</a></li>
-            <li>Unsubscribe from communications: tap the link in any product email, or email us with subject <code>Unsubscribe</code></li>
-            <li>GDPR representative inquiries: email with subject <code>GDPR Representative Request</code></li>
-            <li>U.S. state privacy rights: email with subject <code>U.S. Privacy Rights Request</code></li>
-            <li>Data breach concerns: email with subject <code>Security Concern</code> for expedited response</li>
+            <li>Report a child account: subject <code>Child Account Report</code></li>
+            <li>Data breach concerns: subject <code>Security Concern</code></li>
         </ul>
     </section>
 
     <section>
-        <h2><span class="num">19</span>Version History</h2>
-        <div class="changelog">
-            <div><span class="ver">v4.0</span><span class="date">May 2026</span></div>
-            <ul>
-                <li>Added multi-signal region detection (country + IP + locale)</li>
-                <li>Added EU Representative reference (Article 27 GDPR)</li>
-                <li>Added explicit U.S. state privacy rights section (CCPA, CPRA, VCDPA, CPA, CTDPA, UCPA)</li>
-                <li>Added Right to Object section for behavioral personalization (Section 4B)</li>
-                <li>Added Data Breach Notification commitment (Section 14A)</li>
-                <li>Added Governing Law clause (Section 17)</li>
-                <li>Added enhanced protections for users 13&ndash;17 globally</li>
-                <li>Added Sub-Processors detail with DPA references and international transfer safeguards</li>
-                <li>Separated Premium status flag from full purchase history for marketing purposes</li>
-                <li>Removed re-engagement campaigns for EU/UK users (avoiding cold-email risk)</li>
-                <li>Clarified Accessibility Service justification per Google Play 2023+ policy</li>
-            </ul>
-            <div><span class="ver">v3.1</span><span class="date">May 2026</span></div>
-            <ul>
-                <li>Adopted bundled-consent model via Terms acceptance on welcome screen</li>
-                <li>Introduced geo-aware EU/UK exclusion from marketing by default</li>
-            </ul>
-            <div><span class="ver">v3.0</span><span class="date">May 2026</span></div>
-            <ul>
-                <li>Consolidated email opt-in into a single preference</li>
-                <li>Introduced soft opt-in for paid users and one-time re-engagement</li>
-            </ul>
-            <div><span class="ver">v2.1</span><span class="date">May 2026</span></div>
-            <ul>
-                <li>Added Email Communications section with explicit opt-in checkboxes</li>
-                <li>Fixed children's-privacy threshold from 3 to 13</li>
-            </ul>
-            <div><span class="ver">v2.0</span><span class="date">May 2026</span></div>
-            <ul>
-                <li>Initial public version with preset-sharing terms and Premium plan scope</li>
-            </ul>
+        <h2><span class="num">18</span>Governing Law</h2>
+        <p>This Privacy Policy and our Terms of Service are governed by the <strong>laws of the Socialist Republic of Vietnam</strong>, without regard to conflict-of-law principles. Any dispute arising out of or relating to this Privacy Policy that cannot be resolved informally will be submitted to the competent courts of Vietnam.</p>
+        <p>This clause does <strong>not</strong> limit any non-waivable consumer rights granted to you by mandatory local law. EU/UK/EEA users retain the right to bring claims under their local consumer protection laws and to lodge complaints with their local data protection authority. U.S. users retain the right to exercise statutory privacy rights (CCPA, CPRA, VCDPA, etc.).</p>
+    </section>
+
+    <section>
+        <h2><span class="num">19</span>Your Agreement</h2>
+        <p>When you first open the App, you are shown a welcome screen that displays this Privacy Policy and Terms in a scrollable view. By tapping the <strong>"I Agree"</strong> button in the confirmation dialog, you acknowledge that you have read and understood this Policy and consent to:</p>
+        <ul>
+            <li>The collection and use of your data <strong>solely</strong> for the purposes described above (app functionality, account management, fraud prevention, transactional communications)</li>
+            <li>The transfer of your data to our trusted sub-processors as described in Section 5</li>
+            <li>Receiving <strong>transactional emails and notifications only</strong> &mdash; we do not send marketing</li>
+        </ul>
+        <p>You can revoke your consent at any time by deleting your account (Section 12).</p>
+
+        <div class="preview-card" data-tag="Welcome screen">
+            <h4>What you see on first launch</h4>
+            <div class="phone-mock">
+                <div class="phone-logo">U</div>
+                <p class="mock-title">Agree to continue?</p>
+                <p class="mock-sub">UNIFY EQ requires an account to use cloud features like preset sharing.</p>
+
+                <p class="terms-text">
+                    By tapping <strong>I Agree</strong>, you confirm you've read our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. We only collect data needed to run the App and will never send you marketing.
+                </p>
+
+                <div class="mock-actions">
+                    <button class="mock-btn mock-btn-ghost" id="declineBtn">Decline</button>
+                    <button class="mock-btn mock-btn-primary" id="agreeBtn">I Agree</button>
+                </div>
+
+                <div class="mock-status" id="mockStatus"></div>
+            </div>
         </div>
     </section>
 
@@ -966,16 +808,27 @@
 
 <script>
     (function() {
-        const btn    = document.getElementById('continueBtn');
-        const status = document.getElementById('mockStatus');
+        const agree   = document.getElementById('agreeBtn');
+        const decline = document.getElementById('declineBtn');
+        const status  = document.getElementById('mockStatus');
 
-        btn.addEventListener('click', () => {
+        agree.addEventListener('click', () => {
+            status.classList.remove('declined');
             status.classList.add('show');
-            status.innerHTML = "✓ Continued. Terms &amp; Privacy Policy accepted. You'll receive product communications (max 2–4/month). Change anytime in Settings.";
+            status.innerHTML = "✓ Agreed. Welcome to UNIFY EQ. You will only receive transactional emails (receipts, security alerts) — never marketing.";
             setTimeout(() => {
                 status.classList.remove('show');
                 status.textContent = '';
             }, 6500);
+        });
+
+        decline.addEventListener('click', () => {
+            status.classList.add('show', 'declined');
+            status.textContent = "Declined. The app would close on a real device. You can re-open anytime to reconsider.";
+            setTimeout(() => {
+                status.classList.remove('show', 'declined');
+                status.textContent = '';
+            }, 5500);
         });
     })();
 </script>
