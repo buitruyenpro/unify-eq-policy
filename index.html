@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy & Terms — UNIFY EQ</title>
+    <title>Privacy Policy &amp; Terms — UNIFY EQ</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><defs><linearGradient id='g' x1='0.1' y1='0.05' x2='0.9' y2='0.95'><stop offset='0%25' stop-color='%2300E0FF'/><stop offset='22%25' stop-color='%2300B7FF'/><stop offset='50%25' stop-color='%23A865F0'/><stop offset='78%25' stop-color='%23FF3D9A'/><stop offset='100%25' stop-color='%23FF2477'/></linearGradient></defs><rect width='96' height='96' rx='22' fill='%23070410'/><path d='M22 26 V58 a26 26 0 0 0 52 0 V26' stroke='url(%23g)' stroke-width='13' stroke-linecap='round' fill='none'/><rect x='44' y='30' width='8' height='24' rx='4' fill='%23fff'/><path d='M78 80 L86 85 L78 90 Z' fill='%23fff' opacity='0.55'/></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -12,6 +12,7 @@
             --gold-deep:   #C9A84C;
             --cyan:        #00E5FF;
             --rose:        #D08540;
+            --emerald:     #5FE3A1;
             --bg-base:     #050507;
             --bg-card:     #0F0F14;
             --bg-card-hi:  #16161E;
@@ -137,6 +138,16 @@
             width: 6px; height: 6px; border-radius: 50%;
             background: var(--gold); box-shadow: 0 0 6px rgba(235, 207, 122, 0.5);
         }
+        ul.check li::before {
+            content: '✓'; background: transparent; box-shadow: none;
+            color: var(--emerald); font-weight: 700; font-size: 0.95em;
+            top: 6px; left: 0; width: auto; height: auto;
+        }
+        ul.cross li::before {
+            content: '✕'; background: transparent; box-shadow: none;
+            color: #FF7A7A; font-weight: 700; font-size: 0.9em;
+            top: 6px; left: 2px; width: auto; height: auto;
+        }
         a {
             color: var(--cyan); text-decoration: none;
             border-bottom: 1px dotted rgba(0, 229, 255, 0.4);
@@ -158,6 +169,8 @@
         .callout-critical strong { color: #FF9999; }
         .callout-info { background: linear-gradient(90deg, rgba(0, 229, 255, 0.08), rgba(0, 229, 255, 0.02)); border-left-color: var(--cyan); }
         .callout-info strong { color: #66F1FF; }
+        .callout-good { background: linear-gradient(90deg, rgba(95, 227, 161, 0.10), rgba(95, 227, 161, 0.02)); border-left-color: var(--emerald); }
+        .callout-good strong { color: #8AF0BC; }
 
         .plans { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0 8px; }
         .badge {
@@ -173,6 +186,186 @@
         .badge-yearly::before   { background: var(--gold); }
         .badge-lifetime { background: rgba(232, 201, 106, 0.12); color: #FFD86B; border: 1px solid rgba(255, 216, 107, 0.4); }
         .badge-lifetime::before { background: #FFD86B; box-shadow: 0 0 6px rgba(255, 216, 107, 0.7); }
+
+        /* ============ EMAIL CONSENT PREVIEW (mock-up of in-app opt-in) ============ */
+        .preview-wrap {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+            margin: 22px 0 8px;
+        }
+        @media (max-width: 720px) {
+            .preview-wrap { grid-template-columns: 1fr; }
+        }
+        .preview-card {
+            background: #0A0A12;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+        .preview-card::before {
+            content: attr(data-tag);
+            position: absolute; top: 12px; right: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65em; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--gold-deep); opacity: 0.7;
+        }
+        .preview-card h4 {
+            margin: 0 0 14px; font-size: 0.85em; color: var(--text-muted);
+            font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Mobile mock-up */
+        .phone-mock {
+            background: linear-gradient(180deg, #0E0E18, #050508);
+            border-radius: 16px;
+            padding: 20px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .phone-mock .mock-title {
+            font-size: 1em; color: var(--text-primary); font-weight: 600;
+            margin: 0 0 6px; line-height: 1.3;
+        }
+        .phone-mock .mock-sub {
+            font-size: 0.82em; color: var(--text-muted); margin: 0 0 18px;
+            line-height: 1.55;
+        }
+        .opt-row {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer; user-select: none;
+        }
+        .opt-row:first-of-type { border-top: none; }
+        .opt-check {
+            flex-shrink: 0; width: 20px; height: 20px; border-radius: 6px;
+            border: 1.5px solid rgba(235, 207, 122, 0.4);
+            background: transparent; margin-top: 2px;
+            display: flex; align-items: center; justify-content: center;
+            transition: all .2s;
+        }
+        .opt-row.checked .opt-check {
+            background: var(--gold); border-color: var(--gold);
+            box-shadow: 0 0 12px rgba(235, 207, 122, 0.4);
+        }
+        .opt-check svg { width: 12px; height: 12px; opacity: 0; transition: opacity .15s; }
+        .opt-row.checked .opt-check svg { opacity: 1; }
+        .opt-text { flex: 1; }
+        .opt-text .opt-label {
+            font-size: 0.86em; color: var(--text-primary); font-weight: 500;
+            margin: 0 0 3px;
+        }
+        .opt-text .opt-desc {
+            font-size: 0.76em; color: var(--text-muted); line-height: 1.5; margin: 0;
+        }
+        .mock-actions {
+            display: flex; gap: 10px; margin-top: 16px; padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .mock-btn {
+            flex: 1; padding: 10px 14px; border-radius: 10px;
+            font-size: 0.82em; font-weight: 600; text-align: center;
+            cursor: pointer; transition: all .2s; border: none;
+            font-family: inherit;
+        }
+        .mock-btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+            color: #1A1410;
+        }
+        .mock-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(235, 207, 122, 0.3); }
+        .mock-btn-ghost {
+            background: transparent; color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .mock-btn-ghost:hover { background: rgba(255, 255, 255, 0.04); color: var(--text-primary); }
+        .mock-status {
+            margin-top: 14px; padding: 10px 14px; border-radius: 8px;
+            font-size: 0.78em; line-height: 1.5;
+            background: rgba(95, 227, 161, 0.08); border-left: 2px solid var(--emerald);
+            color: #8AF0BC; opacity: 0; transition: opacity .3s;
+        }
+        .mock-status.show { opacity: 1; }
+        .mock-status.skipped {
+            background: rgba(184, 184, 196, 0.06); border-left-color: var(--text-muted);
+            color: var(--text-muted);
+        }
+
+        /* Email preview */
+        .email-mock {
+            background: #FAFAF7; color: #1A1A20;
+            border-radius: 14px; padding: 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+        .email-header {
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            padding-bottom: 12px; margin-bottom: 14px;
+        }
+        .email-from {
+            display: flex; align-items: center; gap: 10px; margin-bottom: 4px;
+        }
+        .email-avatar {
+            width: 32px; height: 32px; border-radius: 8px;
+            background: linear-gradient(135deg, #00B7FF, #FF2477);
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 700; font-size: 0.85em;
+        }
+        .email-from-info { flex: 1; }
+        .email-name { font-size: 0.84em; font-weight: 600; color: #1A1A20; }
+        .email-addr { font-size: 0.72em; color: #888; }
+        .email-subj {
+            font-size: 0.92em; font-weight: 700; color: #1A1A20;
+            margin: 8px 0 0;
+        }
+        .email-body {
+            font-size: 0.8em; color: #444; line-height: 1.55;
+        }
+        .email-body p { color: #444; font-size: 0.95em; margin: 0 0 10px; }
+        .email-cta {
+            display: inline-block; margin-top: 8px;
+            padding: 8px 16px; border-radius: 8px;
+            background: linear-gradient(135deg, #C9A84C, #EBCF7A);
+            color: #1A1410; font-size: 0.78em; font-weight: 600;
+            text-decoration: none; border-bottom: none;
+        }
+        .email-footer {
+            margin-top: 14px; padding-top: 10px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            font-size: 0.7em; color: #999; line-height: 1.5;
+        }
+        .email-footer a { color: #6B6B6B; border-bottom: 1px dotted #ccc; }
+
+        .promise-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+            margin: 18px 0;
+        }
+        @media (max-width: 640px) { .promise-grid { grid-template-columns: 1fr; } }
+        .promise-cell {
+            padding: 16px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .promise-cell h5 {
+            margin: 0 0 8px; font-size: 0.85em; font-weight: 600;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .promise-cell.do h5 { color: var(--emerald); }
+        .promise-cell.dont h5 { color: #FF9999; }
+        .promise-cell h5 .icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 22px; height: 22px; border-radius: 50%;
+            font-size: 0.9em; font-weight: 700;
+        }
+        .promise-cell.do h5 .icon { background: rgba(95, 227, 161, 0.15); color: var(--emerald); }
+        .promise-cell.dont h5 .icon { background: rgba(255, 153, 153, 0.12); color: #FF9999; }
+        .promise-cell ul { margin: 0; }
+        .promise-cell ul li {
+            padding-left: 16px; font-size: 0.85em; margin-bottom: 6px; line-height: 1.5;
+        }
+        .promise-cell ul li::before {
+            top: 10px; width: 4px; height: 4px;
+        }
+        .promise-cell.do ul li::before { background: var(--emerald); box-shadow: 0 0 4px rgba(95, 227, 161, 0.5); }
+        .promise-cell.dont ul li::before { background: #FF9999; box-shadow: 0 0 4px rgba(255, 153, 153, 0.4); }
 
         footer {
             text-align: center; margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--border);
@@ -219,15 +412,11 @@
                     </feMerge>
                 </filter>
             </defs>
-            <!-- Background rounded square -->
             <rect width="96" height="96" rx="22" fill="url(#bgGlow)"/>
-            <!-- The U letter (rounded U-shape) -->
             <path d="M 22 26 V 58 a 26 26 0 0 0 52 0 V 26"
                   stroke="url(#uniGrad)" stroke-width="13" stroke-linecap="round"
                   fill="none" filter="url(#uGlow)"/>
-            <!-- Inner white capsule (the "I") -->
             <rect x="44" y="30" width="8" height="24" rx="4" fill="#FFFFFF"/>
-            <!-- Tiny play triangle bottom-right -->
             <path d="M 78 80 L 86 85 L 78 90 Z" fill="#FFFFFF" opacity="0.55"/>
         </svg>
         <h1>Privacy Policy &amp; Terms</h1>
@@ -237,7 +426,7 @@
             <span class="dot">&bull;</span>
             <span>May 2026</span>
             <span class="dot">&bull;</span>
-            <span>Version 2.0</span>
+            <span>Version 2.1</span>
         </div>
         <div class="waveform" aria-hidden="true">
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -299,6 +488,13 @@
             <li>App version, basic diagnostic info needed for the equalizer service</li>
         </ul>
 
+        <h3>3.5. Email communication preferences (optional, opt-in only)</h3>
+        <ul>
+            <li>Your choice on whether to receive product emails from us (defaults to <strong>off</strong> &mdash; we only send them if you actively turn this on)</li>
+            <li>Timestamp and policy version at the moment you opted in, so we can prove your consent was given freely and informed</li>
+            <li>Unsubscribe events &mdash; recorded the moment you click "unsubscribe" so we never email you again on that topic</li>
+        </ul>
+
         <p>We do <strong>NOT</strong> collect: phone numbers, contacts, calendar, precise location, browsing history, financial info, health data, or audio recordings.</p>
     </section>
 
@@ -310,15 +506,178 @@
             <li><strong>Personalization</strong> &mdash; showing your name, avatar, country, audio tier badge, attribution handles</li>
             <li><strong>Analytics</strong> &mdash; aggregate engagement metrics</li>
             <li><strong>Fraud prevention</strong> &mdash; detecting trial abuse and spam through device ID + dedup keys</li>
+            <li><strong>Product communication (opt-in only)</strong> &mdash; if and only if you opt in, your email may be used to send you the kinds of messages described in Section 4A below</li>
         </ul>
-        <p>We do <strong>NOT</strong> sell your personal data. We do <strong>NOT</strong> use it for advertising or marketing.</p>
+        <div class="callout callout-good">
+            <p><strong>Our promise.</strong> We do <strong>NOT</strong> sell your personal data. We do <strong>NOT</strong> share your email with advertisers, data brokers, or any third-party marketers. The only marketing emails you may ever receive are from us, about our own apps and audio content &mdash; and only if you ticked the box.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="num">4A</span>Email Communications</h2>
+
+        <p>Email is the only way we can reach you outside the App &mdash; for receipts, security alerts, and (if you opt in) news about the audio tools we build. Because email is personal, we treat it carefully and split it into two clear categories so you always know what to expect.</p>
+
+        <h3>Two kinds of email, clearly separated</h3>
+
+        <div class="promise-grid">
+            <div class="promise-cell do">
+                <h5><span class="icon">!</span>Transactional (always sent)</h5>
+                <ul>
+                    <li>Purchase receipts &amp; subscription confirmations</li>
+                    <li>Account security alerts (new login, password reset)</li>
+                    <li>Important policy or pricing changes that affect you</li>
+                    <li>Account deletion confirmations</li>
+                </ul>
+            </div>
+            <div class="promise-cell do">
+                <h5><span class="icon">✦</span>Product (opt-in only)</h5>
+                <ul>
+                    <li>New features &amp; major updates to UNIFY EQ</li>
+                    <li>New apps we release in the audio space</li>
+                    <li>Audio tips, EQ guides, headphone tuning tutorials</li>
+                    <li>Premium discounts &amp; limited-time offers</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Transactional emails are required for the service to function and cannot be turned off without deleting your account. Product emails are <strong>100% optional</strong> &mdash; you choose, and you can change your mind any time.</p>
+
+        <h3>Here's exactly what you see when you opt in</h3>
+
+        <p>Transparency matters, so here is the actual screen you'll see inside the App and a sample of what a product email looks like. Nothing hidden, nothing pre-checked.</p>
+
+        <div class="preview-wrap">
+            <div class="preview-card" data-tag="In-app screen">
+                <h4>Email preferences</h4>
+                <div class="phone-mock">
+                    <p class="mock-title">Stay in the loop?</p>
+                    <p class="mock-sub">Pick what you'd like to hear about. You can change this anytime in Settings.</p>
+
+                    <div class="opt-row" data-opt="features">
+                        <div class="opt-check">
+                            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 6 L5 9 L10 3" stroke="#1A1410" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="opt-text">
+                            <p class="opt-label">New features &amp; updates</p>
+                            <p class="opt-desc">When we ship something cool in UNIFY EQ. ~1 email/month.</p>
+                        </div>
+                    </div>
+
+                    <div class="opt-row" data-opt="apps">
+                        <div class="opt-check">
+                            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 6 L5 9 L10 3" stroke="#1A1410" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="opt-text">
+                            <p class="opt-label">New apps from our team</p>
+                            <p class="opt-desc">When we launch a new audio app. A few times per year.</p>
+                        </div>
+                    </div>
+
+                    <div class="opt-row" data-opt="tips">
+                        <div class="opt-check">
+                            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 6 L5 9 L10 3" stroke="#1A1410" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="opt-text">
+                            <p class="opt-label">Audio tips &amp; tutorials</p>
+                            <p class="opt-desc">EQ guides, headphone tuning, gear deep-dives. Optional.</p>
+                        </div>
+                    </div>
+
+                    <div class="mock-actions">
+                        <button class="mock-btn mock-btn-ghost" id="skipBtn">Skip</button>
+                        <button class="mock-btn mock-btn-primary" id="saveBtn">Save</button>
+                    </div>
+
+                    <div class="mock-status" id="mockStatus"></div>
+                </div>
+            </div>
+
+            <div class="preview-card" data-tag="Sample email">
+                <h4>What a product email looks like</h4>
+                <div class="email-mock">
+                    <div class="email-header">
+                        <div class="email-from">
+                            <div class="email-avatar">U</div>
+                            <div class="email-from-info">
+                                <div class="email-name">UNIFY EQ Team</div>
+                                <div class="email-addr">hello@unifyeq.app</div>
+                            </div>
+                        </div>
+                        <p class="email-subj">New: Spatial Audio is here 🎧</p>
+                    </div>
+                    <div class="email-body">
+                        <p>Hi there,</p>
+                        <p>We just rolled out <strong>Spatial Audio</strong> in UNIFY EQ &mdash; a new DSP layer that widens your soundstage by 40% on any pair of headphones. It's free to try for everyone this week.</p>
+                        <a href="#" class="email-cta">Open in UNIFY EQ →</a>
+                    </div>
+                    <div class="email-footer">
+                        You're receiving this because you opted in to product updates.<br>
+                        <a href="#">Unsubscribe</a> &nbsp;·&nbsp; <a href="#">Email preferences</a> &nbsp;·&nbsp; UNIFY EQ, Vietnam
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Our hard rules &mdash; what we will and won't do</h3>
+
+        <div class="promise-grid">
+            <div class="promise-cell do">
+                <h5><span class="icon">✓</span>We will</h5>
+                <ul>
+                    <li>Only email you if you actively opted in</li>
+                    <li>Include an unsubscribe link in every product email</li>
+                    <li>Honor unsubscribe requests within 48 hours</li>
+                    <li>Keep frequency low &mdash; on average 2 to 4 emails per month, max</li>
+                    <li>Only promote things we built ourselves</li>
+                    <li>Let you change your preferences anytime in Settings</li>
+                </ul>
+            </div>
+            <div class="promise-cell dont">
+                <h5><span class="icon">✕</span>We will never</h5>
+                <ul>
+                    <li>Sell, rent, or trade your email to anyone</li>
+                    <li>Share your email with advertisers or data brokers</li>
+                    <li>Send you emails from random third-party sponsors</li>
+                    <li>Email you about products unrelated to audio</li>
+                    <li>Pre-check the opt-in box for you</li>
+                    <li>Make unsubscribing hard or buried in fine print</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>How to opt out at any time</h3>
+        <ul>
+            <li>Click <strong>Unsubscribe</strong> at the bottom of any product email &mdash; takes one tap, no login required</li>
+            <li>Inside the App, go to <strong>Settings → Notifications → Email preferences</strong> and toggle off</li>
+            <li>Email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>Unsubscribe</code> &mdash; we'll process within 48 hours</li>
+        </ul>
+        <p>Opting out of product emails will <strong>not</strong> stop transactional emails (receipts, security alerts), because those are required for your account to function. If you also want to stop those, you'll need to delete your account &mdash; see Section 12.</p>
+
+        <div class="callout callout-info">
+            <p><strong>If you signed up before Version 2.1 of this policy:</strong> you have not been opted in. We will only send you product emails if you explicitly enable them &mdash; either by responding to a one-time re-permission email we may send, or by opening the App and choosing your preferences in Settings.</p>
+        </div>
     </section>
 
     <section>
         <h2><span class="num">05</span>Data Sharing</h2>
         <p>Data is stored on <strong>Google Firebase</strong> infrastructure (Realtime Database, Authentication), a processor on our behalf governed by Google's data processing terms.</p>
         <p>Public profile fields (name, avatar, bio, attribution handles, published presets, feedback messages) are visible to <strong>other users of the App</strong>. Email address, billing details, and device ID are <strong>never</strong> public.</p>
-        <p>We do not share data with third parties beyond Firebase (Google) and the standard Google Play billing flow.</p>
+
+        <h3>Trusted service providers (processors)</h3>
+        <p>To deliver the service, we use a small number of trusted vendors who process data <strong>only on our behalf</strong>, under contracts that require them to protect your data and use it only for the purposes we specify:</p>
+        <ul>
+            <li><strong>Google Firebase</strong> &mdash; account authentication, database, server infrastructure</li>
+            <li><strong>Google Play Billing</strong> &mdash; subscription &amp; in-app purchase processing</li>
+            <li><strong>Email service provider</strong> (e.g. SendGrid, Brevo, or Mailchimp) &mdash; <em>only</em> if you opted in to product emails; used solely to deliver those emails. They never use your email for their own purposes.</li>
+        </ul>
+        <p>We do <strong>not</strong> share your data with anyone else &mdash; no advertisers, no data brokers, no analytics resellers, no third-party marketers.</p>
     </section>
 
     <section>
@@ -349,6 +708,7 @@
     <section>
         <h2><span class="num">09</span>Advertising</h2>
         <p>The free version may show ads from partner ad networks (e.g. AdMob). These networks may use anonymous identifiers to deliver relevant ads. Premium users do not see ads.</p>
+        <p>These in-app ads are separate from email communications &mdash; ad networks do not receive your email address from us.</p>
     </section>
 
     <section>
@@ -444,6 +804,7 @@
             <li>Your preset feedback messages and saves</li>
             <li>Your creator subscriptions</li>
             <li>Notifications addressed to you</li>
+            <li>Your email marketing preferences and consent records</li>
         </ul>
 
         <h3>What is retained</h3>
@@ -451,13 +812,15 @@
             <li>Anonymized engagement counts on other users' content (your identity is removed)</li>
             <li>Billing / transaction records (retained for up to 5 years for tax and accounting compliance, not linked to your personal identity)</li>
             <li>Diagnostic logs (anonymized, up to 90 days)</li>
+            <li>Suppression list entry &mdash; we keep a hashed record of your email address on a "do not contact" list, so if anyone ever uploads your email by mistake, we still won't message you</li>
         </ul>
         <p>Requests are processed within <strong>30 days</strong>. Most are completed within 7 business days.</p>
     </section>
 
     <section>
         <h2><span class="num">13</span>Children's Privacy</h2>
-        <p>UNIFY EQ is not directed at children under 3. If we learn that we have inadvertently collected data from a child under 3, we will delete it promptly. Parents who believe their child has provided data should contact us at <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a>.</p>
+        <p>UNIFY EQ is not directed at children under <strong>13</strong>. If we learn that we have inadvertently collected data from a child under 13, we will delete it promptly. Parents who believe their child has provided data should contact us at <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a>.</p>
+        <p>In jurisdictions where the minimum digital consent age is higher (e.g. 16 in parts of the EU), local law applies and we will treat the higher threshold as the minimum.</p>
     </section>
 
     <section>
@@ -472,7 +835,7 @@
 
     <section>
         <h2><span class="num">16</span>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy as the App evolves. Material changes will be announced in-app or via the Play Store listing. Continued use of the App after an update constitutes acceptance of the revised policy.</p>
+        <p>We may update this Privacy Policy as the App evolves. Material changes &mdash; especially changes that expand how we use your data (such as new email categories) &mdash; will be announced in-app or via the Play Store listing <strong>at least 14 days before they take effect</strong>. If a change requires fresh consent (for example, a new type of email), we will ask you separately. Continued use of the App after a non-consent-requiring update constitutes acceptance of the revised policy.</p>
     </section>
 
     <section>
@@ -481,6 +844,7 @@
         <ul>
             <li>Email: <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a></li>
             <li>Data deletion: <a href="https://buitruyenpro.github.io/unify-eq-policy/delete-data.html">https://buitruyenpro.github.io/unify-eq-policy/delete-data.html</a></li>
+            <li>Unsubscribe from emails: click the link in any product email, or email us with subject <code>Unsubscribe</code></li>
         </ul>
     </section>
 
@@ -490,6 +854,52 @@
     </footer>
 
 </div>
+
+<script>
+    // Interactive opt-in preview
+    (function() {
+        const rows = document.querySelectorAll('.opt-row');
+        const saveBtn = document.getElementById('saveBtn');
+        const skipBtn = document.getElementById('skipBtn');
+        const status  = document.getElementById('mockStatus');
+
+        rows.forEach(row => {
+            row.addEventListener('click', () => {
+                row.classList.toggle('checked');
+            });
+        });
+
+        function reset() {
+            rows.forEach(r => r.classList.remove('checked'));
+            status.classList.remove('show', 'skipped');
+            status.textContent = '';
+        }
+
+        saveBtn.addEventListener('click', () => {
+            const picked = Array.from(rows)
+                .filter(r => r.classList.contains('checked'))
+                .map(r => r.querySelector('.opt-label').textContent);
+
+            if (picked.length === 0) {
+                status.classList.remove('skipped');
+                status.classList.add('show', 'skipped');
+                status.textContent = "No boxes ticked — that's fine. You won't receive any product emails.";
+            } else {
+                status.classList.remove('skipped');
+                status.classList.add('show');
+                status.innerHTML = "✓ Saved. You'll receive: <strong>" + picked.join(', ') + "</strong>. You can change this anytime in Settings.";
+            }
+
+            setTimeout(reset, 6000);
+        });
+
+        skipBtn.addEventListener('click', () => {
+            status.classList.add('show', 'skipped');
+            status.textContent = "Skipped. No product emails will be sent. You can opt in later from Settings.";
+            setTimeout(reset, 5000);
+        });
+    })();
+</script>
 
 </body>
 </html>
