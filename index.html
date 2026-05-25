@@ -29,27 +29,19 @@
                 radial-gradient(ellipse at top, rgba(235, 207, 122, 0.06) 0%, transparent 50%),
                 radial-gradient(ellipse at bottom, rgba(0, 229, 255, 0.04) 0%, transparent 50%);
             color: var(--text-primary);
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            line-height: 1.7;
-            font-weight: 400;
+            margin: 0; padding: 0; min-height: 100vh;
+            line-height: 1.7; font-weight: 400;
             -webkit-font-smoothing: antialiased;
-            position: relative;
-            overflow-x: hidden;
+            position: relative; overflow-x: hidden;
         }
         body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
+            content: ''; position: fixed; inset: 0;
             background-image: repeating-linear-gradient(90deg, transparent 0, transparent 38px,
                 rgba(235, 207, 122, 0.018) 38px, rgba(235, 207, 122, 0.018) 40px);
-            pointer-events: none;
-            z-index: 0;
+            pointer-events: none; z-index: 0;
         }
         .wrap { max-width: 880px; margin: 0 auto; padding: 60px 28px; position: relative; z-index: 1; }
 
-        /* Hero */
         .hero {
             text-align: center; margin-bottom: 56px; padding-bottom: 40px;
             border-bottom: 1px solid var(--border); position: relative;
@@ -78,7 +70,6 @@
         }
         .meta-line .dot { color: var(--gold); margin: 0 8px; }
 
-        /* Waveform animation */
         .waveform {
             display: flex; justify-content: center; align-items: flex-end; gap: 3px;
             height: 28px; margin: 20px auto 0; max-width: 220px; opacity: 0.55;
@@ -131,22 +122,13 @@
         }
         p, li { color: var(--text-secondary); font-size: 0.93em; line-height: 1.75; }
         strong { color: var(--text-primary); font-weight: 600; }
+        em { color: var(--text-primary); font-style: normal; font-weight: 500; }
         ul { padding-left: 0; list-style: none; margin: 12px 0; }
         ul li { position: relative; padding-left: 22px; margin-bottom: 8px; }
         ul li::before {
             content: ''; position: absolute; left: 4px; top: 12px;
             width: 6px; height: 6px; border-radius: 50%;
             background: var(--gold); box-shadow: 0 0 6px rgba(235, 207, 122, 0.5);
-        }
-        ul.check li::before {
-            content: '✓'; background: transparent; box-shadow: none;
-            color: var(--emerald); font-weight: 700; font-size: 0.95em;
-            top: 6px; left: 0; width: auto; height: auto;
-        }
-        ul.cross li::before {
-            content: '✕'; background: transparent; box-shadow: none;
-            color: #FF7A7A; font-weight: 700; font-size: 0.9em;
-            top: 6px; left: 2px; width: auto; height: auto;
         }
         a {
             color: var(--cyan); text-decoration: none;
@@ -187,21 +169,18 @@
         .badge-lifetime { background: rgba(232, 201, 106, 0.12); color: #FFD86B; border: 1px solid rgba(255, 216, 107, 0.4); }
         .badge-lifetime::before { background: #FFD86B; box-shadow: 0 0 6px rgba(255, 216, 107, 0.7); }
 
-        /* ============ EMAIL CONSENT PREVIEW (mock-up of in-app opt-in) ============ */
+        /* Welcome screen mock-up */
         .preview-wrap {
             display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
             margin: 22px 0 8px;
         }
-        @media (max-width: 720px) {
-            .preview-wrap { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 720px) { .preview-wrap { grid-template-columns: 1fr; } }
         .preview-card {
             background: #0A0A12;
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 18px;
             position: relative;
-            overflow: hidden;
         }
         .preview-card::before {
             content: attr(data-tag);
@@ -216,81 +195,59 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Mobile mock-up */
         .phone-mock {
             background: linear-gradient(180deg, #0E0E18, #050508);
             border-radius: 16px;
-            padding: 20px 18px;
+            padding: 24px 20px;
             border: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+        }
+        .phone-logo {
+            width: 56px; height: 56px; margin: 8px auto 18px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #00E0FF, #A865F0, #FF2477);
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 800; font-size: 1.4em;
+            box-shadow: 0 8px 24px rgba(168, 101, 240, 0.3);
         }
         .phone-mock .mock-title {
-            font-size: 1em; color: var(--text-primary); font-weight: 600;
-            margin: 0 0 6px; line-height: 1.3;
+            font-size: 1.1em; color: var(--text-primary); font-weight: 700;
+            margin: 0 0 8px; line-height: 1.3;
         }
         .phone-mock .mock-sub {
-            font-size: 0.82em; color: var(--text-muted); margin: 0 0 18px;
+            font-size: 0.82em; color: var(--text-secondary); margin: 0 0 22px;
             line-height: 1.55;
         }
-        .opt-row {
-            display: flex; align-items: flex-start; gap: 12px;
-            padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.05);
-            cursor: pointer; user-select: none;
+        .terms-text {
+            font-size: 0.74em; color: var(--text-muted); line-height: 1.6;
+            margin: 0 0 18px; padding: 0 4px;
         }
-        .opt-row:first-of-type { border-top: none; }
-        .opt-check {
-            flex-shrink: 0; width: 20px; height: 20px; border-radius: 6px;
-            border: 1.5px solid rgba(235, 207, 122, 0.4);
-            background: transparent; margin-top: 2px;
-            display: flex; align-items: center; justify-content: center;
-            transition: all .2s;
+        .terms-text a {
+            color: var(--gold); border-bottom: 1px dotted rgba(235, 207, 122, 0.4);
         }
-        .opt-row.checked .opt-check {
-            background: var(--gold); border-color: var(--gold);
-            box-shadow: 0 0 12px rgba(235, 207, 122, 0.4);
-        }
-        .opt-check svg { width: 12px; height: 12px; opacity: 0; transition: opacity .15s; }
-        .opt-row.checked .opt-check svg { opacity: 1; }
-        .opt-text { flex: 1; }
-        .opt-text .opt-label {
-            font-size: 0.86em; color: var(--text-primary); font-weight: 500;
-            margin: 0 0 3px;
-        }
-        .opt-text .opt-desc {
-            font-size: 0.76em; color: var(--text-muted); line-height: 1.5; margin: 0;
-        }
-        .mock-actions {
-            display: flex; gap: 10px; margin-top: 16px; padding-top: 14px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .mock-btn {
-            flex: 1; padding: 10px 14px; border-radius: 10px;
-            font-size: 0.82em; font-weight: 600; text-align: center;
-            cursor: pointer; transition: all .2s; border: none;
-            font-family: inherit;
-        }
-        .mock-btn-primary {
+        .mock-btn-big {
+            width: 100%; padding: 14px;
+            border-radius: 12px;
             background: linear-gradient(135deg, var(--gold), var(--gold-deep));
             color: #1A1410;
+            font-size: 0.9em; font-weight: 700;
+            border: none; cursor: pointer;
+            font-family: inherit;
+            transition: all .2s;
         }
-        .mock-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(235, 207, 122, 0.3); }
-        .mock-btn-ghost {
-            background: transparent; color: var(--text-secondary);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .mock-btn-big:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(235, 207, 122, 0.3);
         }
-        .mock-btn-ghost:hover { background: rgba(255, 255, 255, 0.04); color: var(--text-primary); }
         .mock-status {
             margin-top: 14px; padding: 10px 14px; border-radius: 8px;
             font-size: 0.78em; line-height: 1.5;
             background: rgba(95, 227, 161, 0.08); border-left: 2px solid var(--emerald);
             color: #8AF0BC; opacity: 0; transition: opacity .3s;
+            text-align: left;
         }
         .mock-status.show { opacity: 1; }
-        .mock-status.skipped {
-            background: rgba(184, 184, 196, 0.06); border-left-color: var(--text-muted);
-            color: var(--text-muted);
-        }
 
-        /* Email preview */
         .email-mock {
             background: #FAFAF7; color: #1A1A20;
             border-radius: 14px; padding: 18px;
@@ -300,9 +257,7 @@
             border-bottom: 1px solid rgba(0,0,0,0.08);
             padding-bottom: 12px; margin-bottom: 14px;
         }
-        .email-from {
-            display: flex; align-items: center; gap: 10px; margin-bottom: 4px;
-        }
+        .email-from { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
         .email-avatar {
             width: 32px; height: 32px; border-radius: 8px;
             background: linear-gradient(135deg, #00B7FF, #FF2477);
@@ -312,14 +267,8 @@
         .email-from-info { flex: 1; }
         .email-name { font-size: 0.84em; font-weight: 600; color: #1A1A20; }
         .email-addr { font-size: 0.72em; color: #888; }
-        .email-subj {
-            font-size: 0.92em; font-weight: 700; color: #1A1A20;
-            margin: 8px 0 0;
-        }
-        .email-body {
-            font-size: 0.8em; color: #444; line-height: 1.55;
-        }
-        .email-body p { color: #444; font-size: 0.95em; margin: 0 0 10px; }
+        .email-subj { font-size: 0.92em; font-weight: 700; color: #1A1A20; margin: 8px 0 0; }
+        .email-body p { color: #444; font-size: 0.8em; margin: 0 0 10px; line-height: 1.55; }
         .email-cta {
             display: inline-block; margin-top: 8px;
             padding: 8px 16px; border-radius: 8px;
@@ -361,9 +310,7 @@
         .promise-cell ul li {
             padding-left: 16px; font-size: 0.85em; margin-bottom: 6px; line-height: 1.5;
         }
-        .promise-cell ul li::before {
-            top: 10px; width: 4px; height: 4px;
-        }
+        .promise-cell ul li::before { top: 10px; width: 4px; height: 4px; }
         .promise-cell.do ul li::before { background: var(--emerald); box-shadow: 0 0 4px rgba(95, 227, 161, 0.5); }
         .promise-cell.dont ul li::before { background: #FF9999; box-shadow: 0 0 4px rgba(255, 153, 153, 0.4); }
 
@@ -426,7 +373,7 @@
             <span class="dot">&bull;</span>
             <span>May 2026</span>
             <span class="dot">&bull;</span>
-            <span>Version 2.1</span>
+            <span>Version 3.1</span>
         </div>
         <div class="waveform" aria-hidden="true">
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -437,7 +384,10 @@
     <section>
         <h2><span class="num">01</span>Introduction</h2>
         <p>Welcome to <strong>UNIFY EQ</strong> (the "App"), an audio equalizer and sound enhancement utility. This Privacy Policy explains how we collect, use, store, and share information when you use the App.</p>
-        <p>UNIFY EQ is <strong>not a social network</strong>. It is an audio tool with an optional <strong>preset-sharing library</strong> where users can publish their custom equalizer settings and audio configurations for other audiophiles to discover and apply. By using UNIFY EQ, you agree to the practices described below.</p>
+        <p>UNIFY EQ is <strong>not a social network</strong>. It is an audio tool with an optional <strong>preset-sharing library</strong> where users can publish their custom equalizer settings and audio configurations for other audiophiles to discover and apply.</p>
+        <div class="callout callout-info">
+            <p><strong>Your agreement.</strong> When you first open the App, you are shown a welcome screen with a link to this Privacy Policy and our Terms. By tapping <strong>Continue</strong>, you agree to everything described here &mdash; including how we use your data for app functionality, account management, and product communications. You can review or change communication preferences anytime in <code>Settings → Notifications</code>.</p>
+        </div>
     </section>
 
     <section>
@@ -445,7 +395,7 @@
         <ul>
             <li><strong>Microphone</strong> (<code>RECORD_AUDIO</code> / <code>CAPTURE_AUDIO_OUTPUT</code>): used <strong>only</strong> to analyze audio waves for the visualizer and equalizer processing on-device. We do <strong>NOT</strong> record, store, or transmit your audio.</li>
             <li><strong>Storage</strong>: saves personal sound presets, cached avatars, and exported share-card images on your device.</li>
-            <li><strong>Notifications</strong>: used for in-app notifications about likes, comments, follows, and admin actions.</li>
+            <li><strong>Notifications</strong>: used for in-app notifications about likes, comments, follows, admin actions, and product communications from our team (new features, app launches, audio tips, special offers). You can disable any notification category in <code>Settings → Notifications</code>.</li>
             <li><strong>System Alert Window, Foreground Service, Wake Lock, Exact Alarms</strong>: keep the audio effect service running across other apps.</li>
             <li><strong>Accessibility Service</strong>: detects audio events from other apps so the equalizer adapts in real-time. We do <strong>NOT</strong> read text, capture screens, or collect anything outside our equalizer logic.</li>
             <li><strong>Billing</strong>: verifies Premium subscriptions purchased via Google Play.</li>
@@ -461,7 +411,7 @@
             <li>Name and email address (from Google / Facebook profile)</li>
             <li>Profile photo URL (from Google / Facebook)</li>
             <li>A unique user ID</li>
-            <li>Country code (e.g. "VN") for displaying a flag</li>
+            <li>Country code (e.g. "VN") for displaying a flag and determining applicable regional regulations</li>
             <li>Sign-in provider, account creation time, last login time</li>
         </ul>
 
@@ -485,14 +435,10 @@
         <ul>
             <li>Anonymous device ID (Android ID) used to <strong>prevent trial abuse</strong> (e.g. uninstall-reinstall to reset trial)</li>
             <li>Total listening time and basic engagement counts for in-app stats</li>
+            <li>Feature usage patterns (which equalizer bands, DSP effects, or presets you use most) for product improvement and personalizing content we send you</li>
+            <li>Premium status and purchase history (which tier you bought, when)</li>
             <li>App version, basic diagnostic info needed for the equalizer service</li>
-        </ul>
-
-        <h3>3.5. Email communication preferences (optional, opt-in only)</h3>
-        <ul>
-            <li>Your choice on whether to receive product emails from us (defaults to <strong>off</strong> &mdash; we only send them if you actively turn this on)</li>
-            <li>Timestamp and policy version at the moment you opted in, so we can prove your consent was given freely and informed</li>
-            <li>Unsubscribe events &mdash; recorded the moment you click "unsubscribe" so we never email you again on that topic</li>
+            <li>Last engagement date (last open, last email click) for re-engagement timing</li>
         </ul>
 
         <p>We do <strong>NOT</strong> collect: phone numbers, contacts, calendar, precise location, browsing history, financial info, health data, or audio recordings.</p>
@@ -506,19 +452,38 @@
             <li><strong>Personalization</strong> &mdash; showing your name, avatar, country, audio tier badge, attribution handles</li>
             <li><strong>Analytics</strong> &mdash; aggregate engagement metrics</li>
             <li><strong>Fraud prevention</strong> &mdash; detecting trial abuse and spam through device ID + dedup keys</li>
-            <li><strong>Product communication (opt-in only)</strong> &mdash; if and only if you opt in, your email may be used to send you the kinds of messages described in Section 4A below</li>
+            <li><strong>Product communications</strong> &mdash; sending you updates, tips, app launches, and offers from our team via email and push, as described in Section 4A</li>
+            <li><strong>Behavioral personalization</strong> &mdash; using your in-app activity (features you use most, listening time, Premium status, last login) to tailor which messages we send, so you get fewer but more relevant communications</li>
         </ul>
         <div class="callout callout-good">
-            <p><strong>Our promise.</strong> We do <strong>NOT</strong> sell your personal data. We do <strong>NOT</strong> share your email with advertisers, data brokers, or any third-party marketers. The only marketing emails you may ever receive are from us, about our own apps and audio content &mdash; and only if you ticked the box.</p>
+            <p><strong>Our promise.</strong> We do <strong>NOT</strong> sell your personal data. We do <strong>NOT</strong> share your email with advertisers, data brokers, or any third-party marketers. Every marketing email or push you receive is from us, about audio apps and content we built ourselves &mdash; and you can opt out anytime in one tap.</p>
         </div>
     </section>
 
     <section>
-        <h2><span class="num">4A</span>Email Communications</h2>
+        <h2><span class="num">4A</span>Product Communications</h2>
 
-        <p>Email is the only way we can reach you outside the App &mdash; for receipts, security alerts, and (if you opt in) news about the audio tools we build. Because email is personal, we treat it carefully and split it into two clear categories so you always know what to expect.</p>
+        <p>Product communications &mdash; email and push notifications about UNIFY EQ and our other audio apps &mdash; are how we stay in touch with the people who use our software. We keep them useful, infrequent, and easy to turn off.</p>
 
-        <h3>Two kinds of email, clearly separated</h3>
+        <h3>How consent is established</h3>
+
+        <p>When you first open the App, you see a welcome screen that links to this Privacy Policy and our Terms. By tapping <strong>Continue</strong>, you accept both documents and acknowledge that we may send you product communications. There is no separate checkbox &mdash; the welcome screen acceptance is your consent, given before you start using the App. This is the industry-standard "click-through" consent model used by major audio apps including Spotify, Poweramp, and similar utilities.</p>
+
+        <p>We rely on three lawful bases depending on your circumstances:</p>
+
+        <ul>
+            <li><strong>Consent via Terms acceptance</strong> &mdash; By tapping Continue on the welcome screen, you consent to receiving product communications. You retain a one-tap opt-out at all times.</li>
+            <li><strong>Customer relationship (paid users)</strong> &mdash; If you purchase any Premium tier, we may send you product updates about UNIFY EQ and closely related audio apps from our team under the legitimate-interest "soft opt-in" exemption recognized by laws such as GDPR Recital 47 and the U.S. CAN-SPAM Act.</li>
+            <li><strong>One-time re-engagement</strong> &mdash; If you haven't opened the App in 90+ days, we may send a single re-engagement email with new features or offers. Strictly one message &mdash; further communications require fresh engagement.</li>
+        </ul>
+
+        <h3>Regional rules &mdash; we respect stricter laws automatically</h3>
+
+        <div class="callout callout-info">
+            <p><strong>If you are in the European Union, United Kingdom, Switzerland, or other GDPR/UK-GDPR jurisdictions:</strong> we <strong>do not</strong> rely on Terms acceptance alone for marketing consent. Users in these regions are <strong>excluded from marketing communications by default</strong> and will only receive product emails or push if they explicitly opt in inside the App (<code>Settings → Notifications → Email preferences</code>). Transactional messages (receipts, security alerts) are sent normally. Region is detected automatically from your country code and account locale.</p>
+        </div>
+
+        <h3>Categories of communication</h3>
 
         <div class="promise-grid">
             <div class="promise-cell do">
@@ -531,7 +496,7 @@
                 </ul>
             </div>
             <div class="promise-cell do">
-                <h5><span class="icon">✦</span>Product (opt-in only)</h5>
+                <h5><span class="icon">✦</span>Product (managed by you)</h5>
                 <ul>
                     <li>New features &amp; major updates to UNIFY EQ</li>
                     <li>New apps we release in the audio space</li>
@@ -541,59 +506,23 @@
             </div>
         </div>
 
-        <p>Transactional emails are required for the service to function and cannot be turned off without deleting your account. Product emails are <strong>100% optional</strong> &mdash; you choose, and you can change your mind any time.</p>
+        <h3>Here's exactly what you see when you first open the App</h3>
 
-        <h3>Here's exactly what you see when you opt in</h3>
-
-        <p>Transparency matters, so here is the actual screen you'll see inside the App and a sample of what a product email looks like. Nothing hidden, nothing pre-checked.</p>
+        <p>Transparency matters, so here is the actual welcome screen and a sample of what a product email looks like.</p>
 
         <div class="preview-wrap">
-            <div class="preview-card" data-tag="In-app screen">
-                <h4>Email preferences</h4>
+            <div class="preview-card" data-tag="Welcome screen">
+                <h4>First-launch screen</h4>
                 <div class="phone-mock">
-                    <p class="mock-title">Stay in the loop?</p>
-                    <p class="mock-sub">Pick what you'd like to hear about. You can change this anytime in Settings.</p>
+                    <div class="phone-logo">U</div>
+                    <p class="mock-title">Welcome to UNIFY EQ</p>
+                    <p class="mock-sub">Studio-grade equalizer, bass booster &amp; audio enhancer &mdash; tuned for your headphones.</p>
 
-                    <div class="opt-row" data-opt="features">
-                        <div class="opt-check">
-                            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 6 L5 9 L10 3" stroke="#1A1410" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="opt-text">
-                            <p class="opt-label">New features &amp; updates</p>
-                            <p class="opt-desc">When we ship something cool in UNIFY EQ. ~1 email/month.</p>
-                        </div>
-                    </div>
+                    <p class="terms-text">
+                        By tapping <strong>Continue</strong>, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, and to receive occasional product communications from our team (you can opt out anytime in Settings).
+                    </p>
 
-                    <div class="opt-row" data-opt="apps">
-                        <div class="opt-check">
-                            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 6 L5 9 L10 3" stroke="#1A1410" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="opt-text">
-                            <p class="opt-label">New apps from our team</p>
-                            <p class="opt-desc">When we launch a new audio app. A few times per year.</p>
-                        </div>
-                    </div>
-
-                    <div class="opt-row" data-opt="tips">
-                        <div class="opt-check">
-                            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 6 L5 9 L10 3" stroke="#1A1410" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="opt-text">
-                            <p class="opt-label">Audio tips &amp; tutorials</p>
-                            <p class="opt-desc">EQ guides, headphone tuning, gear deep-dives. Optional.</p>
-                        </div>
-                    </div>
-
-                    <div class="mock-actions">
-                        <button class="mock-btn mock-btn-ghost" id="skipBtn">Skip</button>
-                        <button class="mock-btn mock-btn-primary" id="saveBtn">Save</button>
-                    </div>
+                    <button class="mock-btn-big" id="continueBtn">Continue</button>
 
                     <div class="mock-status" id="mockStatus"></div>
                 </div>
@@ -614,16 +543,24 @@
                     </div>
                     <div class="email-body">
                         <p>Hi there,</p>
-                        <p>We just rolled out <strong>Spatial Audio</strong> in UNIFY EQ &mdash; a new DSP layer that widens your soundstage by 40% on any pair of headphones. It's free to try for everyone this week.</p>
+                        <p>We just rolled out <strong>Spatial Audio</strong> in UNIFY EQ &mdash; a new DSP layer that widens your soundstage by 40% on any pair of headphones. Free to try this week.</p>
                         <a href="#" class="email-cta">Open in UNIFY EQ →</a>
                     </div>
                     <div class="email-footer">
-                        You're receiving this because you opted in to product updates.<br>
+                        You're receiving this because you accepted our Terms when you installed UNIFY EQ.<br>
                         <a href="#">Unsubscribe</a> &nbsp;·&nbsp; <a href="#">Email preferences</a> &nbsp;·&nbsp; UNIFY EQ, Vietnam
                     </div>
                 </div>
             </div>
         </div>
+
+        <h3>Frequency</h3>
+        <ul>
+            <li><strong>Typical month</strong>: 2 to 4 product emails</li>
+            <li><strong>Major product launch or seasonal promotion</strong>: occasionally up to 6 emails in a month, then back to normal</li>
+            <li><strong>Push notifications</strong> for product news: at most 2&ndash;3 per month, independent of email</li>
+        </ul>
+        <p>If this feels like too much, you can reduce frequency or opt out entirely in Settings &mdash; we'd rather have you stay subscribed at a lower frequency than lose you completely.</p>
 
         <h3>Our hard rules &mdash; what we will and won't do</h3>
 
@@ -631,12 +568,12 @@
             <div class="promise-cell do">
                 <h5><span class="icon">✓</span>We will</h5>
                 <ul>
-                    <li>Only email you if you actively opted in</li>
-                    <li>Include an unsubscribe link in every product email</li>
                     <li>Honor unsubscribe requests within 48 hours</li>
-                    <li>Keep frequency low &mdash; on average 2 to 4 emails per month, max</li>
-                    <li>Only promote things we built ourselves</li>
-                    <li>Let you change your preferences anytime in Settings</li>
+                    <li>Include a one-tap unsubscribe link in every product email</li>
+                    <li>Only promote apps and content we built ourselves</li>
+                    <li>Let you change preferences anytime in Settings</li>
+                    <li>Tailor what we send based on what you actually use</li>
+                    <li>Permanently suppress contact for anyone who deleted their account</li>
                 </ul>
             </div>
             <div class="promise-cell dont">
@@ -644,24 +581,24 @@
                 <ul>
                     <li>Sell, rent, or trade your email to anyone</li>
                     <li>Share your email with advertisers or data brokers</li>
-                    <li>Send you emails from random third-party sponsors</li>
-                    <li>Email you about products unrelated to audio</li>
-                    <li>Pre-check the opt-in box for you</li>
-                    <li>Make unsubscribing hard or buried in fine print</li>
+                    <li>Forward third-party sponsored emails to you</li>
+                    <li>Bury the unsubscribe link or make it require login</li>
+                    <li>Send you anything unrelated to audio or our products</li>
+                    <li>Email EU/UK users without explicit opt-in</li>
                 </ul>
             </div>
         </div>
 
         <h3>How to opt out at any time</h3>
         <ul>
-            <li>Click <strong>Unsubscribe</strong> at the bottom of any product email &mdash; takes one tap, no login required</li>
+            <li>Tap <strong>Unsubscribe</strong> at the bottom of any product email &mdash; one tap, no login required</li>
             <li>Inside the App, go to <strong>Settings → Notifications → Email preferences</strong> and toggle off</li>
-            <li>Email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>Unsubscribe</code> &mdash; we'll process within 48 hours</li>
+            <li>Email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>Unsubscribe</code> &mdash; processed within 48 hours</li>
         </ul>
-        <p>Opting out of product emails will <strong>not</strong> stop transactional emails (receipts, security alerts), because those are required for your account to function. If you also want to stop those, you'll need to delete your account &mdash; see Section 12.</p>
+        <p>Opting out of product communications will <strong>not</strong> stop transactional emails (receipts, security alerts), which are required for your account to function. If you also want to stop those, you'll need to delete your account &mdash; see Section 12.</p>
 
-        <div class="callout callout-info">
-            <p><strong>If you signed up before Version 2.1 of this policy:</strong> you have not been opted in. We will only send you product emails if you explicitly enable them &mdash; either by responding to a one-time re-permission email we may send, or by opening the App and choosing your preferences in Settings.</p>
+        <div class="callout callout-warn">
+            <p><strong>If you signed up before Version 3.1 of this policy:</strong> the new Terms-acceptance consent model applies to users who first accept the updated Terms inside the App. Existing users will see a one-time updated-terms notice with the option to review changes or opt out before the new model takes effect.</p>
         </div>
     </section>
 
@@ -675,7 +612,8 @@
         <ul>
             <li><strong>Google Firebase</strong> &mdash; account authentication, database, server infrastructure</li>
             <li><strong>Google Play Billing</strong> &mdash; subscription &amp; in-app purchase processing</li>
-            <li><strong>Email service provider</strong> (e.g. SendGrid, Brevo, or Mailchimp) &mdash; <em>only</em> if you opted in to product emails; used solely to deliver those emails. They never use your email for their own purposes.</li>
+            <li><strong>Email service provider</strong> (e.g. SendGrid, Brevo, or Mailchimp) &mdash; used to deliver transactional and product emails. They never use your email for their own purposes.</li>
+            <li><strong>Analytics providers</strong> (e.g. Firebase Analytics) &mdash; aggregate, pseudonymous usage data</li>
         </ul>
         <p>We do <strong>not</strong> share your data with anyone else &mdash; no advertisers, no data brokers, no analytics resellers, no third-party marketers.</p>
     </section>
@@ -708,7 +646,7 @@
     <section>
         <h2><span class="num">09</span>Advertising</h2>
         <p>The free version may show ads from partner ad networks (e.g. AdMob). These networks may use anonymous identifiers to deliver relevant ads. Premium users do not see ads.</p>
-        <p>These in-app ads are separate from email communications &mdash; ad networks do not receive your email address from us.</p>
+        <p>These in-app ads are separate from email and push communications &mdash; ad networks do not receive your email address from us.</p>
     </section>
 
     <section>
@@ -804,7 +742,7 @@
             <li>Your preset feedback messages and saves</li>
             <li>Your creator subscriptions</li>
             <li>Notifications addressed to you</li>
-            <li>Your email marketing preferences and consent records</li>
+            <li>Your communication preferences and behavioral data used for personalization</li>
         </ul>
 
         <h3>What is retained</h3>
@@ -812,7 +750,7 @@
             <li>Anonymized engagement counts on other users' content (your identity is removed)</li>
             <li>Billing / transaction records (retained for up to 5 years for tax and accounting compliance, not linked to your personal identity)</li>
             <li>Diagnostic logs (anonymized, up to 90 days)</li>
-            <li>Suppression list entry &mdash; we keep a hashed record of your email address on a "do not contact" list, so if anyone ever uploads your email by mistake, we still won't message you</li>
+            <li>Suppression list entry &mdash; we keep a hashed record of your email address on a "do not contact" list, so we are sure to never email you again, even by accident</li>
         </ul>
         <p>Requests are processed within <strong>30 days</strong>. Most are completed within 7 business days.</p>
     </section>
@@ -835,7 +773,7 @@
 
     <section>
         <h2><span class="num">16</span>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy as the App evolves. Material changes &mdash; especially changes that expand how we use your data (such as new email categories) &mdash; will be announced in-app or via the Play Store listing <strong>at least 14 days before they take effect</strong>. If a change requires fresh consent (for example, a new type of email), we will ask you separately. Continued use of the App after a non-consent-requiring update constitutes acceptance of the revised policy.</p>
+        <p>We may update this Privacy Policy as the App evolves. Material changes &mdash; especially changes that expand how we use your data &mdash; will be announced in-app or via the Play Store listing <strong>at least 14 days before they take effect</strong>. If a change requires fresh consent in your region (for example, sharing data with a new category of third party, or marketing to EU/UK users), we will ask you separately. Continued use of the App after a non-consent-requiring update constitutes acceptance of the revised policy.</p>
     </section>
 
     <section>
@@ -844,7 +782,7 @@
         <ul>
             <li>Email: <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a></li>
             <li>Data deletion: <a href="https://buitruyenpro.github.io/unify-eq-policy/delete-data.html">https://buitruyenpro.github.io/unify-eq-policy/delete-data.html</a></li>
-            <li>Unsubscribe from emails: click the link in any product email, or email us with subject <code>Unsubscribe</code></li>
+            <li>Unsubscribe from communications: tap the link in any product email, or email us with subject <code>Unsubscribe</code></li>
         </ul>
     </section>
 
@@ -856,47 +794,17 @@
 </div>
 
 <script>
-    // Interactive opt-in preview
     (function() {
-        const rows = document.querySelectorAll('.opt-row');
-        const saveBtn = document.getElementById('saveBtn');
-        const skipBtn = document.getElementById('skipBtn');
-        const status  = document.getElementById('mockStatus');
+        const btn    = document.getElementById('continueBtn');
+        const status = document.getElementById('mockStatus');
 
-        rows.forEach(row => {
-            row.addEventListener('click', () => {
-                row.classList.toggle('checked');
-            });
-        });
-
-        function reset() {
-            rows.forEach(r => r.classList.remove('checked'));
-            status.classList.remove('show', 'skipped');
-            status.textContent = '';
-        }
-
-        saveBtn.addEventListener('click', () => {
-            const picked = Array.from(rows)
-                .filter(r => r.classList.contains('checked'))
-                .map(r => r.querySelector('.opt-label').textContent);
-
-            if (picked.length === 0) {
-                status.classList.remove('skipped');
-                status.classList.add('show', 'skipped');
-                status.textContent = "No boxes ticked — that's fine. You won't receive any product emails.";
-            } else {
-                status.classList.remove('skipped');
-                status.classList.add('show');
-                status.innerHTML = "✓ Saved. You'll receive: <strong>" + picked.join(', ') + "</strong>. You can change this anytime in Settings.";
-            }
-
-            setTimeout(reset, 6000);
-        });
-
-        skipBtn.addEventListener('click', () => {
-            status.classList.add('show', 'skipped');
-            status.textContent = "Skipped. No product emails will be sent. You can opt in later from Settings.";
-            setTimeout(reset, 5000);
+        btn.addEventListener('click', () => {
+            status.classList.add('show');
+            status.innerHTML = "✓ Continued. Terms &amp; Privacy Policy accepted. You'll receive product communications (max 2–4/month). Change anytime in Settings.";
+            setTimeout(() => {
+                status.classList.remove('show');
+                status.textContent = '';
+            }, 6500);
         });
     })();
 </script>
