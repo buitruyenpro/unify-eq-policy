@@ -64,8 +64,22 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
         .hero-sub { color: var(--text-secondary); font-size: 0.95em; font-weight: 400; margin: 0; }
+        .age-pill {
+            display: inline-flex; align-items: center; gap: 8px;
+            margin-top: 14px; padding: 6px 14px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(95, 227, 161, 0.12), rgba(95, 227, 161, 0.04));
+            border: 1px solid rgba(95, 227, 161, 0.3);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78em; color: var(--emerald);
+            font-weight: 600; letter-spacing: 0.05em;
+        }
+        .age-pill::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%;
+            background: var(--emerald); box-shadow: 0 0 8px var(--emerald);
+        }
         .meta-line {
-            margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.75em;
+            margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 0.75em;
             color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase;
         }
         .meta-line .dot { color: var(--gold); margin: 0 8px; }
@@ -169,7 +183,6 @@
         .badge-lifetime { background: rgba(232, 201, 106, 0.12); color: #FFD86B; border: 1px solid rgba(255, 216, 107, 0.4); }
         .badge-lifetime::before { background: #FFD86B; box-shadow: 0 0 6px rgba(255, 216, 107, 0.7); }
 
-        /* Welcome mock */
         .preview-card {
             background: #0A0A12;
             border: 1px solid var(--border);
@@ -302,6 +315,33 @@
         }
         .right-card p { margin: 0; font-size: 0.83em; color: var(--text-secondary); line-height: 1.55; }
 
+        .age-banner {
+            background: linear-gradient(135deg, rgba(95, 227, 161, 0.12), rgba(0, 229, 255, 0.08));
+            border: 2px solid rgba(95, 227, 161, 0.35);
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 18px 0;
+            display: flex; align-items: center; gap: 18px;
+        }
+        @media (max-width: 640px) { .age-banner { flex-direction: column; text-align: center; } }
+        .age-banner-icon {
+            flex-shrink: 0;
+            width: 64px; height: 64px; border-radius: 16px;
+            background: linear-gradient(135deg, var(--emerald), #2DBA82);
+            display: flex; align-items: center; justify-content: center;
+            color: #0A2018; font-weight: 800; font-size: 1.5em;
+            box-shadow: 0 4px 16px rgba(95, 227, 161, 0.3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .age-banner-content h3 {
+            color: var(--emerald) !important;
+            margin: 0 0 4px !important;
+            font-size: 1.05em !important;
+        }
+        .age-banner-content p {
+            margin: 0; color: var(--text-secondary); font-size: 0.9em;
+        }
+
         footer {
             text-align: center; margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--border);
         }
@@ -361,7 +401,7 @@
             <span class="dot">&bull;</span>
             <span>May 2026</span>
             <span class="dot">&bull;</span>
-            <span>Version 5.0</span>
+            <span>Version 6.1</span>
         </div>
         <div class="waveform" aria-hidden="true">
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -373,6 +413,15 @@
         <h2><span class="num">01</span>Introduction</h2>
         <p>Welcome to <strong>UNIFY EQ</strong> (the "App"), an audio equalizer and sound enhancement utility operated by an independent developer based in <strong>Vietnam</strong>. This Privacy Policy explains how we collect, use, store, and share information when you use the App.</p>
         <p>UNIFY EQ is <strong>not a social network</strong>. It is an audio tool with an optional <strong>preset-sharing library</strong> where users can publish their custom equalizer settings and audio configurations for other audiophiles to discover and apply.</p>
+
+        <div class="age-banner">
+            <div class="age-banner-icon">16+</div>
+            <div class="age-banner-content">
+                <h3>Minimum age requirement</h3>
+                <p>UNIFY EQ requires users to be at least <strong>16 years old</strong> to create an account and use the App, in compliance with Vietnam Decree 13/2023 and EU GDPR Article 8.</p>
+            </div>
+        </div>
+
         <div class="callout callout-good">
             <p><strong>Privacy-first commitment.</strong> We do <strong>NOT</strong> send marketing or promotional emails. We do <strong>NOT</strong> sell, rent, or trade your data. The only emails you may receive from us are transactional (purchase receipts, security alerts, important policy changes). Nothing else, ever.</p>
         </div>
@@ -392,7 +441,7 @@
 
     <section>
         <h2><span class="num">03</span>Accounts &amp; Online Data</h2>
-        <p>UNIFY EQ requires sign-in (Google or Facebook OAuth) to enable cloud features such as preset publishing, save/subscribe actions, and cross-device sync. The following data is collected and stored on our servers (Firebase):</p>
+        <p>UNIFY EQ requires sign-in (Google or Facebook OAuth) and age verification (minimum 16) to enable cloud features such as preset publishing, save/subscribe actions, and cross-device sync. The following data is collected and stored on our servers (Firebase):</p>
 
         <h3>3.1. Account &amp; profile data</h3>
         <ul>
@@ -401,6 +450,7 @@
             <li>A unique user ID</li>
             <li>Country code for displaying a flag</li>
             <li>Sign-in provider, account creation time, last login time</li>
+            <li>Age verification record (declared age band, verification method, timestamp)</li>
         </ul>
         <p><strong>Your email is used only for transactional purposes</strong> (account verification, security alerts, purchase receipts, important policy updates). It is never used for marketing, never shared with third-party marketers, and never sold.</p>
 
@@ -422,7 +472,7 @@
 
         <h3>3.4. Technical &amp; usage data</h3>
         <ul>
-            <li>Anonymous device ID (Android ID) used to <strong>prevent trial abuse</strong> (e.g. uninstall-reinstall to reset trial)</li>
+            <li>Anonymous device ID (Android ID / Advertising ID) used solely to <strong>prevent trial abuse</strong> (e.g. uninstall-reinstall to reset trial), as permitted under Google Play's Device or other IDs policy for fraud prevention. This identifier is never shared with third parties for advertising and is reset when you delete the App.</li>
             <li>Total listening time and basic engagement counts for in-app stats</li>
             <li>Premium status flag (true/false) for unlocking paid features</li>
             <li>App version, basic diagnostic info needed for the equalizer service</li>
@@ -439,6 +489,7 @@
             <li><strong>Personalization</strong> &mdash; showing your name, avatar, country, audio tier badge, attribution handles</li>
             <li><strong>Analytics</strong> &mdash; aggregate, pseudonymous engagement metrics for product improvement</li>
             <li><strong>Fraud prevention</strong> &mdash; detecting trial abuse and spam through device ID + dedup keys</li>
+            <li><strong>Age compliance</strong> &mdash; verifying users meet the minimum age requirement (16+)</li>
             <li><strong>Transactional communications</strong> &mdash; sending purchase receipts, security alerts, and important policy updates via email (see Section 4A)</li>
         </ul>
         <div class="callout callout-good">
@@ -464,7 +515,7 @@
                 <h5><span class="icon">✓</span>Email (transactional only)</h5>
                 <ul>
                     <li>Purchase receipts &amp; subscription confirmations</li>
-                    <li>Subscription renewal reminders (legally required)</li>
+                    <li>Subscription renewal &amp; expiry notices (when required by app stores or local consumer law)</li>
                     <li>Account security alerts (new device login, password reset)</li>
                     <li>Account deletion confirmation</li>
                     <li>Critical policy or pricing changes that affect you</li>
@@ -502,12 +553,12 @@
     <section>
         <h2><span class="num">05</span>Data Sharing &amp; Sub-Processors</h2>
         <p>Data is stored on <strong>Google Firebase</strong> infrastructure, a processor on our behalf governed by Google's Data Processing Terms.</p>
-        <p>Public profile fields (name, avatar, bio, attribution handles, published presets, feedback messages) are visible to <strong>other users of the App</strong>. Email address, billing details, and device ID are <strong>never</strong> public.</p>
+        <p>Public profile fields (name, avatar, bio, attribution handles, published presets, feedback messages) are visible to <strong>other users of the App</strong>. Email address, billing details, age verification records, and device ID are <strong>never</strong> public.</p>
 
         <h3>Trusted service providers (processors)</h3>
         <p>To deliver the service, we use a small number of trusted vendors who process data <strong>only on our behalf</strong>, under Data Processing Agreements (DPAs):</p>
         <ul>
-            <li><strong>Google Firebase</strong> (Google LLC, USA) &mdash; account authentication, database, server infrastructure</li>
+            <li><strong>Google Firebase</strong> (Google LLC, USA) &mdash; account authentication, database, server infrastructure. Data is stored in Firebase regions selected based on user proximity (primarily <code>asia-southeast1</code> for Asia-Pacific users and <code>us-central1</code> for other regions).</li>
             <li><strong>Google Play Billing</strong> (Google LLC, USA) &mdash; subscription &amp; in-app purchase processing</li>
             <li><strong>Transactional email service</strong> (e.g. SendGrid by Twilio, Brevo, or Amazon SES) &mdash; used solely to deliver transactional emails (receipts, security alerts). They never use your email for their own purposes and we never use them for marketing.</li>
             <li><strong>Analytics provider</strong> (Firebase Analytics by Google) &mdash; aggregate, pseudonymous usage data only</li>
@@ -535,6 +586,8 @@
             <li><strong>Auto-renewal</strong>: Monthly / Yearly subscriptions auto-renew unless cancelled at least 24 hours before the period ends.</li>
             <li><strong>Cancellation</strong>: cancel anytime via your <strong>Google Play Account &rarr; Subscriptions</strong>.</li>
             <li><strong>Lifetime</strong>: one-time payment, no auto-renewal.</li>
+            <li><strong>Free trial (if offered)</strong>: any free trial period converts automatically to a paid subscription at the end of the trial unless you cancel at least 24 hours before the trial ends. You are responsible for cancelling on time to avoid being charged. The trial duration and price after trial are displayed clearly on the purchase screen before you accept.</li>
+            <li><strong>Price changes</strong>: if subscription prices change, you will be notified by Google Play before the change takes effect and given the option to cancel.</li>
         </ul>
     </section>
 
@@ -546,7 +599,7 @@
     <section>
         <h2><span class="num">09</span>Advertising</h2>
         <p>The free version may show ads from partner ad networks (e.g. AdMob). These networks may use anonymous identifiers to deliver relevant ads. Premium users do not see ads.</p>
-        <p>These in-app ads are separate from email and push communications &mdash; ad networks do not receive your email address from us. We do not send marketing emails of any kind.</p>
+        <p>Because UNIFY EQ requires users to be 16 or older, all ad inventory is treated as adult inventory &mdash; no child-directed ads are served. These in-app ads are separate from email and push communications, and ad networks do not receive your email address from us.</p>
     </section>
 
     <section>
@@ -678,6 +731,7 @@
             <li>Your preset feedback messages and saves</li>
             <li>Your creator subscriptions</li>
             <li>Notifications addressed to you</li>
+            <li>Age verification record</li>
         </ul>
 
         <h3>What is retained</h3>
@@ -688,41 +742,58 @@
             <li>Suppression list entry &mdash; a hashed (SHA-256) record of your email so we never contact you again</li>
         </ul>
         <p>Requests are processed within <strong>30 days</strong>. Most are completed within 7 business days.</p>
+
+        <h3>Inactive account policy</h3>
+        <p>To minimize the data we hold, accounts that have been inactive (no app open or sign-in) for <strong>24 consecutive months</strong> may be flagged for deletion. Before deletion, we will send a notice to the email on file giving you <strong>30 days</strong> to sign in and keep the account active. Premium subscribers (Monthly, Yearly, Lifetime) are <strong>exempt</strong> from this inactivity policy as long as their purchase remains valid.</p>
     </section>
 
     <section>
-        <h2><span class="num">13</span>Children's Privacy</h2>
-        <p>UNIFY EQ is not directed at children under <strong>13</strong>. We require an account to use the App, and account creation requires age verification.</p>
+        <h2><span class="num">13</span>Age Requirement &amp; Children's Privacy</h2>
+
+        <div class="age-banner">
+            <div class="age-banner-icon">16+</div>
+            <div class="age-banner-content">
+                <h3>You must be 16 or older</h3>
+                <p>UNIFY EQ is strictly for users aged 16 and above. Younger users cannot create an account or use the App.</p>
+            </div>
+        </div>
+
+        <h3>Why 16?</h3>
+        <p>We set the minimum age at <strong>16</strong> to ensure full compliance with the strictest applicable privacy laws governing minors, including:</p>
+        <ul>
+            <li><strong>Vietnam Decree 13/2023</strong> on Personal Data Protection (Article 20 &mdash; children under 16 receive heightened protection)</li>
+            <li><strong>EU GDPR Article 8</strong> (default digital consent age of 16)</li>
+            <li><strong>U.S. COPPA</strong> (we exceed the 13-year minimum to provide greater protection)</li>
+            <li><strong>UK Age Appropriate Design Code</strong></li>
+        </ul>
+        <p>By choosing a higher minimum than legally required in some regions, we eliminate the need for region-specific parental-consent flows and ensure consistent protection for all younger people worldwide.</p>
 
         <h3>How we verify age</h3>
+        <p>We use multiple layered signals to enforce the minimum age requirement:</p>
         <ul>
-            <li>Google "Family Link" / child-account flag is checked automatically &mdash; if true, signup is blocked</li>
-            <li>Facebook <code>age_range</code> API is checked automatically (if signed in via Facebook)</li>
-            <li>For users where no automatic signal is available, a self-declared age confirmation is required at signup</li>
-            <li>Behavioral signals are reviewed by moderators</li>
-            <li>A parent/guardian report channel is available (Section 17)</li>
+            <li><strong>Google "Family Link" / child-account flag</strong> &mdash; checked automatically at sign-in; if flagged, signup is blocked immediately</li>
+            <li><strong>Facebook <code>age_range</code> API</strong> &mdash; checked automatically (if signed in via Facebook); accounts with <code>min &lt; 16</code> are blocked</li>
+            <li><strong>Self-declared age confirmation</strong> &mdash; required at signup when no automatic signal is available. Users must confirm they are 16 or older to proceed.</li>
+            <li><strong>Automated pattern detection</strong> &mdash; usernames, bios, and profile data are scanned for indicators of underage users (e.g. explicit mentions of school grade, birth year suggesting under 16). Flagged accounts are reviewed and removed if confirmed.</li>
+            <li><strong>Parent/guardian report channel</strong> &mdash; see "How parents / guardians can report" below</li>
         </ul>
 
-        <h3>Users under 13</h3>
-        <p>Account creation is blocked for users we identify as being under 13. If we discover that we have inadvertently created an account for a child under 13, we will:</p>
+        <h3>Users under 16</h3>
+        <p>Account creation is blocked for users we identify as being under 16. If we discover that we have inadvertently created an account for someone under 16, we will:</p>
         <ul>
-            <li>Suspend the account within 24 hours</li>
-            <li>Delete all associated personal data within 30 days</li>
+            <li>Suspend the account within <strong>24 hours</strong></li>
+            <li>Delete all associated personal data within <strong>30 days</strong></li>
             <li>Add the email to a permanent suppression list to prevent re-registration</li>
+            <li>Notify the user (or their parent/guardian, if known) that the account has been removed</li>
         </ul>
-        <p>Parents who believe their child has provided data should contact us at <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>Child Account Report</code>.</p>
 
-        <h3>Enhanced protections for users 13&ndash;17</h3>
-        <p>Users aged 13&ndash;17 receive stricter privacy defaults regardless of region:</p>
-        <ul>
-            <li>Profile is private by default (not visible to other users)</li>
-            <li>Preset publishing requires moderator pre-approval</li>
-            <li>Cannot be contacted via in-app messaging by users they don't follow</li>
-        </ul>
-        <p>This aligns with the UK Age Appropriate Design Code (Children's Code) and similar frameworks.</p>
+        <h3>How parents / guardians can report</h3>
+        <div class="callout callout-info">
+            <p>If you believe a person under 16 has created an account on UNIFY EQ, please email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>Underage Account Report</code>. Include the account name or email if known. We will investigate within 7 business days and take action within 30 days.</p>
+        </div>
 
-        <h3>Regional minimum age</h3>
-        <p>In jurisdictions where the minimum digital consent age is higher (e.g. 16 in parts of the EU under Article 8 GDPR), local law applies and we treat the higher threshold as the minimum for account creation.</p>
+        <h3>No exceptions, no parental-consent workaround</h3>
+        <p>To keep our compliance simple and protect young people, we do <strong>not</strong> offer a parental-consent path that would allow users under 16 to use the App. There is no way to bypass the age requirement. This is intentional &mdash; we believe a clear, bright-line rule is safer than a partial exception that could be abused.</p>
     </section>
 
     <section>
@@ -757,7 +828,7 @@
         <ul>
             <li>Email: <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a></li>
             <li>Data rights &amp; deletion: <a href="https://buitruyenpro.github.io/unify-eq-policy/delete-data.html">https://buitruyenpro.github.io/unify-eq-policy/delete-data.html</a></li>
-            <li>Report a child account: subject <code>Child Account Report</code></li>
+            <li>Report an underage account: subject <code>Underage Account Report</code></li>
             <li>Data breach concerns: subject <code>Security Concern</code></li>
         </ul>
     </section>
@@ -770,11 +841,13 @@
 
     <section>
         <h2><span class="num">19</span>Your Agreement</h2>
-        <p>When you first open the App, you are shown a welcome screen that displays this Privacy Policy and Terms in a scrollable view. By tapping the <strong>"I Agree"</strong> button in the confirmation dialog, you acknowledge that you have read and understood this Policy and consent to:</p>
+        <p>When you first open the App, you are shown a welcome screen that displays this Privacy Policy and Terms in a scrollable view. You will also be asked to confirm that you are at least <strong>16 years old</strong>. By tapping the <strong>"I Agree"</strong> button in the confirmation dialog, you acknowledge that:</p>
         <ul>
-            <li>The collection and use of your data <strong>solely</strong> for the purposes described above (app functionality, account management, fraud prevention, transactional communications)</li>
-            <li>The transfer of your data to our trusted sub-processors as described in Section 5</li>
-            <li>Receiving <strong>transactional emails and notifications only</strong> &mdash; we do not send marketing</li>
+            <li>You have read and understood this Policy</li>
+            <li>You are at least 16 years old</li>
+            <li>You consent to the collection and use of your data <strong>solely</strong> for the purposes described above (app functionality, account management, fraud prevention, transactional communications)</li>
+            <li>You consent to the transfer of your data to our trusted sub-processors as described in Section 5</li>
+            <li>You understand we send <strong>transactional communications only</strong> &mdash; no marketing, ever</li>
         </ul>
         <p>You can revoke your consent at any time by deleting your account (Section 12).</p>
 
@@ -783,15 +856,15 @@
             <div class="phone-mock">
                 <div class="phone-logo">U</div>
                 <p class="mock-title">Agree to continue?</p>
-                <p class="mock-sub">UNIFY EQ requires an account to use cloud features like preset sharing.</p>
+                <p class="mock-sub">UNIFY EQ requires you to be at least 16 years old and to have an account to use cloud features.</p>
 
                 <p class="terms-text">
-                    By tapping <strong>I Agree</strong>, you confirm you've read our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. We only collect data needed to run the App and will never send you marketing.
+                    By tapping <strong>I Agree</strong>, you confirm you are <strong>16 or older</strong> and that you've read our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. We only collect data needed to run the App and will never send you marketing.
                 </p>
 
                 <div class="mock-actions">
                     <button class="mock-btn mock-btn-ghost" id="declineBtn">Decline</button>
-                    <button class="mock-btn mock-btn-primary" id="agreeBtn">I Agree</button>
+                    <button class="mock-btn mock-btn-primary" id="agreeBtn">I Agree (16+)</button>
                 </div>
 
                 <div class="mock-status" id="mockStatus"></div>
@@ -800,7 +873,7 @@
     </section>
 
     <footer>
-        <p>By using UNIFY EQ, you acknowledge that you have read and understood this Privacy Policy &amp; Terms.</p>
+        <p>By using UNIFY EQ, you acknowledge that you have read and understood this Privacy Policy &amp; Terms, and that you are at least 16 years old.</p>
         <p class="copyright">&copy; 2026 UNIFY EQ &nbsp;&bull;&nbsp; All rights reserved</p>
     </footer>
 
@@ -815,7 +888,7 @@
         agree.addEventListener('click', () => {
             status.classList.remove('declined');
             status.classList.add('show');
-            status.innerHTML = "✓ Agreed. Welcome to UNIFY EQ. You will only receive transactional emails (receipts, security alerts) — never marketing.";
+            status.innerHTML = "✓ Agreed. Age confirmed (16+). Welcome to UNIFY EQ. You will only receive transactional emails — never marketing.";
             setTimeout(() => {
                 status.classList.remove('show');
                 status.textContent = '';
@@ -824,7 +897,7 @@
 
         decline.addEventListener('click', () => {
             status.classList.add('show', 'declined');
-            status.textContent = "Declined. The app would close on a real device. You can re-open anytime to reconsider.";
+            status.textContent = "Declined. The app would close on a real device. If you're under 16, please come back when you're older.";
             setTimeout(() => {
                 status.classList.remove('show', 'declined');
                 status.textContent = '';
