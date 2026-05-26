@@ -342,6 +342,29 @@
             margin: 0; color: var(--text-secondary); font-size: 0.9em;
         }
 
+        .nav-path {
+            display: block;
+            margin: 14px 0;
+            padding: 14px 18px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, rgba(235, 207, 122, 0.08), rgba(235, 207, 122, 0.02));
+            border: 1px dashed rgba(235, 207, 122, 0.35);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+            color: var(--gold);
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+        }
+        .nav-path .arrow {
+            color: var(--gold-deep);
+            margin: 0 6px;
+            font-weight: 700;
+        }
+        .nav-path .step {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
         footer {
             text-align: center; margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--border);
         }
@@ -401,7 +424,7 @@
             <span class="dot">&bull;</span>
             <span>May 2026</span>
             <span class="dot">&bull;</span>
-            <span>Version 6.1</span>
+            <span>Version 6.2</span>
         </div>
         <div class="waveform" aria-hidden="true">
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -423,7 +446,7 @@
         </div>
 
         <div class="callout callout-good">
-            <p><strong>Privacy-first commitment.</strong> We do <strong>NOT</strong> send marketing or promotional emails. We do <strong>NOT</strong> sell, rent, or trade your data. The only emails you may receive from us are transactional (purchase receipts, security alerts, important policy changes). Nothing else, ever.</p>
+            <p><strong>Your inbox, your rules.</strong> We send <strong>transactional emails</strong> automatically (receipts, security alerts, important policy changes &mdash; these are required for the service). We also send an <strong>optional marketing newsletter</strong> &mdash; but <strong>only if you explicitly opt in</strong>, and you can opt out anytime with one tap. We never sell your email, never share it with advertisers, and never enroll you in marketing without asking. Full details in <a href="#section-4a">Section 4A</a>.</p>
         </div>
     </section>
 
@@ -432,7 +455,7 @@
         <ul>
             <li><strong>Microphone</strong> (<code>RECORD_AUDIO</code> / <code>CAPTURE_AUDIO_OUTPUT</code>): used <strong>only</strong> to analyze audio waves for the visualizer and equalizer processing on-device. We do <strong>NOT</strong> record, store, or transmit your audio.</li>
             <li><strong>Storage</strong>: saves personal sound presets, cached avatars, and exported share-card images on your device.</li>
-            <li><strong>Notifications</strong>: used only for in-app notifications about likes, comments, follows, and admin actions related to your preset-sharing activity. No promotional or marketing notifications are ever sent.</li>
+            <li><strong>Notifications</strong>: used only for in-app activity notifications (likes, comments, follows, admin actions related to your preset-sharing activity). We do <strong>NOT</strong> send promotional or marketing push notifications &mdash; all marketing happens via email and only with your opt-in.</li>
             <li><strong>System Alert Window, Foreground Service, Wake Lock, Exact Alarms</strong>: keep the audio effect service running across other apps.</li>
             <li><strong>Accessibility Service</strong>: declared with <code>isAccessibilityTool=true</code>. Used solely to detect audio session events from other media apps so the equalizer can adapt DSP processing in real-time. We do <strong>NOT</strong> read screen text, capture screen content, log keystrokes, or perform any action outside our equalizer DSP pipeline.</li>
             <li><strong>Billing</strong>: verifies Premium subscriptions purchased via Google Play.</li>
@@ -451,8 +474,14 @@
             <li>Country code for displaying a flag</li>
             <li>Sign-in provider, account creation time, last login time</li>
             <li>Age verification record (declared age band, verification method, timestamp)</li>
+            <li><strong>Marketing-email preference</strong> &mdash; a boolean field (<code>newsletterOptin</code>) recording whether you opted in to our marketing newsletter. Three states are possible: <em>not asked yet</em>, <em>opted in</em>, <em>opted out</em>. See <a href="#section-4a">Section 4A</a>.</li>
         </ul>
-        <p><strong>Your email is used only for transactional purposes</strong> (account verification, security alerts, purchase receipts, important policy updates). It is never used for marketing, never shared with third-party marketers, and never sold.</p>
+        <p>Your email address is used for two purposes only:</p>
+        <ul>
+            <li><strong>Transactional</strong> (always, no consent required &mdash; necessary for the contract): account verification, security alerts, purchase receipts, important policy updates.</li>
+            <li><strong>Marketing newsletter</strong> (only if you opted in): the specific topics listed in Section 4A.2 below.</li>
+        </ul>
+        <p>We never sell your email, never share it with third-party marketers, and never enroll you in marketing automatically.</p>
 
         <h3>3.2. Profile content (optional, you can leave blank)</h3>
         <ul>
@@ -490,29 +519,32 @@
             <li><strong>Analytics</strong> &mdash; aggregate, pseudonymous engagement metrics for product improvement</li>
             <li><strong>Fraud prevention</strong> &mdash; detecting trial abuse and spam through device ID + dedup keys</li>
             <li><strong>Age compliance</strong> &mdash; verifying users meet the minimum age requirement (16+)</li>
-            <li><strong>Transactional communications</strong> &mdash; sending purchase receipts, security alerts, and important policy updates via email (see Section 4A)</li>
+            <li><strong>Transactional communications</strong> &mdash; sending purchase receipts, security alerts, and important policy updates via email (see Section 4A.1)</li>
+            <li><strong>Marketing newsletter</strong> &mdash; only sent to users who explicitly opted in. Covers a strictly defined set of topics listed in Section 4A.2. You can withdraw consent anytime (see Section 4A.4).</li>
         </ul>
         <div class="callout callout-good">
             <p><strong>What we will NEVER do with your data:</strong></p>
-            <p>✕ Send you marketing or promotional emails of any kind<br>
-            ✕ Send you marketing or promotional push notifications<br>
+            <p>✕ Enroll you in any marketing communication without your explicit opt-in<br>
+            ✕ Make opting out harder than opting in<br>
+            ✕ Send marketing topics outside the list in Section 4A.2<br>
             ✕ Sell, rent, or trade your personal data<br>
-            ✕ Share your email with advertisers, data brokers, or any third party for marketing<br>
-            ✕ Use your data for behavioral profiling or targeted advertising<br>
-            ✕ Promote other apps to you, even our own</p>
+            ✕ Share your email with advertisers, data brokers, or third-party marketers<br>
+            ✕ Use your data for cross-app behavioral profiling or third-party targeted advertising<br>
+            ✕ Sponsor third-party promotions inside our marketing emails</p>
         </div>
     </section>
 
-    <section>
-        <h2><span class="num">4A</span>Email &amp; Notifications &mdash; Strictly Transactional</h2>
+    <section id="section-4a">
+        <h2><span class="num">4A</span>Email Communications &mdash; Transactional &amp; Opt-In Marketing</h2>
 
-        <p>We take a <strong>minimalist approach</strong> to communications. You will only ever receive messages that are <em>necessary</em> for your account or your safety &mdash; nothing else.</p>
+        <p>UNIFY EQ sends two strictly separated categories of email. <strong>Transactional</strong> emails are sent automatically because they are necessary to run your account. <strong>Marketing</strong> emails are sent <strong>only</strong> to users who have explicitly opted in &mdash; off by default.</p>
 
-        <h3>What we send</h3>
+        <h3>4A.1. Transactional emails (always on &mdash; required for the service)</h3>
+        <p>Legal basis: performance of contract (GDPR Art. 6(1)(b)) / necessary for service provision under Vietnam Decree 13/2023. No consent toggle &mdash; you cannot opt out of these without closing your account, because they are required for the service to function safely.</p>
 
         <div class="promise-grid">
             <div class="promise-cell do">
-                <h5><span class="icon">✓</span>Email (transactional only)</h5>
+                <h5><span class="icon">✓</span>We send (transactional)</h5>
                 <ul>
                     <li>Purchase receipts &amp; subscription confirmations</li>
                     <li>Subscription renewal &amp; expiry notices (when required by app stores or local consumer law)</li>
@@ -523,45 +555,86 @@
                 </ul>
             </div>
             <div class="promise-cell dont">
-                <h5><span class="icon">✕</span>What we will never send</h5>
+                <h5><span class="icon">✕</span>We never send (any category)</h5>
                 <ul>
-                    <li>Marketing or promotional emails</li>
-                    <li>"New features" announcements via email</li>
-                    <li>"New app from us" promotions</li>
-                    <li>Tips, tutorials, newsletters</li>
-                    <li>Premium discount offers</li>
+                    <li>Third-party sponsored content or paid ads inside our emails</li>
                     <li>Re-engagement / "we miss you" emails</li>
-                    <li>Third-party sponsored content</li>
+                    <li>Behavioral tracking pixels for ad networks</li>
+                    <li>Anything to a user who opted out</li>
+                    <li>Anything to a user under the age of 16</li>
                 </ul>
             </div>
         </div>
 
-        <h3>In-app push notifications</h3>
-        <p>Push notifications are used only for <strong>activity related to your account</strong>:</p>
-        <ul>
-            <li>Someone saved or commented on your published preset</li>
-            <li>Someone subscribed to your creator profile</li>
-            <li>A moderator action affecting your content</li>
-            <li>Critical security alerts (new login, password change)</li>
-        </ul>
-        <p>You can disable any notification category in <code>Settings → Notifications</code>, or disable all notifications via Android System Settings.</p>
+        <h3>4A.2. Marketing newsletter (opt-in only &mdash; off by default)</h3>
+        <p>Legal basis: your explicit, freely-given consent (GDPR Art. 6(1)(a) and Art. 7; Vietnam Decree 13/2023 Art. 11; Vietnam Decree 91/2020 on combating spam). New accounts are <strong>not</strong> enrolled by default. We will ask you once, you choose, and your choice is recorded.</p>
 
-        <h3>How to stop receiving emails</h3>
-        <p>Because all our emails are transactional and required for account functionality, the only way to stop receiving them is to <strong>delete your account</strong>. See Section 12 for instructions. After deletion, your email is added to a permanent suppression list so we never contact you again.</p>
+        <p>If you opt in, you will receive emails covering <strong>only</strong> the following six topics &mdash; nothing else:</p>
+        <ul>
+            <li><strong>New apps we launch in the future</strong> &mdash; if we publish a new app, you will hear about it once at launch.</li>
+            <li><strong>Major updates and new features for this app</strong> &mdash; significant version releases, not every minor patch.</li>
+            <li><strong>Fresh community preset packs</strong> &mdash; curated collections of audio presets from the community.</li>
+            <li><strong>Premium discount codes and flash sales</strong> &mdash; occasional promotions on Monthly / Yearly / Lifetime tiers.</li>
+            <li><strong>Early access to beta features</strong> &mdash; invitations to test upcoming features before public release.</li>
+        </ul>
+
+        <div class="callout callout-info">
+            <p><strong>Frequency cap:</strong> About <strong>1&ndash;2 emails per month</strong> on average. We commit to a hard ceiling of <strong>4 emails per calendar month</strong> for any single opted-in user. If we ever come close to this limit, we will combine topics in a single email rather than send multiple.</p>
+        </div>
+
+        <p>Every marketing email we send will:</p>
+        <ul>
+            <li>Identify itself as a marketing message from UNIFY EQ in the header</li>
+            <li>Display the sender name and reply-to address clearly</li>
+            <li>Include a <strong>one-click unsubscribe link</strong> at the bottom (no login, no questionnaire)</li>
+            <li>Include a <code>List-Unsubscribe</code> RFC 8058 header so Gmail / Outlook / Apple Mail show the native "Unsubscribe" button next to the sender name</li>
+            <li>State who we are and where we are based (UNIFY EQ, independent developer, Vietnam) &mdash; this satisfies CAN-SPAM identification requirements for U.S. recipients</li>
+        </ul>
+
+        <h3>4A.3. How to opt in</h3>
+        <p>There are exactly two ways to opt in. <strong>Both require an affirmative action by you</strong> &mdash; we will never enroll you silently.</p>
+
+        <p><strong>(a) During your first sign-in</strong> &mdash; right after you confirm "I am 16 or older" and tap "Continue with Google", we show a dialog titled <em>"Stay in the loop?"</em> listing the same six topics from Section 4A.2. You tap either <strong>"Yes, sign me up"</strong> (opt in) or <strong>"No, thanks"</strong> (opt out). The dialog is shown only once. Your choice is saved on your device and synced to your account record on our servers.</p>
+
+        <p><strong>(b) Later, from Settings</strong> &mdash; you can change your mind at any time using the in-app toggle. Navigate to:</p>
+
+        <p class="nav-path"><span class="step">Community</span> <span class="arrow">›</span> <span class="step">Profile tab</span> <span class="arrow">›</span> <span class="step">⚙ gear icon</span> <span class="arrow">›</span> <span class="step">Community section</span> <span class="arrow">›</span> <span class="step">"Email updates from us" toggle</span></p>
+
+        <p>When you toggle this <strong>on</strong>, a confirmation dialog titled <em>"You are subscribed"</em> appears showing the same six topics. Only after you tap <strong>"Got it"</strong> do we record the opt-in.</p>
+
+        <h3>4A.4. How to opt out</h3>
+        <p>Opt-out is at least as easy as opt-in, as required by GDPR Art. 7(3). You have <strong>three equally valid channels</strong>:</p>
+
+        <ol>
+            <li><strong>In-app toggle</strong> &mdash; same path as above: <code>Community › Profile tab › ⚙ gear › Community section › "Email updates from us"</code>. Switching it <strong>off</strong> takes effect immediately on your device and is synced to our servers, typically within seconds.</li>
+            <li><strong>One-click unsubscribe link</strong> in any marketing email we send. No login required, no confirmation page that re-asks. One click and you are out.</li>
+            <li><strong>Delete your account</strong> (see Section 12). This removes all your data, including marketing consent. Your hashed email address is added to our suppression list so we never contact you again.</li>
+        </ol>
+
+        <div class="callout callout-good">
+            <p><strong>After opt-out:</strong> we stop sending marketing emails within <strong>24 hours</strong> (typically instant). We will not send a "we miss you" or "are you sure?" email. We will not re-prompt the in-app dialog. Your transactional emails (receipts, security alerts) continue, because those are required for your account.</p>
+        </div>
+
+        <h3>4A.5. Consent record &amp; data subject rights</h3>
+        <p>For every opt-in user we store: the choice (boolean), the channel (login dialog vs. settings toggle), and the date inferred from Firebase server metadata when the record was created or modified. You can request a copy of your consent record at any time via the channels in <a href="#section-12">Section 12</a>.</p>
+
+        <h3>4A.6. Push notifications &mdash; never used for marketing</h3>
+        <p>Push notifications are used <strong>only</strong> for activity related to your own account: someone saved or commented on your published preset, someone subscribed to your creator profile, a moderator action affecting your content, or critical security alerts. We do not use push for any marketing purpose, ever. Marketing happens exclusively through opt-in email.</p>
+        <p>You can disable activity notification categories in <code>Community › Profile tab › ⚙ gear › Notifications</code>, or disable all notifications via Android System Settings.</p>
     </section>
 
     <section>
         <h2><span class="num">05</span>Data Sharing &amp; Sub-Processors</h2>
         <p>Data is stored on <strong>Google Firebase</strong> infrastructure, a processor on our behalf governed by Google's Data Processing Terms.</p>
-        <p>Public profile fields (name, avatar, bio, attribution handles, published presets, feedback messages) are visible to <strong>other users of the App</strong>. Email address, billing details, age verification records, and device ID are <strong>never</strong> public.</p>
+        <p>Public profile fields (name, avatar, bio, attribution handles, published presets, feedback messages) are visible to <strong>other users of the App</strong>. Email address, marketing-email preference, billing details, age verification records, and device ID are <strong>never</strong> public.</p>
 
         <h3>Trusted service providers (processors)</h3>
         <p>To deliver the service, we use a small number of trusted vendors who process data <strong>only on our behalf</strong>, under Data Processing Agreements (DPAs):</p>
         <ul>
             <li><strong>Google Firebase</strong> (Google LLC, USA) &mdash; account authentication, database, server infrastructure. Data is stored in Firebase regions selected based on user proximity (primarily <code>asia-southeast1</code> for Asia-Pacific users and <code>us-central1</code> for other regions).</li>
-            <li><strong>Google Play Billing</strong> (Google LLC, USA) &mdash; subscription &amp; in-app purchase processing</li>
-            <li><strong>Transactional email service</strong> (e.g. SendGrid by Twilio, Brevo, or Amazon SES) &mdash; used solely to deliver transactional emails (receipts, security alerts). They never use your email for their own purposes and we never use them for marketing.</li>
-            <li><strong>Analytics provider</strong> (Firebase Analytics by Google) &mdash; aggregate, pseudonymous usage data only</li>
+            <li><strong>Google Play Billing</strong> (Google LLC, USA) &mdash; subscription &amp; in-app purchase processing.</li>
+            <li><strong>Email service provider</strong> (e.g. SendGrid by Twilio, Brevo, or Amazon SES) &mdash; used to deliver <strong>both</strong> transactional emails (to all users) and marketing emails (to opted-in users only). The provider acts strictly as a processor; they never use your email address for their own purposes, never enroll you in third-party communications, and may not market to you on their own behalf.</li>
+            <li><strong>Analytics provider</strong> (Firebase Analytics by Google) &mdash; aggregate, pseudonymous usage data only.</li>
         </ul>
         <p>We do <strong>not</strong> share your data with anyone else &mdash; no advertisers, no data brokers, no analytics resellers, no third-party marketers.</p>
 
@@ -680,14 +753,14 @@
         </ul>
     </section>
 
-    <section>
+    <section id="section-12">
         <h2><span class="num">12</span>Your Rights &amp; Account Deletion</h2>
         <p>You have a range of rights over your personal data. The core rights below are honored <strong>globally</strong>, regardless of region:</p>
 
         <div class="rights-grid">
             <div class="right-card">
                 <h5>Right to access</h5>
-                <p>Get a copy of all personal data we hold about you.</p>
+                <p>Get a copy of all personal data we hold about you, including your marketing-consent record.</p>
             </div>
             <div class="right-card">
                 <h5>Right to portability</h5>
@@ -707,7 +780,7 @@
             </div>
             <div class="right-card">
                 <h5>Right to withdraw consent</h5>
-                <p>At any time, with no penalty.</p>
+                <p>Including marketing-email consent, at any time, with no penalty.</p>
             </div>
             <div class="right-card">
                 <h5>Right to lodge a complaint</h5>
@@ -715,7 +788,7 @@
             </div>
             <div class="right-card">
                 <h5>Right to non-discrimination</h5>
-                <p>For exercising any of the rights above.</p>
+                <p>For exercising any of the rights above &mdash; we will not degrade your service for opting out of marketing.</p>
             </div>
         </div>
 
@@ -732,6 +805,7 @@
             <li>Your creator subscriptions</li>
             <li>Notifications addressed to you</li>
             <li>Age verification record</li>
+            <li>Marketing-email preference record</li>
         </ul>
 
         <h3>What is retained</h3>
@@ -739,12 +813,12 @@
             <li>Anonymized engagement counts on other users' content (your identity is removed)</li>
             <li>Billing / transaction records (retained for up to 5 years for tax and accounting compliance under Vietnamese law, not linked to your personal identity after deletion)</li>
             <li>Diagnostic logs (anonymized, up to 90 days)</li>
-            <li>Suppression list entry &mdash; a hashed (SHA-256) record of your email so we never contact you again</li>
+            <li>Suppression list entry &mdash; a hashed (SHA-256) record of your email so we never contact you again, whether transactionally or for marketing</li>
         </ul>
         <p>Requests are processed within <strong>30 days</strong>. Most are completed within 7 business days.</p>
 
         <h3>Inactive account policy</h3>
-        <p>To minimize the data we hold, accounts that have been inactive (no app open or sign-in) for <strong>24 consecutive months</strong> may be flagged for deletion. Before deletion, we will send a notice to the email on file giving you <strong>30 days</strong> to sign in and keep the account active. Premium subscribers (Monthly, Yearly, Lifetime) are <strong>exempt</strong> from this inactivity policy as long as their purchase remains valid.</p>
+        <p>To minimize the data we hold, accounts that have been inactive (no app open or sign-in) for <strong>24 consecutive months</strong> may be flagged for deletion. Before deletion, we will send a notice to the email on file giving you <strong>30 days</strong> to sign in and keep the account active. This is a transactional notice tied to account hygiene &mdash; it is not a marketing message and is sent regardless of your marketing-email preference. Premium subscribers (Monthly, Yearly, Lifetime) are <strong>exempt</strong> from this inactivity policy as long as their purchase remains valid.</p>
     </section>
 
     <section>
@@ -773,7 +847,7 @@
         <ul>
             <li><strong>Google "Family Link" / child-account flag</strong> &mdash; checked automatically at sign-in; if flagged, signup is blocked immediately</li>
             <li><strong>Facebook <code>age_range</code> API</strong> &mdash; checked automatically (if signed in via Facebook); accounts with <code>min &lt; 16</code> are blocked</li>
-            <li><strong>Self-declared age confirmation</strong> &mdash; required at signup when no automatic signal is available. Users must confirm they are 16 or older to proceed.</li>
+            <li><strong>Self-declared age confirmation</strong> &mdash; required at signup when no automatic signal is available. Users must tick "I confirm I am 16 years old or older" before they can proceed with Google sign-in.</li>
             <li><strong>Automated pattern detection</strong> &mdash; usernames, bios, and profile data are scanned for indicators of underage users (e.g. explicit mentions of school grade, birth year suggesting under 16). Flagged accounts are reviewed and removed if confirmed.</li>
             <li><strong>Parent/guardian report channel</strong> &mdash; see "How parents / guardians can report" below</li>
         </ul>
@@ -783,9 +857,10 @@
         <ul>
             <li>Suspend the account within <strong>24 hours</strong></li>
             <li>Delete all associated personal data within <strong>30 days</strong></li>
-            <li>Add the email to a permanent suppression list to prevent re-registration</li>
+            <li>Add the email to a permanent suppression list to prevent re-registration and to block any future contact (transactional or marketing)</li>
             <li>Notify the user (or their parent/guardian, if known) that the account has been removed</li>
         </ul>
+        <p>Marketing emails are <strong>never</strong> sent to users under 16, even hypothetically &mdash; the opt-in dialog only appears after age confirmation, and any account discovered to be underage is suppressed before any marketing send.</p>
 
         <h3>How parents / guardians can report</h3>
         <div class="callout callout-info">
@@ -806,7 +881,7 @@
         <p>In the event of a data breach affecting your personal information, we will:</p>
         <ul>
             <li>Notify the relevant supervisory authority within <strong>72 hours</strong> of becoming aware of the breach, as required by GDPR Article 33 and similar laws</li>
-            <li>Notify affected users <strong>without undue delay</strong> via the email registered to your account and an in-app banner when the breach is likely to result in high risk to your rights and freedoms</li>
+            <li>Notify affected users <strong>without undue delay</strong> via the email registered to your account and an in-app banner when the breach is likely to result in high risk to your rights and freedoms (this is a transactional notice and is sent regardless of marketing-email preference)</li>
             <li>Provide clear information on what happened, what data was affected, what we are doing, and what you can do to protect yourself</li>
             <li>Maintain an internal breach register documenting every incident</li>
         </ul>
@@ -819,7 +894,9 @@
 
     <section>
         <h2><span class="num">16</span>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy as the App evolves. Material changes will be announced in-app or via the Play Store listing <strong>at least 14 days before they take effect</strong>. If a future change would introduce marketing communications or any new use of your data beyond what is described above, we will request <strong>fresh, explicit consent</strong> from you separately &mdash; we will not silently expand the scope of how we use your data. Continued use of the App after a non-consent-requiring update constitutes acceptance of the revised policy.</p>
+        <p>We may update this Privacy Policy as the App evolves. Material changes will be announced in-app or via the Play Store listing <strong>at least 14 days before they take effect</strong>.</p>
+        <p>If a future change would <strong>expand</strong> the marketing topics in Section 4A.2 (for example, adding a new topic category), or introduce a <strong>new category</strong> of communication beyond transactional and the opt-in newsletter, we will request <strong>fresh, explicit consent</strong> from you separately. We will not silently expand the scope of how we use your email or your data.</p>
+        <p>Continued use of the App after a non-consent-requiring update constitutes acceptance of the revised policy.</p>
     </section>
 
     <section>
@@ -828,6 +905,7 @@
         <ul>
             <li>Email: <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a></li>
             <li>Data rights &amp; deletion: <a href="https://buitruyenpro.github.io/unify-eq-policy/delete-data.html">https://buitruyenpro.github.io/unify-eq-policy/delete-data.html</a></li>
+            <li>Marketing email opt-out (besides the in-app toggle or unsubscribe link): subject <code>Unsubscribe Marketing</code></li>
             <li>Report an underage account: subject <code>Underage Account Report</code></li>
             <li>Data breach concerns: subject <code>Security Concern</code></li>
         </ul>
@@ -847,9 +925,9 @@
             <li>You are at least 16 years old</li>
             <li>You consent to the collection and use of your data <strong>solely</strong> for the purposes described above (app functionality, account management, fraud prevention, transactional communications)</li>
             <li>You consent to the transfer of your data to our trusted sub-processors as described in Section 5</li>
-            <li>You understand we send <strong>transactional communications only</strong> &mdash; no marketing, ever</li>
+            <li>You understand that marketing-email enrollment is a <strong>separate, optional decision</strong> &mdash; tapping "I Agree" here does <strong>NOT</strong> opt you in to marketing. You will be asked separately, and "No, thanks" is always a valid answer.</li>
         </ul>
-        <p>You can revoke your consent at any time by deleting your account (Section 12).</p>
+        <p>You can revoke your consent at any time by deleting your account (Section 12). You can revoke marketing consent specifically &mdash; without closing your account &mdash; using the in-app toggle described in Section 4A.4.</p>
 
         <div class="preview-card" data-tag="Welcome screen">
             <h4>What you see on first launch</h4>
@@ -859,7 +937,7 @@
                 <p class="mock-sub">UNIFY EQ requires you to be at least 16 years old and to have an account to use cloud features.</p>
 
                 <p class="terms-text">
-                    By tapping <strong>I Agree</strong>, you confirm you are <strong>16 or older</strong> and that you've read our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. We only collect data needed to run the App and will never send you marketing.
+                    By tapping <strong>I Agree</strong>, you confirm you are <strong>16 or older</strong> and that you've read our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. We only collect data needed to run the App. Marketing emails are <strong>opt-in only</strong> &mdash; you choose, and you can change your mind anytime.
                 </p>
 
                 <div class="mock-actions">
@@ -873,7 +951,7 @@
     </section>
 
     <footer>
-        <p>By using UNIFY EQ, you acknowledge that you have read and understood this Privacy Policy &amp; Terms, and that you are at least 16 years old.</p>
+        <p>By using UNIFY EQ, you acknowledge that you have read and understood this Privacy Policy &amp; Terms, and that you are at least 16 years old. Marketing-email enrollment is a separate, opt-in choice.</p>
         <p class="copyright">&copy; 2026 UNIFY EQ &nbsp;&bull;&nbsp; All rights reserved</p>
     </footer>
 
@@ -888,7 +966,7 @@
         agree.addEventListener('click', () => {
             status.classList.remove('declined');
             status.classList.add('show');
-            status.innerHTML = "✓ Agreed. Age confirmed (16+). Welcome to UNIFY EQ. You will only receive transactional emails — never marketing.";
+            status.innerHTML = "✓ Agreed. Age confirmed (16+). Welcome to UNIFY EQ. We'll ask you separately whether you'd like our optional marketing newsletter — and you can always decline.";
             setTimeout(() => {
                 status.classList.remove('show');
                 status.textContent = '';
