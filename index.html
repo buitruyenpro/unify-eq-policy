@@ -268,6 +268,37 @@
             color: var(--text-muted);
         }
 
+        .promise-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+            margin: 18px 0;
+        }
+        @media (max-width: 640px) { .promise-grid { grid-template-columns: 1fr; } }
+        .promise-cell {
+            padding: 16px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .promise-cell h5 {
+            margin: 0 0 8px; font-size: 0.85em; font-weight: 600;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .promise-cell.do h5 { color: var(--emerald); }
+        .promise-cell.dont h5 { color: #FF9999; }
+        .promise-cell h5 .icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 22px; height: 22px; border-radius: 50%;
+            font-size: 0.9em; font-weight: 700;
+        }
+        .promise-cell.do h5 .icon { background: rgba(95, 227, 161, 0.15); color: var(--emerald); }
+        .promise-cell.dont h5 .icon { background: rgba(255, 153, 153, 0.12); color: #FF9999; }
+        .promise-cell ul { margin: 0; }
+        .promise-cell ul li {
+            padding-left: 16px; font-size: 0.85em; margin-bottom: 6px; line-height: 1.5;
+        }
+        .promise-cell ul li::before { top: 10px; width: 4px; height: 4px; }
+        .promise-cell.do ul li::before { background: var(--emerald); box-shadow: 0 0 4px rgba(95, 227, 161, 0.5); }
+        .promise-cell.dont ul li::before { background: #FF9999; box-shadow: 0 0 4px rgba(255, 153, 153, 0.4); }
+
         .rights-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
             margin: 16px 0;
@@ -309,6 +340,29 @@
         }
         .age-banner-content p {
             margin: 0; color: var(--text-secondary); font-size: 0.9em;
+        }
+
+        .nav-path {
+            display: block;
+            margin: 14px 0;
+            padding: 14px 18px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, rgba(235, 207, 122, 0.08), rgba(235, 207, 122, 0.02));
+            border: 1px dashed rgba(235, 207, 122, 0.35);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+            color: var(--gold);
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+        }
+        .nav-path .arrow {
+            color: var(--gold-deep);
+            margin: 0 6px;
+            font-weight: 700;
+        }
+        .nav-path .step {
+            color: var(--text-primary);
+            font-weight: 600;
         }
 
         footer {
@@ -368,9 +422,9 @@
         <div class="meta-line">
             <span>Last updated</span>
             <span class="dot">&bull;</span>
-            <span>June 2026</span>
+            <span>May 2026</span>
             <span class="dot">&bull;</span>
-            <span>Version 7.0</span>
+            <span>Version 6.3</span>
         </div>
         <div class="waveform" aria-hidden="true">
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -380,19 +434,19 @@
 
     <section>
         <h2><span class="num">01</span>Introduction</h2>
-        <p>Welcome to <strong>UNIFY EQ</strong> (the "App"), an audio equalizer and sound enhancement utility operated by an independent developer based in <strong>Vietnam</strong>. This Privacy Policy explains how we collect, use, and store information when you use the App.</p>
-        <p>UNIFY EQ is a <strong>fully offline, local-only audio tool</strong>. The App does not require an account, does not use any sign-in provider, and does not include any social, community, or content-sharing features. All equalizer presets and settings are stored only on your own device.</p>
+        <p>Welcome to <strong>UNIFY EQ</strong> (the "App"), an audio equalizer and sound enhancement utility operated by an independent developer based in <strong>Vietnam</strong>. This Privacy Policy explains how we collect, use, store, and share information when you use the App.</p>
+        <p>UNIFY EQ is <strong>not a social network</strong>. It is an audio tool with an optional <strong>preset-sharing library</strong> where users can publish their custom equalizer settings and audio configurations for other audiophiles to discover and apply.</p>
 
         <div class="age-banner">
-            <div class="age-banner-icon">13+</div>
+            <div class="age-banner-icon">16+</div>
             <div class="age-banner-content">
                 <h3>Minimum age requirement</h3>
-                <p>UNIFY EQ requires users to be at least <strong>13 years old</strong>, in line with standard app-store and regulatory baselines (e.g. U.S. COPPA's 13-year threshold).</p>
+                <p>UNIFY EQ requires users to be at least <strong>16 years old</strong> to create an account and use the App, in compliance with Vietnam Decree 13/2023 and EU GDPR Article 8.</p>
             </div>
         </div>
 
         <div class="callout callout-good">
-            <p><strong>No accounts. No cloud. No community.</strong> UNIFY EQ does not ask you to sign in with Google or Facebook, does not create a user profile, and does not include preset-sharing, comments, or any social feature. Everything the App does happens locally on your device.</p>
+            <p><strong>Your inbox, your rules.</strong> We send <strong>transactional emails</strong> automatically (receipts, security alerts, important policy changes &mdash; these are required for the service). We also send an <strong>optional marketing newsletter</strong> &mdash; but <strong>only if you explicitly opt in</strong>, and you can opt out anytime with one tap. We never sell your email, never share it with advertisers, and never enroll you in marketing without asking. Full details in <a href="#section-4a">Section 4A</a>.</p>
         </div>
     </section>
 
@@ -400,8 +454,8 @@
         <h2><span class="num">02</span>Permissions &amp; On-Device Data</h2>
         <ul>
             <li><strong>Microphone</strong> (<code>RECORD_AUDIO</code> / <code>CAPTURE_AUDIO_OUTPUT</code>): used <strong>only</strong> to analyze audio waves for the visualizer and equalizer processing on-device. We do <strong>NOT</strong> record, store, or transmit your audio.</li>
-            <li><strong>Storage</strong>: saves your personal sound presets and exported share-card images locally on your device only.</li>
-            <li><strong>Notifications</strong>: used only for local, on-device alerts directly related to the equalizer service (e.g. effect running in background). We do <strong>NOT</strong> send promotional, marketing, or remote push notifications of any kind.</li>
+            <li><strong>Storage</strong>: saves personal sound presets, cached avatars, and exported share-card images on your device.</li>
+            <li><strong>Notifications</strong>: used only for in-app activity notifications (likes, comments, follows, admin actions related to your preset-sharing activity). We do <strong>NOT</strong> send promotional or marketing push notifications &mdash; all marketing happens via email and only with your opt-in.</li>
             <li><strong>System Alert Window, Foreground Service, Wake Lock, Exact Alarms</strong>: keep the audio effect service running across other apps.</li>
             <li><strong>Accessibility Service</strong>: declared with <code>isAccessibilityTool=true</code>. Used solely to detect audio session events from other media apps so the equalizer can adapt DSP processing in real-time. We do <strong>NOT</strong> read screen text, capture screen content, log keystrokes, or perform any action outside our equalizer DSP pipeline.</li>
             <li><strong>Billing</strong>: verifies Premium subscriptions purchased via Google Play.</li>
@@ -409,62 +463,183 @@
     </section>
 
     <section>
-        <h2><span class="num">03</span>No Accounts, No Online Data Collection</h2>
-        <p>UNIFY EQ does <strong>not</strong> require sign-in, does <strong>not</strong> offer Google or Facebook login, and does <strong>not</strong> create or store any user profile on a server. There is no community feature, no preset-sharing library, no creator profile, no comments, and no social interaction of any kind.</p>
+        <h2><span class="num">03</span>Accounts &amp; Online Data</h2>
+        <p>UNIFY EQ requires sign-in (Google or Facebook OAuth) and age verification (minimum 16) to enable cloud features such as preset publishing, save/subscribe actions, and cross-device sync. The following data is collected and stored on our servers (Firebase):</p>
 
-        <p>As a result, we do <strong>not</strong> collect, store, or transmit any of the following:</p>
+        <h3>3.1. Account &amp; profile data</h3>
         <ul>
-            <li>Name, email address, or profile photo</li>
-            <li>Any account or user ID</li>
-            <li>Age verification records</li>
-            <li>Published presets, creator cards, comments, or feedback messages tied to an identity</li>
-            <li>Phone numbers, contacts, calendar, precise location, browsing history, financial info, or health data</li>
-            <li>Audio recordings</li>
+            <li>Name and email address (from Google / Facebook profile)</li>
+            <li>Profile photo URL (from Google / Facebook)</li>
+            <li>A unique user ID</li>
+            <li>Country code for displaying a flag</li>
+            <li>Sign-in provider, account creation time, last login time</li>
+            <li>Age verification record (declared age band, verification method, timestamp)</li>
+            <li><strong>Marketing-email preference</strong> &mdash; a boolean field (<code>newsletterOptin</code>) recording whether you opted in to our marketing newsletter. Three states are possible: <em>not asked yet</em>, <em>opted in</em>, <em>opted out</em>. See <a href="#section-4a">Section 4A</a>.</li>
+        </ul>
+        <p>Your email address is used for two purposes only:</p>
+        <ul>
+            <li><strong>Transactional</strong> (always, no consent required &mdash; necessary for the contract): account verification, security alerts, purchase receipts, important policy updates.</li>
+            <li><strong>Marketing newsletter</strong> (only if you opted in): the specific topics listed in Section 4A.2 below.</li>
+        </ul>
+        <p>We never sell your email, never share it with third-party marketers, and never enroll you in marketing automatically.</p>
+
+        <h3>3.2. Profile content (optional, you can leave blank)</h3>
+        <ul>
+            <li>Bio / short description</li>
+            <li>Username (display handle)</li>
+            <li>Attribution handles: Instagram, Facebook, YouTube, TikTok, GitHub (optional username field, used so other audio enthusiasts can find you on the platform where you primarily share audio content &mdash; not used for in-app social interactions)</li>
         </ul>
 
-        <h3>3.1. What stays on your device</h3>
+        <h3>3.3. Preset-sharing content (optional, only if you publish presets)</h3>
         <ul>
-            <li>Your custom equalizer presets and DSP settings</li>
-            <li>App preferences (e.g. theme, last-used preset)</li>
-            <li>Locally cached export images, if you choose to export a share card to your own gallery</li>
+            <li><strong>Creator cards</strong> &mdash; a public preview tied to your published preset (creator name, avatar, audio tier) so other users can attribute the preset to you</li>
+            <li><strong>Feedback messages</strong> on shared presets</li>
+            <li><strong>Saves &amp; creator subscriptions</strong></li>
+            <li><strong>Activity notifications</strong> generated when others save or comment on your published presets</li>
         </ul>
-        <p>None of this data leaves your device unless you manually export or share a file yourself using your device's standard share function. We have no server-side copy of it.</p>
+        <p>This functionality exists solely to help audio enthusiasts discover quality presets and configurations. It is not designed for general-purpose social messaging.</p>
 
-        <h3>3.2. Limited technical data for billing &amp; anti-fraud</h3>
+        <h3>3.4. Technical &amp; usage data</h3>
         <ul>
-            <li><strong>Anonymous device ID</strong> (Android ID / Advertising ID) used solely to <strong>prevent trial abuse</strong> (e.g. uninstall-reinstall to reset a free trial), as permitted under Google Play's Device or other IDs policy for fraud prevention. This identifier is never shared with third parties for advertising and is reset when you delete the App.</li>
-            <li><strong>Premium status flag</strong> (true/false), verified via Google Play Billing, to unlock paid features.</li>
-            <li><strong>App version and basic diagnostic info</strong> needed to keep the equalizer service running correctly. Diagnostic logs, if any, are anonymized and not tied to an identity.</li>
+            <li>Anonymous device ID (Android ID / Advertising ID) used solely to <strong>prevent trial abuse</strong> (e.g. uninstall-reinstall to reset trial), as permitted under Google Play's Device or other IDs policy for fraud prevention. This identifier is never shared with third parties for advertising and is reset when you delete the App.</li>
+            <li>Total listening time and basic engagement counts for in-app stats</li>
+            <li>Premium status flag (true/false) for unlocking paid features</li>
+            <li>App version, basic diagnostic info needed for the equalizer service</li>
         </ul>
-        <p>This is the only technical data involved in running the App; it is not linked to a name, email, or any personal profile because none exists.</p>
+
+        <p>We do <strong>NOT</strong> collect: phone numbers, contacts, calendar, precise location, browsing history, financial info (card numbers, bank details), health data, or audio recordings.</p>
     </section>
 
     <section>
         <h2><span class="num">04</span>How Data Is Used</h2>
         <ul>
-            <li><strong>App functionality</strong> &mdash; running the equalizer, DSP effects, and storing your presets locally</li>
-            <li><strong>Fraud prevention</strong> &mdash; detecting trial abuse through an anonymous device identifier</li>
-            <li><strong>Billing</strong> &mdash; verifying your Premium subscription status via Google Play</li>
+            <li><strong>App functionality</strong> &mdash; rendering your creator profile, published presets, feedback messages, save/subscribe actions, activity notifications</li>
+            <li><strong>Account management</strong> &mdash; authenticating you across sessions and devices</li>
+            <li><strong>Personalization</strong> &mdash; showing your name, avatar, country, audio tier badge, attribution handles</li>
+            <li><strong>Analytics</strong> &mdash; aggregate, pseudonymous engagement metrics for product improvement</li>
+            <li><strong>Fraud prevention</strong> &mdash; detecting trial abuse and spam through device ID + dedup keys</li>
+            <li><strong>Age compliance</strong> &mdash; verifying users meet the minimum age requirement (16+)</li>
+            <li><strong>Transactional communications</strong> &mdash; sending purchase receipts, security alerts, and important policy updates via email (see Section 4A.1)</li>
+            <li><strong>Marketing newsletter</strong> &mdash; only sent to users who explicitly opted in. Covers a strictly defined set of topics listed in Section 4A.2. You can withdraw consent anytime (see Section 4A.4).</li>
         </ul>
         <div class="callout callout-good">
-            <p><strong>What we will NEVER do:</strong></p>
-            <p>✕ Ask you to create an account or sign in with Google/Facebook<br>
-            ✕ Send marketing or promotional emails (we don't collect an email address to send them to)<br>
-            ✕ Send marketing or promotional push notifications<br>
+            <p><strong>What we will NEVER do with your data:</strong></p>
+            <p>✕ Enroll you in any marketing communication without your explicit opt-in<br>
+            ✕ Make opting out harder than opting in<br>
+            ✕ Send marketing topics outside the list in Section 4A.2<br>
             ✕ Sell, rent, or trade your personal data<br>
-            ✕ Share your data with advertisers, data brokers, or third-party marketers beyond the ad network described in Section 8<br>
-            ✕ Use your data for cross-app behavioral profiling</p>
+            ✕ Share your email with advertisers, data brokers, or third-party marketers<br>
+            ✕ Use your data for cross-app behavioral profiling or third-party targeted advertising<br>
+            ✕ Sponsor third-party promotions inside our marketing emails</p>
         </div>
+    </section>
+
+    <section id="section-4a">
+        <h2><span class="num">4A</span>Email Communications &mdash; Transactional &amp; Opt-In Marketing</h2>
+
+        <p>UNIFY EQ sends two strictly separated categories of email. <strong>Transactional</strong> emails are sent automatically because they are necessary to run your account. <strong>Marketing</strong> emails are sent <strong>only</strong> to users who have explicitly opted in &mdash; off by default.</p>
+
+        <h3>4A.1. Transactional emails (always on &mdash; required for the service)</h3>
+        <p>Legal basis: performance of contract (GDPR Art. 6(1)(b)) / necessary for service provision under Vietnam Decree 13/2023. No consent toggle &mdash; you cannot opt out of these without closing your account, because they are required for the service to function safely.</p>
+
+        <div class="promise-grid">
+            <div class="promise-cell do">
+                <h5><span class="icon">✓</span>We send (transactional)</h5>
+                <ul>
+                    <li>Purchase receipts &amp; subscription confirmations</li>
+                    <li>Subscription renewal &amp; expiry notices (when required by app stores or local consumer law)</li>
+                    <li>Account security alerts (new device login, password reset)</li>
+                    <li>Account deletion confirmation</li>
+                    <li>Critical policy or pricing changes that affect you</li>
+                    <li>Data breach notifications (per Section 14A)</li>
+                </ul>
+            </div>
+            <div class="promise-cell dont">
+                <h5><span class="icon">✕</span>We never send (any category)</h5>
+                <ul>
+                    <li>Third-party sponsored content or paid ads inside our emails</li>
+                    <li>Re-engagement / "we miss you" emails</li>
+                    <li>Behavioral tracking pixels for ad networks</li>
+                    <li>Anything to a user who opted out</li>
+                    <li>Anything to a user under the age of 16</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>4A.2. Marketing newsletter (opt-in only &mdash; off by default)</h3>
+        <p>Legal basis: your explicit, freely-given consent (GDPR Art. 6(1)(a) and Art. 7; Vietnam Decree 13/2023 Art. 11; Vietnam Decree 91/2020 on combating spam). New accounts are <strong>not</strong> enrolled by default. We will ask you once, you choose, and your choice is recorded.</p>
+
+        <p>If you opt in, you will receive emails covering <strong>only</strong> the following six topics &mdash; nothing else:</p>
+        <ul>
+            <li><strong>New apps we launch in the future</strong> &mdash; if we publish a new app, you will hear about it once at launch.</li>
+            <li><strong>Major updates and new features for this app</strong> &mdash; significant version releases, not every minor patch.</li>
+            <li><strong>Fresh community preset packs</strong> &mdash; curated collections of audio presets from the community.</li>
+            <li><strong>Premium discount codes and flash sales</strong> &mdash; occasional promotions on Monthly / Yearly / Lifetime tiers.</li>
+            <li><strong>Early access to beta features</strong> &mdash; invitations to test upcoming features before public release.</li>
+        </ul>
+
+        <div class="callout callout-info">
+            <p><strong>Frequency cap:</strong> About <strong>1&ndash;2 emails per month</strong> on average. We commit to a hard ceiling of <strong>4 emails per calendar month</strong> for any single opted-in user. If we ever come close to this limit, we will combine topics in a single email rather than send multiple.</p>
+        </div>
+
+        <p>Every marketing email we send will:</p>
+        <ul>
+            <li>Identify itself as a marketing message from UNIFY EQ in the header</li>
+            <li>Display the sender name and reply-to address clearly</li>
+            <li>Include a <strong>one-click unsubscribe link</strong> at the bottom (no login, no questionnaire)</li>
+            <li>Include a <code>List-Unsubscribe</code> RFC 8058 header so Gmail / Outlook / Apple Mail show the native "Unsubscribe" button next to the sender name</li>
+            <li>State who we are and where we are based (UNIFY EQ, independent developer, Vietnam) &mdash; this satisfies CAN-SPAM identification requirements for U.S. recipients</li>
+        </ul>
+
+        <h3>4A.3. How to opt in</h3>
+        <p>There are exactly two ways to opt in. <strong>Both require an affirmative action by you</strong> &mdash; we will never enroll you silently.</p>
+
+        <p><strong>(a) During your first sign-in</strong> &mdash; right after you confirm "I am 16 or older" and tap "Continue with Google", we show a dialog titled <em>"Stay in the loop?"</em> listing the same six topics from Section 4A.2. You tap either <strong>"Yes, sign me up"</strong> (opt in) or <strong>"No, thanks"</strong> (opt out). The dialog is shown only once. Your choice is saved on your device and synced to your account record on our servers.</p>
+
+        <p><strong>(b) Later, from Settings</strong> &mdash; you can change your mind at any time using the in-app toggle. Navigate to:</p>
+
+        <p class="nav-path"><span class="step">Community</span> <span class="arrow">›</span> <span class="step">Profile tab</span> <span class="arrow">›</span> <span class="step">⚙ gear icon</span> <span class="arrow">›</span> <span class="step">Community section</span> <span class="arrow">›</span> <span class="step">"Email updates from us" toggle</span></p>
+
+        <p>When you toggle this <strong>on</strong>, a confirmation dialog titled <em>"You are subscribed"</em> appears showing the same six topics. Only after you tap <strong>"Got it"</strong> do we record the opt-in.</p>
+
+        <h3>4A.4. How to opt out</h3>
+        <p>Opt-out is at least as easy as opt-in, as required by GDPR Art. 7(3). You have <strong>three equally valid channels</strong>:</p>
+
+        <ol>
+            <li><strong>In-app toggle</strong> &mdash; same path as above: <code>Community › Profile tab › ⚙ gear › Community section › "Email updates from us"</code>. Switching it <strong>off</strong> takes effect immediately on your device and is synced to our servers, typically within seconds.</li>
+            <li><strong>One-click unsubscribe link</strong> in any marketing email we send. No login required, no confirmation page that re-asks. One click and you are out.</li>
+            <li><strong>Delete your account</strong> (see Section 12). This removes all your data, including marketing consent. Your hashed email address is added to our suppression list so we never contact you again.</li>
+        </ol>
+
+        <div class="callout callout-good">
+            <p><strong>After opt-out:</strong> we stop sending marketing emails within <strong>24 hours</strong> (typically instant). We will not send a "we miss you" or "are you sure?" email. We will not re-prompt the in-app dialog. Your transactional emails (receipts, security alerts) continue, because those are required for your account.</p>
+        </div>
+
+        <h3>4A.5. Consent record &amp; data subject rights</h3>
+        <p>For every opt-in user we store: the choice (boolean), the channel (login dialog vs. settings toggle), and the date inferred from Firebase server metadata when the record was created or modified. You can request a copy of your consent record at any time via the channels in <a href="#section-12">Section 12</a>.</p>
+
+        <h3>4A.6. Push notifications &mdash; never used for marketing</h3>
+        <p>Push notifications are used <strong>only</strong> for activity related to your own account: someone saved or commented on your published preset, someone subscribed to your creator profile, a moderator action affecting your content, or critical security alerts. We do not use push for any marketing purpose, ever. Marketing happens exclusively through opt-in email.</p>
+        <p>You can disable activity notification categories in <code>Community › Profile tab › ⚙ gear › Notifications</code>, or disable all notifications via Android System Settings.</p>
     </section>
 
     <section>
         <h2><span class="num">05</span>Data Sharing &amp; Sub-Processors</h2>
-        <p>Because UNIFY EQ has no accounts and no server-side user data, there is very little to share. The only processing involved is:</p>
+        <p>Data is stored on <strong>Google Firebase</strong> infrastructure, a processor on our behalf governed by Google's Data Processing Terms.</p>
+        <p>Public profile fields (name, avatar, bio, attribution handles, published presets, feedback messages) are visible to <strong>other users of the App</strong>. Email address, marketing-email preference, billing details, age verification records, and device ID are <strong>never</strong> public.</p>
+
+        <h3>Trusted service providers (processors)</h3>
+        <p>To deliver the service, we use a small number of trusted vendors who process data <strong>only on our behalf</strong>, under Data Processing Agreements (DPAs):</p>
         <ul>
+            <li><strong>Google Firebase</strong> (Google LLC, USA) &mdash; account authentication, database, server infrastructure. Data is stored in Firebase regions selected based on user proximity (primarily <code>asia-southeast1</code> for Asia-Pacific users and <code>us-central1</code> for other regions).</li>
             <li><strong>Google Play Billing</strong> (Google LLC, USA) &mdash; subscription &amp; in-app purchase processing.</li>
-            <li><strong>Advertising network</strong> (e.g. AdMob) &mdash; serves ads to free-tier users, as described in Section 8.</li>
+            <li><strong>Email delivery provider</strong> &mdash; a reputable third-party transactional and bulk-email service used to deliver <strong>both</strong> transactional emails (to all users) and marketing emails (to opted-in users only). The provider acts strictly as a processor under a Data Processing Agreement; they never use your email address for their own purposes, never enroll you in third-party communications, and may not market to you on their own behalf. We may change providers from time to time without updating this Policy, provided the replacement offers equivalent or stronger data-protection terms.</li>
+            <li><strong>Analytics provider</strong> (Firebase Analytics by Google) &mdash; aggregate, pseudonymous usage data only.</li>
         </ul>
-        <p>We do <strong>not</strong> use Firebase, do <strong>not</strong> operate a backend database of user profiles, and do <strong>not</strong> share data with any other party.</p>
+        <p>We do <strong>not</strong> share your data with anyone else &mdash; no advertisers, no data brokers, no analytics resellers, no third-party marketers.</p>
+
+        <h3>International data transfers</h3>
+        <p>Because our sub-processors are based in the United States, your data may be transferred outside your country of residence. Such transfers are protected by Standard Contractual Clauses (SCCs) approved by the European Commission for EU/EEA users and the UK International Data Transfer Addendum for UK users.</p>
     </section>
 
     <section>
@@ -475,7 +650,7 @@
             <span class="badge badge-yearly">Yearly</span>
             <span class="badge badge-lifetime">&#9733; Lifetime</span>
         </div>
-        <p>All transactions are securely processed by the <strong>Google Play Store</strong>. We do <strong>NOT</strong> store your credit card or bank details. Since the App has no accounts, your Premium status is tied to your Google Play account and device, and is restored automatically via Google Play's standard purchase-restore mechanism.</p>
+        <p>All transactions are securely processed by the <strong>Google Play Store</strong>. We do <strong>NOT</strong> store your credit card or bank details.</p>
     </section>
 
     <section>
@@ -483,136 +658,331 @@
         <ul>
             <li><strong>Auto-renewal</strong>: Monthly / Yearly subscriptions auto-renew unless cancelled at least 24 hours before the period ends.</li>
             <li><strong>Cancellation</strong>: cancel anytime via your <strong>Google Play Account &rarr; Subscriptions</strong>.</li>
-            <li><strong>Lifetime</strong>: one-time payment, no auto-renewal. "Lifetime" refers to the lifetime of the App as published on Google Play, not eternity.</li>
+            <li><strong>Lifetime</strong>: one-time payment, no auto-renewal.</li>
             <li><strong>Free trial (if offered)</strong>: any free trial period converts automatically to a paid subscription at the end of the trial unless you cancel at least 24 hours before the trial ends. You are responsible for cancelling on time to avoid being charged. The trial duration and price after trial are displayed clearly on the purchase screen before you accept.</li>
             <li><strong>Price changes</strong>: if subscription prices change, you will be notified by Google Play before the change takes effect and given the option to cancel.</li>
         </ul>
     </section>
 
     <section>
-        <h2><span class="num">08</span>Advertising</h2>
-        <p>The free version may show ads from partner ad networks (e.g. AdMob). These networks may use anonymous identifiers to deliver relevant ads. Premium users do not see ads. Ad networks do not receive any personal profile from us, because we do not collect one.</p>
-    </section>
-
-    <section>
-        <h2><span class="num">09</span>Refund Policy</h2>
+        <h2><span class="num">08</span>Refund Policy</h2>
         <p>We follow Google Play's standard refund policy. Refund requests are handled through Google Play within their refund window (typically 48 hours of purchase).</p>
     </section>
 
     <section>
-        <h2><span class="num">10</span>Premium Plans &mdash; Scope</h2>
-        <p>All three Premium tiers (Monthly, Yearly, Lifetime) unlock the same set of <strong>on-device features</strong>, differing only in billing duration:</p>
+        <h2><span class="num">09</span>Advertising</h2>
+        <p>The free version may show ads from partner ad networks (e.g. AdMob). These networks may use anonymous identifiers to deliver relevant ads. Premium users do not see ads.</p>
+        <p>Because UNIFY EQ requires users to be 16 or older, all ad inventory is treated as adult inventory &mdash; no child-directed ads are served. These in-app ads are separate from email and push communications, and ad networks do not receive your email address from us.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">10</span>Premium Plans &mdash; Scope &amp; Limitations</h2>
+
+        <div class="callout callout-critical">
+            <p><strong>Important &mdash; please read before purchasing any Premium tier.</strong></p>
+            <p>Premium tiers (Monthly / Yearly / Lifetime) primarily unlock <strong>offline audio features</strong> on your device. <strong>Online preset-sharing features depend on server infrastructure</strong> and are provided on a best-effort basis &mdash; not guaranteed forever or indefinitely.</p>
+        </div>
+
+        <h3>10.1. What every Premium tier INCLUDES</h3>
+        <p>All three tiers (Monthly, Yearly, Lifetime) grant access to the same Premium feature set, differing only in <strong>billing duration</strong>:</p>
         <ul>
             <li>All premium equalizer bands, DSP effects, visualizers</li>
-            <li>Unlimited custom presets and personalization</li>
+            <li>Custom presets and personalization</li>
             <li>Bass booster, virtualizer, stereo enhancer</li>
             <li>Ad-free experience</li>
+            <li>Premium tier badge on share cards (visible to community)</li>
+            <li>Increased limits for preset publishing (attribution handles, extra preset slots)</li>
         </ul>
-        <p>Because the App is fully local with no server-dependent features, Premium access works entirely offline once purchased and verified through Google Play, and is not subject to the server-availability caveats that apply to cloud-based features.</p>
+
+        <h3>10.2. What "Premium" does NOT promise</h3>
+        <div class="callout callout-warn">
+            <p>Online preset-sharing features <strong>require a backend server</strong> we operate at our own cost. These services are <strong>not</strong> guaranteed for the entire duration of any subscription.</p>
+        </div>
+        <ul>
+            <li>Preset-sharing features may be discontinued, paused, modified, or rate-limited at any time &mdash; including for Lifetime users.</li>
+            <li>We will provide at least <strong>30 days' notice</strong> before permanently shutting down a major preset-sharing feature.</li>
+            <li>Such shutdowns are <strong>not grounds for a refund</strong> &mdash; Premium's primary value is the offline equalizer + DSP feature set, which continues to work on your device.</li>
+            <li>No subscription &mdash; including Lifetime &mdash; carries an obligation on us to operate cloud / server infrastructure indefinitely.</li>
+        </ul>
+
+        <h3>10.3. Plan-specific scope</h3>
+        <p><span class="badge badge-monthly">Monthly</span></p>
+        <ul>
+            <li>Recurring billing every month via Google Play.</li>
+            <li>Access to all Premium features only while the subscription is active.</li>
+            <li>Preset-sharing access available during active period, subject to section 10.2.</li>
+        </ul>
+
+        <p><span class="badge badge-yearly">Yearly</span></p>
+        <ul>
+            <li>Recurring billing every year via Google Play (better value than monthly).</li>
+            <li>Access to all Premium features only while the subscription is active.</li>
+            <li>Preset-sharing access available during active period, subject to section 10.2.</li>
+        </ul>
+
+        <p><span class="badge badge-lifetime">&#9733; Lifetime</span></p>
+        <ul>
+            <li>One-time payment. No recurring charges.</li>
+            <li>Access to all Premium <strong>offline</strong> features for as long as the App remains published and installable from Google Play.</li>
+            <li><strong>"Lifetime" refers to the lifetime of the App, not eternity, and not the lifetime of the preset-sharing server.</strong></li>
+            <li>If we stop publishing the App on Google Play, Lifetime users may lose access without refund. We will give as much advance notice as practicable.</li>
+            <li>Preset-sharing access for Lifetime users is subject to the same best-effort terms &mdash; see section 10.2.</li>
+        </ul>
+
+        <h3>10.4. Why we have to say this</h3>
+        <p>Servers, databases, and cloud bandwidth cost money every month. A one-time Lifetime payment cannot fund cloud hosting forever. By choosing any Premium tier, you acknowledge that:</p>
+        <ul>
+            <li>You are paying for the offline Premium app functionality during the relevant billing period (or for life of the app, in the case of Lifetime).</li>
+            <li>Preset-sharing features are a bonus that may evolve, change, or end.</li>
+            <li>This is industry-standard practice for apps with optional cloud / preset-sharing features.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="num">11</span>Preset Library &amp; Content Rules</h2>
+        <p>When you publish presets, creator cards, or post preset feedback, you agree to the following:</p>
+        <ul>
+            <li>You will <strong>not</strong> post offensive, hateful, harassing, illegal, sexually explicit, or copyrighted content.</li>
+            <li>You will <strong>not</strong> impersonate others or use misleading profile information.</li>
+            <li>You will <strong>not</strong> spam, scam, or solicit other users.</li>
+            <li>You will <strong>not</strong> link to malicious, phishing, or unsafe external URLs in your social handles.</li>
+            <li>All share cards are <strong>reviewed by moderators</strong> before becoming publicly visible.</li>
+            <li>We reserve the right to remove content, block users, or terminate accounts that violate these rules &mdash; <strong>without refund</strong>.</li>
+            <li>You can <strong>block</strong> any user from within the App.</li>
+            <li>Report mechanisms are provided for inappropriate content.</li>
+        </ul>
     </section>
 
     <section id="section-12">
-        <h2><span class="num">11</span>Your Rights &amp; Data Deletion</h2>
-        <p>Because UNIFY EQ does not collect personal data tied to an identity, most data-subject rights are satisfied simply by the fact that we hold nothing to access, port, or correct. The rights below remain available where applicable:</p>
+        <h2><span class="num">12</span>Your Rights &amp; Account Deletion</h2>
+        <p>You have a range of rights over your personal data. The core rights below are honored <strong>globally</strong>, regardless of region:</p>
 
         <div class="rights-grid">
             <div class="right-card">
                 <h5>Right to access</h5>
-                <p>You may request confirmation of what limited technical data (if any) is associated with your device.</p>
+                <p>Get a copy of all personal data we hold about you, including your marketing-consent record.</p>
             </div>
             <div class="right-card">
-                <h5>Right to deletion</h5>
-                <p>Uninstalling the App deletes all locally stored presets and preferences immediately. There is no server-side account to delete.</p>
+                <h5>Right to portability</h5>
+                <p>Receive your data in a machine-readable format (JSON) for transfer to another service.</p>
             </div>
             <div class="right-card">
                 <h5>Right to rectification</h5>
-                <p>You can freely edit or delete your own local presets at any time within the App.</p>
+                <p>Correct inaccurate or incomplete data.</p>
+            </div>
+            <div class="right-card">
+                <h5>Right to deletion</h5>
+                <p>Have your account and associated data erased.</p>
+            </div>
+            <div class="right-card">
+                <h5>Right to restrict</h5>
+                <p>Pause processing of your data while a dispute is resolved.</p>
+            </div>
+            <div class="right-card">
+                <h5>Right to withdraw consent</h5>
+                <p>Including marketing-email consent, at any time, with no penalty.</p>
             </div>
             <div class="right-card">
                 <h5>Right to lodge a complaint</h5>
-                <p>With your local data protection authority, if you believe your rights have been violated.</p>
+                <p>With your local data protection authority.</p>
+            </div>
+            <div class="right-card">
+                <h5>Right to non-discrimination</h5>
+                <p>For exercising any of the rights above &mdash; we will not degrade your service for opting out of marketing.</p>
             </div>
         </div>
 
         <h3>How to exercise any right</h3>
         <div class="callout callout-info">
-            <p>Email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>UNIFY EQ &mdash; Data Rights Request</code>. We respond within 30 days.</p>
+            <p>Visit <a href="https://buitruyenpro.github.io/unify-eq-policy/delete-data.html">our data rights page</a>, or email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>UNIFY EQ &mdash; Data Rights Request</code>. We respond within 30 days (45 days for U.S. state law requests).</p>
         </div>
 
-        <h3>Uninstalling the App</h3>
-        <p>Uninstalling UNIFY EQ removes all locally stored presets, preferences, and cached files from your device. Any anonymous device identifier used for trial-abuse prevention (Section 3.2) is reset on reinstall. Your Premium purchase history remains with your Google Play account independently of the App.</p>
+        <h3>What is deleted on account deletion</h3>
+        <ul>
+            <li>Profile (name, email, avatar, bio, attribution handles, country, username)</li>
+            <li>Your published presets and creator cards (pending and approved)</li>
+            <li>Your preset feedback messages and saves</li>
+            <li>Your creator subscriptions</li>
+            <li>Notifications addressed to you</li>
+            <li>Age verification record</li>
+            <li>Marketing-email preference record</li>
+        </ul>
+
+        <h3>What is retained</h3>
+        <ul>
+            <li>Anonymized engagement counts on other users' content (your identity is removed)</li>
+            <li>Billing / transaction records (retained for up to 5 years for tax and accounting compliance under Vietnamese law, not linked to your personal identity after deletion)</li>
+            <li>Diagnostic logs (anonymized, up to 90 days)</li>
+            <li>Suppression list entry &mdash; a hashed (SHA-256) record of your email so we never contact you again, whether transactionally or for marketing</li>
+        </ul>
+        <p>Requests are processed within <strong>30 days</strong>. Most are completed within 7 business days.</p>
+
+        <h3>Inactive account policy</h3>
+        <p>To minimize the data we hold, accounts that have been inactive (no app open or sign-in) for <strong>24 consecutive months</strong> may be flagged for deletion. Before deletion, we will send a notice to the email on file giving you <strong>30 days</strong> to sign in and keep the account active. This is a transactional notice tied to account hygiene &mdash; it is not a marketing message and is sent regardless of your marketing-email preference. Premium subscribers (Monthly, Yearly, Lifetime) are <strong>exempt</strong> from this inactivity policy as long as their purchase remains valid.</p>
     </section>
 
     <section>
-        <h2><span class="num">12</span>Age Requirement</h2>
+        <h2><span class="num">13</span>Age Requirement &amp; Children's Privacy</h2>
 
         <div class="age-banner">
-            <div class="age-banner-icon">13+</div>
+            <div class="age-banner-icon">16+</div>
             <div class="age-banner-content">
-                <h3>You must be 13 or older</h3>
-                <p>UNIFY EQ is intended for users aged 13 and above.</p>
+                <h3>You must be 16 or older</h3>
+                <p>UNIFY EQ is strictly for users aged 16 and above. Younger users cannot create an account or use the App.</p>
             </div>
         </div>
 
-        <h3>Why 13?</h3>
-        <p>We set the minimum age at <strong>13</strong> to align with the U.S. <strong>COPPA</strong> threshold and standard Google Play age-gating practice for general-audience apps that are not specifically directed at children. The App does not knowingly collect personal data from anyone, of any age, since it has no account system &mdash; but a minimum age requirement is still applied as a condition of use of the App and its store listing.</p>
+        <h3>Why 16?</h3>
+        <p>We set the minimum age at <strong>16</strong> to ensure full compliance with the strictest applicable privacy laws governing minors, including:</p>
+        <ul>
+            <li><strong>Vietnam Decree 13/2023</strong> on Personal Data Protection (Article 20 &mdash; children under 16 receive heightened protection)</li>
+            <li><strong>EU GDPR Article 8</strong> (default digital consent age of 16)</li>
+            <li><strong>U.S. COPPA</strong> (we exceed the 13-year minimum to provide greater protection)</li>
+            <li><strong>UK Age Appropriate Design Code</strong></li>
+        </ul>
+        <p>By choosing a higher minimum than legally required in some regions, we eliminate the need for region-specific parental-consent flows and ensure consistent protection for all younger people worldwide.</p>
 
         <h3>How we verify age</h3>
-        <p>At first launch, users must confirm <strong>"I confirm I am 13 years old or older"</strong> before proceeding. Because the App has no sign-in system, this is a self-declared confirmation rather than a verified credential.</p>
-
-        <h3>No accounts means nothing to collect from younger users</h3>
-        <p>Since UNIFY EQ does not create accounts, profiles, or any server-side record, we do not knowingly collect personal information from users of any age through the App itself. If you are a parent or guardian and believe a child under 13 is using the App in violation of the age requirement, please use the contact channel in Section 15.</p>
-    </section>
-
-    <section>
-        <h2><span class="num">13</span>Security</h2>
-        <p>Any network traffic the App generates (Google Play Billing verification, ad requests) is encrypted in transit (HTTPS/TLS 1.2+). The App stores no passwords, since there is no account system. We follow industry best practices, but no system can be 100% secure &mdash; users acknowledge this inherent risk.</p>
-    </section>
-
-    <section>
-        <h2><span class="num">14</span>Disclaimer of Warranties</h2>
-        <p>The App is provided <strong>"as is"</strong> without warranty of any kind. We do not guarantee the App will be free from errors. Listening to music at high volumes for extended periods may damage your hearing or device equipment &mdash; please use with caution.</p>
-    </section>
-
-    <section>
-        <h2><span class="num">15</span>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy as the App evolves. Material changes will be announced in-app or via the Play Store listing <strong>at least 14 days before they take effect</strong>. If a future version of the App were to introduce accounts, cloud sync, or any new data collection, we would update this Policy and, where required, request your consent before that change takes effect.</p>
-        <p>Continued use of the App after an update constitutes acceptance of the revised policy.</p>
-    </section>
-
-    <section>
-        <h2><span class="num">16</span>Contact</h2>
-        <p>For privacy questions, data requests, or technical support:</p>
+        <p>We use multiple layered signals to enforce the minimum age requirement:</p>
         <ul>
-            <li>Email: <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a></li>
-            <li>Data rights requests: subject <code>UNIFY EQ &mdash; Data Rights Request</code></li>
+            <li><strong>Google "Family Link" / child-account flag</strong> &mdash; checked automatically at sign-in; if flagged, signup is blocked immediately</li>
+            <li><strong>Facebook <code>age_range</code> API</strong> &mdash; checked automatically (if signed in via Facebook); accounts with <code>min &lt; 16</code> are blocked</li>
+            <li><strong>Self-declared age confirmation</strong> &mdash; required at signup when no automatic signal is available. Users must tick "I confirm I am 16 years old or older" before they can proceed with Google sign-in.</li>
+            <li><strong>Automated pattern detection</strong> &mdash; usernames, bios, and profile data are scanned for indicators of underage users (e.g. explicit mentions of school grade, birth year suggesting under 16). Flagged accounts are reviewed and removed if confirmed.</li>
+            <li><strong>Parent/guardian report channel</strong> &mdash; see "How parents / guardians can report" below</li>
+        </ul>
+
+        <h3>Users under 16</h3>
+        <p>Account creation is blocked for users we identify as being under 16. If we discover that we have inadvertently created an account for someone under 16, we will:</p>
+        <ul>
+            <li>Suspend the account within <strong>24 hours</strong></li>
+            <li>Delete all associated personal data within <strong>30 days</strong></li>
+            <li>Add the email to a permanent suppression list to prevent re-registration and to block any future contact (transactional or marketing)</li>
+            <li>Notify the user (or their parent/guardian, if known) that the account has been removed</li>
+        </ul>
+        <p>Marketing emails are <strong>never</strong> sent to users under 16, even hypothetically &mdash; the opt-in dialog only appears after age confirmation, and any account discovered to be underage is suppressed before any marketing send.</p>
+
+        <h3>How parents / guardians can report</h3>
+        <div class="callout callout-info">
+            <p>If you believe a person under 16 has created an account on UNIFY EQ, please email <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a> with subject <code>Underage Account Report</code>. Include the account name or email if known. We will investigate within 7 business days and take action within 30 days.</p>
+        </div>
+
+        <h3>No exceptions, no parental-consent workaround</h3>
+        <p>To keep our compliance simple and protect young people, we do <strong>not</strong> offer a parental-consent path that would allow users under 16 to use the App. There is no way to bypass the age requirement. This is intentional &mdash; we believe a clear, bright-line rule is safer than a partial exception that could be abused.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">14</span>Security</h2>
+        <p>All network traffic between the App and our servers is encrypted in transit (HTTPS/TLS 1.2+). Firebase enforces server-side validation rules to prevent unauthorized data access. Passwords are not stored &mdash; authentication is delegated entirely to Google/Facebook OAuth. We follow industry best practices, but no system can be 100% secure &mdash; users acknowledge this inherent risk.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">14A</span>Data Breach Notification</h2>
+        <p>In the event of a data breach affecting your personal information, we will:</p>
+        <ul>
+            <li>Notify the relevant supervisory authority within <strong>72 hours</strong> of becoming aware of the breach, as required by GDPR Article 33 and similar laws</li>
+            <li>Notify affected users <strong>without undue delay</strong> via the email registered to your account and an in-app banner when the breach is likely to result in high risk to your rights and freedoms (this is a transactional notice and is sent regardless of marketing-email preference)</li>
+            <li>Provide clear information on what happened, what data was affected, what we are doing, and what you can do to protect yourself</li>
+            <li>Maintain an internal breach register documenting every incident</li>
         </ul>
     </section>
 
     <section>
-        <h2><span class="num">17</span>Governing Law</h2>
+        <h2><span class="num">15</span>Disclaimer of Warranties</h2>
+        <p>The App is provided <strong>"as is"</strong> without warranty of any kind. We do not guarantee uninterrupted availability of preset-sharing features or that the App will be free from errors. Listening to music at high volumes for extended periods may damage your hearing or device equipment &mdash; please use with caution.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">16</span>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy as the App evolves. Material changes will be announced in-app or via the Play Store listing <strong>at least 14 days before they take effect</strong>.</p>
+        <p>If a future change would <strong>expand</strong> the marketing topics in Section 4A.2 (for example, adding a new topic category), or introduce a <strong>new category</strong> of communication beyond transactional and the opt-in newsletter, we will request <strong>fresh, explicit consent</strong> from you separately. We will not silently expand the scope of how we use your email or your data.</p>
+        <p>Continued use of the App after a non-consent-requiring update constitutes acceptance of the revised policy.</p>
+    </section>
+
+    <section>
+        <h2><span class="num">17</span>Contact</h2>
+        <p>For privacy questions, data requests, or technical support:</p>
+        <ul>
+            <li>Email: <a href="mailto:namtruyenpro95@gmail.com">namtruyenpro95@gmail.com</a></li>
+            <li>Data rights &amp; deletion: <a href="https://buitruyenpro.github.io/unify-eq-policy/delete-data.html">https://buitruyenpro.github.io/unify-eq-policy/delete-data.html</a></li>
+            <li>Marketing email opt-out (besides the in-app toggle or unsubscribe link): subject <code>Unsubscribe Marketing</code></li>
+            <li>Report an underage account: subject <code>Underage Account Report</code></li>
+            <li>Data breach concerns: subject <code>Security Concern</code></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span class="num">18</span>Governing Law</h2>
         <p>This Privacy Policy and our Terms of Service are governed by the <strong>laws of the Socialist Republic of Vietnam</strong>, without regard to conflict-of-law principles. Any dispute arising out of or relating to this Privacy Policy that cannot be resolved informally will be submitted to the competent courts of Vietnam.</p>
         <p>This clause does <strong>not</strong> limit any non-waivable consumer rights granted to you by mandatory local law. EU/UK/EEA users retain the right to bring claims under their local consumer protection laws and to lodge complaints with their local data protection authority. U.S. users retain the right to exercise statutory privacy rights (CCPA, CPRA, VCDPA, etc.).</p>
     </section>
 
     <section>
-        <h2><span class="num">18</span>Your Agreement</h2>
-        <p>UNIFY EQ does not show a sign-up screen, consent dialog, or "I Agree" button before use &mdash; the App opens directly to its main functionality. By downloading, installing, and using the App, you acknowledge that:</p>
+        <h2><span class="num">19</span>Your Agreement</h2>
+        <p>When you first open the App, you are shown a welcome screen that displays this Privacy Policy and Terms in a scrollable view. You will also be asked to confirm that you are at least <strong>16 years old</strong>. By tapping the <strong>"I Agree"</strong> button in the confirmation dialog, you acknowledge that:</p>
         <ul>
-            <li>You have read and understood this Policy (available at all times via the Play Store listing and the in-app settings/about screen)</li>
-            <li>You are at least 13 years old</li>
-            <li>You understand the App works entirely offline, with no account, and stores your presets locally on your device only</li>
-            <li>You consent to the limited technical processing described above (anonymous device ID for fraud prevention, Google Play billing verification)</li>
+            <li>You have read and understood this Policy</li>
+            <li>You are at least 16 years old</li>
+            <li>You consent to the collection and use of your data <strong>solely</strong> for the purposes described above (app functionality, account management, fraud prevention, transactional communications)</li>
+            <li>You consent to the transfer of your data to our trusted sub-processors as described in Section 5</li>
+            <li>You understand that marketing-email enrollment is a <strong>separate, optional decision</strong> &mdash; tapping "I Agree" here does <strong>NOT</strong> opt you in to marketing. You will be asked separately, and "No, thanks" is always a valid answer.</li>
         </ul>
-        <p>You can stop using the App and remove all local data at any time simply by uninstalling it.</p>
+        <p>You can revoke your consent at any time by deleting your account (Section 12). You can revoke marketing consent specifically &mdash; without closing your account &mdash; using the in-app toggle described in Section 4A.4.</p>
+
+        <div class="preview-card" data-tag="Welcome screen">
+            <h4>What you see on first launch</h4>
+            <div class="phone-mock">
+                <div class="phone-logo">U</div>
+                <p class="mock-title">Agree to continue?</p>
+                <p class="mock-sub">UNIFY EQ requires you to be at least 16 years old and to have an account to use cloud features.</p>
+
+                <p class="terms-text">
+                    By tapping <strong>I Agree</strong>, you confirm you are <strong>16 or older</strong> and that you've read our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. We only collect data needed to run the App. Marketing emails are <strong>opt-in only</strong> &mdash; you choose, and you can change your mind anytime.
+                </p>
+
+                <div class="mock-actions">
+                    <button class="mock-btn mock-btn-ghost" id="declineBtn">Decline</button>
+                    <button class="mock-btn mock-btn-primary" id="agreeBtn">I Agree (16+)</button>
+                </div>
+
+                <div class="mock-status" id="mockStatus"></div>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>By downloading and using UNIFY EQ, you acknowledge that you have read and understood this Privacy Policy &amp; Terms, and that you are at least 13 years old. UNIFY EQ has no accounts, no cloud features, and no community functionality.</p>
+        <p>By using UNIFY EQ, you acknowledge that you have read and understood this Privacy Policy &amp; Terms, and that you are at least 16 years old. Marketing-email enrollment is a separate, opt-in choice.</p>
         <p class="copyright">&copy; 2026 UNIFY EQ &nbsp;&bull;&nbsp; All rights reserved</p>
     </footer>
 
 </div>
+
+<script>
+    (function() {
+        const agree   = document.getElementById('agreeBtn');
+        const decline = document.getElementById('declineBtn');
+        const status  = document.getElementById('mockStatus');
+
+        agree.addEventListener('click', () => {
+            status.classList.remove('declined');
+            status.classList.add('show');
+            status.innerHTML = "✓ Agreed. Age confirmed (16+). Welcome to UNIFY EQ. We'll ask you separately whether you'd like our optional marketing newsletter — and you can always decline.";
+            setTimeout(() => {
+                status.classList.remove('show');
+                status.textContent = '';
+            }, 6500);
+        });
+
+        decline.addEventListener('click', () => {
+            status.classList.add('show', 'declined');
+            status.textContent = "Declined. The app would close on a real device. If you're under 16, please come back when you're older.";
+            setTimeout(() => {
+                status.classList.remove('show', 'declined');
+                status.textContent = '';
+            }, 5500);
+        });
+    })();
+</script>
 
 </body>
 </html>
