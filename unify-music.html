@@ -365,6 +365,29 @@
             font-weight: 600;
         }
 
+        .credit-block {
+            display: flex; align-items: center; gap: 16px;
+            margin: 18px 0;
+            padding: 16px 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        @media (max-width: 640px) { .credit-block { flex-direction: column; align-items: flex-start; gap: 10px; } }
+        .credit-block .credit-icon {
+            flex-shrink: 0;
+            width: 40px; height: 40px; border-radius: 10px;
+            background: rgba(235, 207, 122, 0.1);
+            border: 1px solid rgba(235, 207, 122, 0.25);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95em; color: var(--gold); font-weight: 700;
+        }
+        .credit-block code {
+            display: inline-block; margin-top: 2px;
+            font-size: 0.88em;
+        }
+
         footer {
             text-align: center; margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--border);
         }
@@ -951,6 +974,20 @@
                 <div class="mock-status" id="mockStatus"></div>
             </div>
         </div>
+    </section>
+
+    <section>
+        <h2><span class="num">20</span>Third-Party Data &amp; Acknowledgments</h2>
+        <p>UNIFY Music's headphone spatial-audio (HRTF) effect is built using head-related impulse response data from the <strong>CIPIC HRTF Database</strong>, made available by the CIPIC Interface Laboratory at the University of California, Davis. This data is used to render horizontal- and elevation-plane binaural spatialization for headphone listening and is processed entirely on-device &mdash; it is not transmitted, modified into a redistributable dataset, or shared with third parties.</p>
+
+        <div class="credit-block">
+            <div class="credit-icon">©</div>
+            <div>
+                <code>HRTF data: CIPIC HRTF Database, UC Davis (Algazi, Duda, Thompson, 2001)</code>
+            </div>
+        </div>
+
+        <p>Copyright (c) 2001 The Regents of the University of California. Used and acknowledged in accordance with the CIPIC HRTF Database license terms.</p>
     </section>
 
     <footer>
