@@ -1,0 +1,22 @@
+{
+  "name": "UNIFY Equalizer Bass Booster",
+  "short_name": "UNIFY Equalizer Bass Boo",
+  "start_url": "/unify-eq-home-page.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#05070d",
+  "icons": [
+    {
+      "src": "unify-eq-favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "unify-eq-favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

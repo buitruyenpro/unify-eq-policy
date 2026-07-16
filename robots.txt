@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://unifyplayer.online/sitemap.xml
