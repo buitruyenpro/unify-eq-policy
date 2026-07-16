@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://unifyplayer.online/unify-eq-home-page.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <image:image>
+      <image:loc>https://unifyplayer.online/unify-eq-assets/images/unify-eq-app-icon.png</image:loc>
+      <image:title>UNIFY Equalizer Bass Booster app icon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://unifyplayer.online/unify-eq-assets/images/unify-eq-graphic-equalizer.webp</image:loc>
+      <image:title>UNIFY EQ 31-band and 16-band equalizer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://unifyplayer.online/unify-eq-assets/images/unify-eq-community-presets.webp</image:loc>
+      <image:title>UNIFY EQ community presets and creator profiles</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://unifyplayer.online/unify-eq-assets/images/unify-eq-ai-mastering-limiter.webp</image:loc>
+      <image:title>UNIFY EQ AI mastering, limiter and compressor</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://unifyplayer.online/unify-eq-assets/images/unify-eq-spatial-audio.webp</image:loc>
+      <image:title>UNIFY EQ 3D and 8D spatial audio</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://unifyplayer.online/unify-eq-assets/images/unify-eq-segment-presets.webp</image:loc>
+      <image:title>UNIFY EQ Music Editor Pro segment presets</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://unifyplayer.online/unify-eq-assets/images/unify-eq-profile-management.webp</image:loc>
+      <image:title>UNIFY EQ preset profiles and backup</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://unifyplayer.online/unify-eq-assets/images/unify-eq-music-player.webp</image:loc>
+      <image:title>UNIFY EQ local music player</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://unifyplayer.online/unify-eq-assets/images/unify-eq-language-guidance.webp</image:loc>
+      <image:title>UNIFY EQ language and audio guidance</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://unifyplayer.online/unify-eq-privacy.html</loc>
+    <lastmod>2026-07-16</lastmod>
+  </url>
+  <url>
+    <loc>https://unifyplayer.online/unify-eq-terms.html</loc>
+    <lastmod>2026-07-16</lastmod>
+  </url>
+  <url>
+    <loc>https://unifyplayer.online/unify-eq-delete-data.html</loc>
+    <lastmod>2026-07-16</lastmod>
+  </url>
+</urlset>

@@ -1,0 +1,20 @@
+{
+  "name": "UNIFY Hi-Res Music Player Pro",
+  "short_name": "UNIFY Music",
+  "start_url": "unify-music-home-page.html",
+  "display": "standalone",
+  "background_color": "#03050a",
+  "theme_color": "#03050a",
+  "icons": [
+    {
+      "src": "unify-music-assets/images/unify-music-app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "unify-music-assets/images/unify-music-app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
