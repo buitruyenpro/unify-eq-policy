@@ -42,3 +42,32 @@ Updated:
 The feature gallery now has a 2 px multicolor frame, inner highlight,
 stronger separation shadow and clearer hover state, preventing black
 screenshots from visually merging into the black page background.
+
+## v7 policy system
+
+Age model:
+- **13+** — core local player, equalizer and user-controlled Google Drive, Dropbox, WebDAV and SMB/NAS playback.
+- **16+** — Community access, accounts, profiles, posts, preset publication/download and every Community interaction.
+
+Connected-storage policy additions:
+- Google Drive read-only scope and Google API Limited Use statement
+- Dropbox OAuth and selected-folder access
+- WebDAV URL, folder, username and app-password handling
+- SMB2/SMB3 server, share, domain/workgroup and local-network security
+- Progressive buffering, range recovery and configurable offline cache
+- Separate disconnect, remove-library and clear-cache behavior
+- Explicit statement that source removal never deletes original provider/server music
+- Explicit separation between private storage and public Community content
+
+
+## v8 — Community is separate from Premium
+
+The legal pages now state explicitly that:
+- Community is an optional developer-operated server feature.
+- Community is not a core Monthly, Yearly or Lifetime Premium entitlement.
+- Premium primarily unlocks eligible on-device, offline and supported player functionality.
+- Premium badges, higher Community limits or creator tools do not guarantee permanent Community access.
+- Community may be modified, limited, suspended or discontinued because of server, database, storage, bandwidth, moderation, security, legal, financial or operational requirements.
+- Lifetime does not mean lifetime access to Community servers.
+- Google Drive, Dropbox, WebDAV and SMB/NAS availability remains separate from Community and depends on providers, user servers, network and compatibility.
+- Community discontinuation does not automatically create a refund right except where required by law or Google Play policy.
