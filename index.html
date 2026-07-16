@@ -1,81 +1,773 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>UNIFY Audio Apps — Music Player & Equalizer for Android</title>
-  <meta name="description" content="Official home of UNIFY Hi-Res Music Player Pro and UNIFY Equalizer Bass Booster for Android.">
-  <link rel="canonical" href="https://unifyplayer.online/">
-  <link rel="icon" type="image/png" sizes="48x48" href="https://unifyplayer.online/favicon-48x48.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="https://unifyplayer.online/favicon-96x96.png">
-  <link rel="shortcut icon" href="https://unifyplayer.online/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://unifyplayer.online/apple-touch-icon.png">
-  <link rel="manifest" href="https://unifyplayer.online/site.webmanifest">
-  <meta name="theme-color" content="#05070d">
-  <meta property="og:title" content="UNIFY Audio Apps">
-  <meta property="og:description" content="Premium Android music playback and professional audio enhancement.">
-  <meta property="og:image" content="https://unifyplayer.online/unify-site-icon.png">
-  <meta property="og:url" content="https://unifyplayer.online/">
-  <meta property="og:type" content="website">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"UNIFY Audio Apps",
-    "url":"https://unifyplayer.online/",
-    "image":"https://unifyplayer.online/unify-site-icon.png"
-  }
-  </script>
-  <style>
-    :root{color-scheme:dark;--cyan:#00eaff;--pink:#ff00ad;--violet:#8e3bff}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:32px;
-    background:radial-gradient(circle at 20% 10%,rgba(0,234,255,.1),transparent 30%),
-    radial-gradient(circle at 85% 80%,rgba(255,0,173,.1),transparent 32%),#05070d;
-    color:#fff;font-family:Inter,system-ui,-apple-system,sans-serif}
-    main{width:min(1080px,100%)}header{text-align:center;margin-bottom:34px}
-    .brand{width:96px;height:96px;border-radius:24px;box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 36px rgba(0,234,255,.12)}
-    h1{font-size:clamp(2.2rem,6vw,5rem);margin:18px 0 8px;letter-spacing:-.055em}
-    header p{color:#929bad;margin:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    article{padding:26px;border:1px solid rgba(255,255,255,.1);border-radius:24px;
-    background:linear-gradient(145deg,rgba(17,23,37,.95),rgba(7,9,16,.96));
-    box-shadow:0 30px 80px rgba(0,0,0,.28)}
-    .app-head{display:flex;align-items:center;gap:15px}.app-head img{width:68px;height:68px;border-radius:17px}
-    h2{font-size:1.35rem;margin:0}.sub{font-size:.72rem;color:#7d8799;margin-top:4px}
-    article p{color:#9ba4b4;line-height:1.65;font-size:.86rem}
-    a{display:inline-flex;padding:11px 16px;border-radius:12px;color:#071019;text-decoration:none;font-weight:800;
-    background:linear-gradient(135deg,var(--cyan),#75f7c9);transition:.2s}
-    article:last-child a{background:linear-gradient(135deg,#ffcf42,var(--pink));color:#170511}
-    a:hover{transform:translateY(-2px);filter:brightness(1.08)}
-    footer{text-align:center;margin-top:25px;color:#657083;font-size:.72rem}
-    @media(max-width:720px){.grid{grid-template-columns:1fr}}
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>UNIFY Audio Apps — Music Player &amp; Equalizer for Android</title>
+<meta content="Choose your UNIFY experience: a premium Hi-Res music player for local, cloud and NAS libraries, or a powerful Android equalizer with bass, 3D audio and Community Presets." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="https://unifyplayer.online/" rel="canonical"/>
+<link href="favicon.ico?v=20260716-3" rel="icon" sizes="any"/>
+<link href="favicon-32x32.png?v=20260716-3" rel="icon" sizes="32x32" type="image/png"/>
+<link href="favicon-48x48.png?v=20260716-3" rel="icon" sizes="48x48" type="image/png"/>
+<link href="apple-touch-icon.png?v=20260716-3" rel="apple-touch-icon" sizes="180x180"/>
+<link href="site.webmanifest?v=20260716-3" rel="manifest"/>
+<meta content="#05060a" name="theme-color"/>
+<meta content="UNIFY Audio Apps" name="application-name"/>
+<meta content="UNIFY Audio Apps" name="apple-mobile-web-app-title"/>
+<meta content="website" property="og:type"/>
+<meta content="UNIFY Audio Apps — Choose Your Sound" property="og:title"/>
+<meta content="Explore UNIFY Hi-Res Music Player Pro and UNIFY Equalizer Bass Booster for Android." property="og:description"/>
+<meta content="https://unifyplayer.online/" property="og:url"/>
+<meta content="https://unifyplayer.online/unify-site-icon.png" property="og:image"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="UNIFY Audio Apps — Choose Your Sound" name="twitter:title"/>
+<meta content="Premium music playback or professional sound enhancement — choose the UNIFY app built for you." name="twitter:description"/>
+<meta content="https://unifyplayer.online/unify-site-icon.png" name="twitter:image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://unifyplayer.online/#website","name":"UNIFY Audio Apps","url":"https://unifyplayer.online/","description":"Official home of UNIFY Hi-Res Music Player Pro and UNIFY Equalizer Bass Booster.","publisher":{"@id":"https://unifyplayer.online/#organization"}},{"@type":"Organization","@id":"https://unifyplayer.online/#organization","name":"3D Audio Labs","url":"https://unifyplayer.online/","logo":{"@type":"ImageObject","url":"https://unifyplayer.online/unify-site-icon.png","width":512,"height":512}},{"@type":"ItemList","name":"UNIFY Android Audio Apps","numberOfItems":2,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"UNIFY Hi-Res Music Player Pro","applicationCategory":"MultimediaApplication","operatingSystem":"Android","url":"https://unifyplayer.online/unify-music-home-page.html","image":"https://unifyplayer.online/unify-music-assets/images/unify-music-themes-player.webp","description":"A Hi-Res Android music player for local music, Google Drive, Dropbox, WebDAV and SMB/NAS libraries."}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"UNIFY Equalizer Bass Booster","applicationCategory":"MultimediaApplication","operatingSystem":"Android","url":"https://unifyplayer.online/unify-eq-home-page.html","image":"https://unifyplayer.online/unify-eq-assets/images/unify-eq-graphic-equalizer.webp","description":"A professional Android equalizer with 31-band EQ, bass enhancement, AI mastering, 3D audio and Community Presets."}}]}]}</script>
+<style>
+    :root{
+      color-scheme:dark;
+      --bg:#05060a;
+      --surface:#0b0e16;
+      --text:#f7f9ff;
+      --muted:#929bad;
+      --line:rgba(255,255,255,.10);
+      --cyan:#00eaff;
+      --violet:#8e3bff;
+      --pink:#ff00ad;
+      --gold:#ffb52a;
+      --green:#75f7c9;
+      --mx:50%;
+      --my:30%;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      overflow-x:hidden;
+      color:var(--text);
+      background:
+        radial-gradient(circle at var(--mx) var(--my),rgba(82,118,255,.12),transparent 25rem),
+        radial-gradient(circle at 10% 10%,rgba(0,234,255,.08),transparent 28rem),
+        radial-gradient(circle at 90% 85%,rgba(255,0,173,.09),transparent 30rem),
+        var(--bg);
+      font-family:Inter,Manrope,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-3;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.021) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.021) 1px,transparent 1px);
+      background-size:68px 68px;
+      mask-image:linear-gradient(to bottom,rgba(0,0,0,.92),transparent 88%);
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      left:0;
+      right:0;
+      top:0;
+      height:1px;
+      z-index:10;
+      background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),var(--pink),var(--gold),transparent);
+      opacity:.72;
+    }
+
+    a{color:inherit}
+    img{display:block;max-width:100%}
+    button,a{-webkit-tap-highlight-color:transparent}
+
+    .site-shell{
+      width:min(1500px,calc(100% - 42px));
+      margin:auto;
+      padding:22px 0 28px;
+    }
+
+    .topbar{
+      min-height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      border:1px solid rgba(255,255,255,.075);
+      border-radius:22px;
+      padding:10px 13px 10px 11px;
+      background:rgba(7,9,15,.62);
+      backdrop-filter:blur(20px);
+      box-shadow:0 20px 70px rgba(0,0,0,.24);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+      text-decoration:none;
+    }
+
+    .brand img{
+      width:42px;
+      height:42px;
+      border-radius:13px;
+      box-shadow:0 8px 28px rgba(0,0,0,.42),0 0 20px rgba(0,234,255,.08);
+    }
+
+    .brand strong,.brand span{display:block}
+    .brand strong{
+      font-size:.78rem;
+      letter-spacing:.14em;
+      line-height:1;
+    }
+    .brand span{
+      margin-top:5px;
+      color:#778196;
+      font-size:.61rem;
+      letter-spacing:.08em;
+    }
+
+    .topbar-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#8f98aa;
+      font-size:.67rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .status-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 14px var(--green);
+      animation:pulse 2.2s infinite;
+    }
+
+    .hero{
+      padding:clamp(56px,8vw,106px) 0 44px;
+      text-align:center;
+      position:relative;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:7px 11px;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:999px;
+      color:#a8b0bf;
+      background:rgba(255,255,255,.025);
+      font-size:.62rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .eyebrow i{
+      width:22px;
+      height:1px;
+      background:linear-gradient(90deg,var(--cyan),var(--pink));
+      box-shadow:0 0 12px var(--cyan);
+    }
+
+    h1{
+      max-width:1050px;
+      margin:20px auto 20px;
+      font-size:clamp(3.3rem,8.2vw,8.4rem);
+      line-height:.89;
+      letter-spacing:-.075em;
+      font-weight:780;
+    }
+
+    h1 span{
+      background:linear-gradient(96deg,#fff 8%,#b8c8ff 32%,#88efff 51%,#d497ff 69%,#ffb9dd 87%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero-copy{
+      width:min(720px,100%);
+      margin:0 auto;
+      color:#9ca5b7;
+      font-size:clamp(.9rem,1.4vw,1.08rem);
+      line-height:1.75;
+    }
+
+    .choice-line{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:13px;
+      margin-top:28px;
+      color:#667085;
+      font-size:.64rem;
+      font-weight:800;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+    }
+
+    .choice-line::before,.choice-line::after{
+      content:"";
+      width:70px;
+      height:1px;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.18));
+    }
+    .choice-line::after{transform:scaleX(-1)}
+
+    .app-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+      position:relative;
+    }
+
+    .app-card{
+      --accent:var(--cyan);
+      --accent2:var(--violet);
+      position:relative;
+      min-width:0;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:34px;
+      background:
+        linear-gradient(145deg,rgba(16,21,34,.93),rgba(7,9,16,.98));
+      box-shadow:0 36px 100px rgba(0,0,0,.38);
+      isolation:isolate;
+      transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .45s;
+    }
+
+    .app-card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      z-index:-2;
+      border-radius:inherit;
+      background:
+        radial-gradient(circle at 28% 0%,color-mix(in srgb,var(--accent) 20%,transparent),transparent 34%),
+        radial-gradient(circle at 100% 75%,color-mix(in srgb,var(--accent2) 15%,transparent),transparent 42%);
+    }
+
+    .app-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:4;
+      pointer-events:none;
+      border-radius:inherit;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
+    .app-card.music{--accent:#ffb52a;--accent2:#ff5f2e}
+    .app-card.eq{--accent:#00eaff;--accent2:#ff00ad}
+
+    .card-link{
+      display:grid;
+      grid-template-rows:auto 1fr auto;
+      height:100%;
+      color:inherit;
+      text-decoration:none;
+      outline:none;
+    }
+
+    .card-link:focus-visible{
+      box-shadow:inset 0 0 0 3px var(--accent);
+      border-radius:34px;
+    }
+
+    .media{
+      position:relative;
+      margin:11px 11px 0;
+      border-radius:26px;
+      overflow:hidden;
+      aspect-ratio:512/500;
+      background:#030407;
+      box-shadow:0 26px 65px rgba(0,0,0,.42);
+    }
+
+    .media::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:2;
+      pointer-events:none;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.14),
+        inset 0 -90px 100px rgba(0,0,0,.22);
+      border-radius:inherit;
+    }
+
+    .media picture{display:block;width:100%;height:100%}.media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .75s cubic-bezier(.2,.8,.2,1),filter .55s;
+    }
+
+    .media-badge{
+      position:absolute;
+      z-index:3;
+      top:17px;
+      left:17px;
+      display:flex;
+      align-items:center;
+      gap:7px;
+      padding:8px 10px;
+      border:1px solid rgba(255,255,255,.13);
+      border-radius:999px;
+      background:rgba(4,6,11,.75);
+      backdrop-filter:blur(16px);
+      color:#fff;
+      font-size:.57rem;
+      font-weight:800;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+    }
+
+    .media-badge i{
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 12px var(--accent);
+    }
+
+    .visual-bars{
+      position:absolute;
+      right:18px;
+      bottom:18px;
+      z-index:3;
+      height:28px;
+      display:flex;
+      align-items:center;
+      gap:3px;
+      padding:7px 9px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;
+      background:rgba(4,6,11,.72);
+      backdrop-filter:blur(14px);
+    }
+
+    .visual-bars span{
+      width:2px;
+      height:var(--h);
+      border-radius:99px;
+      background:linear-gradient(to top,var(--accent),var(--accent2));
+      animation:eqbar 1.25s ease-in-out infinite alternate;
+      animation-delay:var(--d);
+      transform-origin:center;
+    }
+
+    .card-body{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:16px;
+      padding:24px 26px 16px;
+      align-items:start;
+    }
+
+    .app-icon{
+      width:66px;
+      height:66px;
+      border-radius:19px;
+      box-shadow:
+        0 16px 38px rgba(0,0,0,.42),
+        0 0 0 1px rgba(255,255,255,.08);
+    }
+
+    .app-type{
+      color:var(--accent);
+      font-size:.59rem;
+      font-weight:850;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    h2{
+      margin:5px 0 7px;
+      font-size:clamp(1.35rem,2.5vw,2.25rem);
+      line-height:1.03;
+      letter-spacing:-.045em;
+    }
+
+    .card-desc{
+      margin:0;
+      color:#929bad;
+      font-size:.78rem;
+      line-height:1.62;
+    }
+
+    .feature-row{
+      grid-column:1/-1;
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-top:5px;
+    }
+
+    .feature-row span{
+      padding:7px 9px;
+      border:1px solid rgba(255,255,255,.075);
+      border-radius:999px;
+      background:rgba(255,255,255,.025);
+      color:#8993a6;
+      font-size:.59rem;
+      font-weight:720;
+      letter-spacing:.03em;
+    }
+
+    .card-footer{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:0 26px 26px;
+    }
+
+    .best-for{
+      color:#687287;
+      font-size:.63rem;
+      line-height:1.5;
+    }
+
+    .best-for strong{
+      display:block;
+      color:#b4bccb;
+      font-size:.66rem;
+      margin-bottom:2px;
+    }
+
+    .explore{
+      flex:0 0 auto;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 15px;
+      border-radius:13px;
+      color:#071019;
+      background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent2) 65%,#fff));
+      box-shadow:0 14px 35px color-mix(in srgb,var(--accent) 15%,transparent);
+      font-size:.7rem;
+      font-weight:900;
+      letter-spacing:.04em;
+    }
+
+    .explore svg{
+      width:15px;
+      height:15px;
+      transition:transform .3s;
+    }
+
+    .app-card:hover{
+      transform:translateY(-8px);
+      border-color:color-mix(in srgb,var(--accent) 35%,rgba(255,255,255,.1));
+      box-shadow:
+        0 44px 120px rgba(0,0,0,.48),
+        0 0 60px color-mix(in srgb,var(--accent) 8%,transparent);
+    }
+
+    .app-card:hover .media picture{display:block;width:100%;height:100%}.media img{
+      transform:scale(1.035);
+      filter:saturate(1.06) contrast(1.02);
+    }
+
+    .app-card:hover .explore svg{transform:translateX(4px)}
+
+    .guide{
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+      gap:18px;
+      margin:30px 0 4px;
+      padding:18px 22px;
+      border:1px solid rgba(255,255,255,.075);
+      border-radius:20px;
+      background:rgba(8,11,18,.5);
+      color:#7d8799;
+      text-align:center;
+      font-size:.69rem;
+      line-height:1.6;
+      backdrop-filter:blur(16px);
+    }
+
+    .guide strong{
+      display:block;
+      color:#dce2ec;
+      margin-bottom:3px;
+      font-size:.74rem;
+    }
+
+    .guide-mark{
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:50%;
+      background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.01));
+      color:#fff;
+      font-size:.66rem;
+      font-weight:900;
+      letter-spacing:.08em;
+    }
+
+    footer{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:23px 4px 0;
+      color:#5f697c;
+      font-size:.61rem;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+
+    .footer-links{display:flex;gap:15px}
+    .footer-links a{
+      color:#727d91;
+      text-decoration:none;
+      transition:color .2s;
+    }
+    .footer-links a:hover{color:#fff}
+
+    @keyframes pulse{
+      0%,100%{opacity:.55;transform:scale(.8)}
+      50%{opacity:1;transform:scale(1.12)}
+    }
+
+    @keyframes eqbar{
+      from{transform:scaleY(.45);opacity:.55}
+      to{transform:scaleY(1);opacity:1}
+    }
+
+    @media(max-width:980px){
+      .site-shell{width:min(100% - 24px,760px)}
+      .app-grid{grid-template-columns:1fr}
+      .hero{padding-top:60px}
+      .app-card:hover{transform:translateY(-3px)}
+      .guide{grid-template-columns:1fr}
+      .guide-mark{margin:auto}
+    }
+
+    @media(max-width:620px){
+      .site-shell{width:min(100% - 18px,520px);padding-top:9px}
+      .topbar{border-radius:17px;padding:8px 10px}
+      .brand img{width:37px;height:37px;border-radius:11px}
+      .brand strong{font-size:.67rem}
+      .brand span{font-size:.53rem}
+      .topbar-right span:last-child{display:none}
+      .hero{padding:48px 5px 32px}
+      h1{font-size:clamp(3rem,17vw,4.9rem)}
+      .hero-copy{font-size:.85rem}
+      .app-card{border-radius:25px}
+      .media{margin:8px 8px 0;border-radius:20px}
+      .media-badge{top:12px;left:12px}
+      .visual-bars{right:12px;bottom:12px}
+      .card-body{grid-template-columns:auto 1fr;padding:20px 18px 14px;gap:13px}
+      .app-icon{width:55px;height:55px;border-radius:16px}
+      h2{font-size:1.45rem}
+      .card-desc{font-size:.73rem}
+      .card-footer{align-items:flex-end;padding:0 18px 20px}
+      .best-for{max-width:165px}
+      .explore{padding:11px 12px;font-size:.64rem}
+      .guide{padding:17px 16px}
+      footer{display:grid;justify-content:center;text-align:center}
+      .footer-links{justify-content:center;flex-wrap:wrap}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+      .app-card:hover{transform:none}
+    }
+  
+.media picture{background:linear-gradient(135deg,rgba(255,255,255,.035),rgba(255,255,255,.012))}
+.media img[alt]{color:#9aa4b5}
+</style>
 </head>
 <body>
+<div class="site-shell">
+<header class="topbar">
+<a aria-label="UNIFY Audio Apps home" class="brand" href="">
+<img alt="" height="42" src="unify-site-icon.png" width="42"/>
+<div>
+<strong>UNIFY AUDIO APPS</strong>
+<span>OFFICIAL · 3D AUDIO LABS</span>
+</div>
+</a>
+<div class="topbar-right">
+<span aria-hidden="true" class="status-dot"></span>
+<span>Built for Android listeners</span>
+</div>
+</header>
 <main>
-  <header>
-    <img class="brand" src="/unify-site-icon.png" width="96" height="96" alt="UNIFY Audio Apps">
-    <h1>UNIFY Audio Apps</h1>
-    <p>High-resolution music playback and professional sound enhancement for Android.</p>
-  </header>
-  <section class="grid">
-    <article>
-      <div class="app-head">
-        <img src="/unify-music-assets/images/unify-music-app-icon-192.png" width="68" height="68" alt="UNIFY Hi-Res Music Player Pro">
-        <div><h2>UNIFY Hi-Res Music Player Pro</h2><div class="sub">Local · Cloud · NAS · Hi-Res Audio</div></div>
-      </div>
-      <p>Play local music and personal Google Drive, Dropbox, WebDAV or SMB/NAS libraries with advanced EQ, 3D audio and premium themes.</p>
-      <a href="/unify-music-home-page.html">Explore UNIFY Music</a>
-    </article>
-    <article>
-      <div class="app-head">
-        <img src="/unify-eq-assets/images/unify-eq-app-icon-192.png" width="68" height="68" alt="UNIFY Equalizer Bass Booster">
-        <div><h2>UNIFY Equalizer Bass Booster</h2><div class="sub">31-Band EQ · Bass · 3D Audio · Community</div></div>
-      </div>
-      <p>Shape sound across Android with professional equalization, bass enhancement, mastering tools, spatial effects and Community Presets.</p>
-      <a href="/unify-eq-home-page.html">Explore UNIFY EQ</a>
-    </article>
-  </section>
-  <footer>Official website · 3D Audio Labs</footer>
+<section aria-labelledby="page-title" class="hero">
+<div class="eyebrow"><i aria-hidden="true"></i> Two apps · one audio ecosystem</div>
+<h1 id="page-title">Choose your <span>sound.</span></h1>
+<p class="hero-copy">
+          Build a beautiful personal music library or transform sound across Android.
+          Explore the UNIFY app that matches the way you listen.
+        </p>
+<div class="choice-line">Select an experience</div>
+</section>
+<section aria-label="Choose a UNIFY app" class="app-grid">
+<article class="app-card music">
+<a aria-label="Explore UNIFY Hi-Res Music Player Pro" class="card-link" href="unify-music-home-page.html">
+<div class="media">
+<picture><source srcset="unify-music-assets/images/unify-music-themes-player.webp" type="image/webp"/><img alt="UNIFY Hi-Res Music Player Pro showing albums, songs, waveform controls and Obsidian Gold theme" decoding="async" height="500" loading="eager" src="unify-music-assets/images/unify-music-themes-player.jpg" width="512"/></picture>
+<div class="media-badge"><i aria-hidden="true"></i> Personal music universe</div>
+<div aria-hidden="true" class="visual-bars">
+<span style="--h:7px;--d:-.1s"></span>
+<span style="--h:15px;--d:-.6s"></span>
+<span style="--h:22px;--d:-.3s"></span>
+<span style="--h:11px;--d:-.8s"></span>
+<span style="--h:19px;--d:-.45s"></span>
+<span style="--h:8px;--d:-.2s"></span>
+<span style="--h:17px;--d:-.72s"></span>
+</div>
+</div>
+<div class="card-body">
+<img alt="" class="app-icon" height="66" src="unify-music-assets/images/unify-music-app-icon-192.png" width="66"/>
+<div>
+<div class="app-type">Hi-Res Android music player</div>
+<h2>UNIFY Hi-Res<br/>Music Player Pro</h2>
+<p class="card-desc">
+                  Bring local music, Google Drive, Dropbox, WebDAV and SMB/NAS into one polished player with advanced audio processing and premium themes.
+                </p>
+</div>
+<div aria-label="UNIFY Music highlights" class="feature-row">
+<span>Local &amp; Hi-Res</span>
+<span>Cloud &amp; NAS</span>
+<span>31-Band EQ</span>
+<span>3D Audio</span>
+<span>Premium Themes</span>
+</div>
+</div>
+<div class="card-footer">
+<div class="best-for">
+<strong>Best for</strong>
+                Listeners building one beautiful library across every personal source.
+              </div>
+<span class="explore">
+                Explore Music
+                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M5 12h14M13 6l6 6-6 6"></path>
+</svg>
+</span>
+</div>
+</a>
+</article>
+<article class="app-card eq">
+<a aria-label="Explore UNIFY Equalizer Bass Booster" class="card-link" href="unify-eq-home-page.html">
+<div class="media">
+<picture><source srcset="unify-eq-assets/images/unify-eq-graphic-equalizer.webp" type="image/webp"/><img alt="UNIFY Equalizer Bass Booster showing professional 16-band and 31-band graphic equalizer controls" decoding="async" height="500" loading="eager" src="unify-eq-assets/images/unify-eq-graphic-equalizer.webp" width="512"/></picture>
+<div class="media-badge"><i aria-hidden="true"></i> Shape every frequency</div>
+<div aria-hidden="true" class="visual-bars">
+<span style="--h:10px;--d:-.5s"></span>
+<span style="--h:22px;--d:-.18s"></span>
+<span style="--h:13px;--d:-.75s"></span>
+<span style="--h:18px;--d:-.35s"></span>
+<span style="--h:8px;--d:-.62s"></span>
+<span style="--h:20px;--d:-.25s"></span>
+<span style="--h:12px;--d:-.9s"></span>
+</div>
+</div>
+<div class="card-body">
+<img alt="" class="app-icon" height="66" src="unify-eq-assets/images/unify-eq-app-icon-192.png" width="66"/>
+<div>
+<div class="app-type">Professional Android sound engine</div>
+<h2>UNIFY Equalizer<br/>Bass Booster</h2>
+<p class="card-desc">
+                  Elevate sound with 16/31-band equalization, bass enhancement, AI mastering, dynamics, spatial audio and optional Community Presets.
+                </p>
+</div>
+<div aria-label="UNIFY Equalizer highlights" class="feature-row">
+<span>16/31-Band EQ</span>
+<span>Smart Bass</span>
+<span>AI Mastering</span>
+<span>Spatial Motion</span>
+<span>Community Presets</span>
+</div>
+</div>
+<div class="card-footer">
+<div class="best-for">
+<strong>Best for</strong>
+                Listeners who want precise, powerful sound enhancement across Android.
+              </div>
+<span class="explore">
+                Explore EQ
+                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M5 12h14M13 6l6 6-6 6"></path>
+</svg>
+</span>
+</div>
+</a>
+</article>
+</section>
+<section aria-label="Quick app selection guide" class="guide">
+<div>
+<strong>Your music is the center</strong>
+          Choose UNIFY Music when you want one premium library for device, cloud and private-server audio.
+        </div>
+<div class="guide-mark">OR</div>
+<div>
+<strong>Your sound is the center</strong>
+          Choose UNIFY EQ when you want to tune, enhance and personalize audio across Android.
+        </div>
+</section>
 </main>
+<footer>
+<span>© 2026 3D Audio Labs · UNIFY Audio Apps</span>
+<nav aria-label="App legal pages" class="footer-links">
+<a href="unify-music-privacy.html">Music Privacy</a>
+<a href="unify-eq-privacy.html">EQ Privacy</a>
+<a href="mailto:namtruyenpro95@gmail.com">Support</a>
+</nav>
+</footer>
+</div>
+<script>
+    (() => {
+      const root = document.documentElement;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!reduceMotion) {
+        window.addEventListener('pointermove', (event) => {
+          root.style.setProperty('--mx', `${event.clientX}px`);
+          root.style.setProperty('--my', `${event.clientY}px`);
+        }, {passive:true});
+
+        document.querySelectorAll('.app-card').forEach((card) => {
+          card.addEventListener('pointermove', (event) => {
+            if (window.innerWidth < 981) return;
+            const rect = card.getBoundingClientRect();
+            const rx = ((event.clientY - rect.top) / rect.height - .5) * -2.1;
+            const ry = ((event.clientX - rect.left) / rect.width - .5) * 2.1;
+            card.style.transform = `translateY(-8px) perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+          }, {passive:true});
+
+          card.addEventListener('pointerleave', () => {
+            card.style.transform = '';
+          }, {passive:true});
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

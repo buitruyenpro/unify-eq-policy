@@ -1,19 +1,19 @@
 {
-  "name": "UNIFY Hi-Res Music Player Pro",
-  "short_name": "UNIFY Hi-Res Music Playe",
-  "start_url": "/unify-music-home-page.html",
+  "name": "UNIFY Equalizer Bass Booster",
+  "short_name": "UNIFY Equalizer Bass Boo",
+  "start_url": "/unify-eq-home-page.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#05070d",
   "icons": [
     {
-      "src": "/unify-music-favicon-192x192.png?v=20260716-2",
+      "src": "/unify-eq-favicon-192x192.png?v=20260716-2",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/unify-music-favicon-512x512.png?v=20260716-2",
+      "src": "/unify-eq-favicon-512x512.png?v=20260716-2",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
