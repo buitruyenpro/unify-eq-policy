@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="Privacy Policy for SONIQ Equalizer & Bass Boost, package com.equalizer.parametriceq.">
+  <title>Privacy Policy | SONIQ Equalizer &amp; Bass Boost</title>
+  <style>
+    :root {
+      --bg: #050a12;
+      --panel: rgba(12, 23, 39, 0.76);
+      --panel-strong: #0c1727;
+      --panel-soft: rgba(255,255,255,0.035);
+      --line: rgba(159, 205, 255, 0.14);
+      --line-strong: rgba(79, 172, 254, 0.34);
+      --text: #eef6ff;
+      --muted: #aebfd2;
+      --soft: #7f93aa;
+      --blue: #4facfe;
+      --cyan: #38e4d2;
+      --violet: #8b7cff;
+      --green: #6ee7b7;
+      --amber: #f8cc6b;
+      --radius: 22px;
+      --shadow: 0 24px 70px rgba(0,0,0,.38);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.68;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(79,172,254,.14), transparent 31rem),
+        radial-gradient(circle at 88% 8%, rgba(139,124,255,.12), transparent 30rem),
+        radial-gradient(circle at 52% 84%, rgba(56,228,210,.07), transparent 34rem),
+        var(--bg);
+    }
+
+    a { color: #80caff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid rgba(79,172,254,.65);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -90px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: #04101d;
+      background: var(--cyan);
+      font-weight: 800;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 16px; }
+
+    .shell { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 74px 0 42px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+    .mark {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(79,172,254,.22), rgba(56,228,210,.10));
+      border: 1px solid rgba(124,205,255,.26);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 14px 35px rgba(38,123,201,.16);
+    }
+    .wave {
+      height: 23px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .wave span {
+      display: block;
+      width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--cyan), var(--blue));
+    }
+    .wave span:nth-child(1) { height: 7px; }
+    .wave span:nth-child(2) { height: 14px; }
+    .wave span:nth-child(3) { height: 22px; }
+    .wave span:nth-child(4) { height: 15px; }
+    .wave span:nth-child(5) { height: 9px; }
+
+    .brand-name { font-weight: 850; letter-spacing: .08em; font-size: .92rem; }
+    .brand-sub { color: var(--soft); font-size: .82rem; margin-top: 1px; }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border: 1px solid rgba(79,172,254,.23);
+      border-radius: 999px;
+      color: #a9dcff;
+      background: rgba(79,172,254,.07);
+      font-size: .79rem;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 18px;
+    }
+    .kicker-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 14px rgba(110,231,183,.75); }
+
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(2.55rem, 7vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+    }
+    h1 span {
+      background: linear-gradient(100deg, #ffffff 10%, #b5dcff 48%, #8cf6e9 92%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .lede {
+      max-width: 780px;
+      margin: 24px 0 0;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 27px;
+    }
+    .pill {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.025);
+      color: #b9cade;
+      font-size: .83rem;
+    }
+    .pill strong { color: var(--text); font-weight: 760; }
+
+    .privacy-callout {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 15px;
+      max-width: 900px;
+      padding: 19px 20px;
+      border: 1px solid rgba(56,228,210,.21);
+      border-radius: 18px;
+      background: linear-gradient(110deg, rgba(56,228,210,.075), rgba(79,172,254,.035));
+    }
+    .privacy-callout .icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: rgba(56,228,210,.10);
+      color: var(--cyan);
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+    .privacy-callout strong { display: block; margin-bottom: 3px; }
+    .privacy-callout p { margin: 0; color: var(--muted); }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 275px minmax(0, 1fr);
+      gap: 34px;
+      padding: 42px 0 80px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 22px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(7,14,25,.72);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+    .toc-title {
+      margin: 0 0 12px;
+      color: #dcecff;
+      font-size: .78rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .toc a {
+      display: block;
+      padding: 7px 9px;
+      margin: 2px 0;
+      border-radius: 9px;
+      color: #91a6bd;
+      font-size: .86rem;
+      line-height: 1.35;
+    }
+    .toc a:hover {
+      color: var(--text);
+      background: rgba(79,172,254,.07);
+      text-decoration: none;
+    }
+
+    main { min-width: 0; }
+    section {
+      scroll-margin-top: 28px;
+      margin-bottom: 22px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 14px 40px rgba(0,0,0,.16);
+    }
+    section.highlight {
+      border-color: rgba(56,228,210,.22);
+      background: linear-gradient(145deg, rgba(11,33,46,.78), rgba(12,23,39,.78));
+    }
+
+    h2 {
+      margin: 0 0 13px;
+      font-size: 1.52rem;
+      line-height: 1.25;
+      letter-spacing: -.025em;
+    }
+    h3 {
+      margin: 26px 0 8px;
+      font-size: 1.05rem;
+      color: #dfeeff;
+    }
+    p { margin: 10px 0; color: var(--muted); }
+    strong { color: #f5f9ff; }
+    code {
+      padding: .15em .42em;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 6px;
+      color: #b9e8ff;
+      background: rgba(255,255,255,.045);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .88em;
+    }
+
+    ul { padding-left: 1.25rem; color: var(--muted); }
+    li { margin: 7px 0; padding-left: 4px; }
+    li::marker { color: var(--blue); }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .mini-card {
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 15px;
+      background: rgba(255,255,255,.025);
+    }
+    .mini-card .label {
+      color: var(--soft);
+      font-size: .73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+    }
+    .mini-card .value { margin-top: 5px; font-weight: 800; color: #ecf7ff; }
+    .mini-card .desc { margin-top: 3px; color: var(--muted); font-size: .84rem; }
+
+    .note {
+      margin-top: 17px;
+      padding: 15px 16px;
+      border-left: 3px solid var(--blue);
+      border-radius: 0 13px 13px 0;
+      background: rgba(79,172,254,.055);
+      color: var(--muted);
+    }
+    .note.green { border-left-color: var(--green); background: rgba(110,231,183,.05); }
+    .note.amber { border-left-color: var(--amber); background: rgba(248,204,107,.05); }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 17px;
+      border: 1px solid rgba(255,255,255,.075);
+      border-radius: 16px;
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 720px; background: rgba(4,10,18,.24); }
+    th, td { text-align: left; vertical-align: top; padding: 14px 15px; border-bottom: 1px solid rgba(255,255,255,.065); }
+    th {
+      color: #dcecff;
+      background: rgba(255,255,255,.028);
+      font-size: .77rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+    td { color: #aebfd2; font-size: .89rem; }
+    tr:last-child td { border-bottom: 0; }
+    .tag {
+      display: inline-block;
+      white-space: nowrap;
+      padding: 3px 7px;
+      margin: 2px 3px 2px 0;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.035);
+      color: #c8d8e8;
+      font-size: .72rem;
+      font-weight: 720;
+    }
+    .tag.local { color: #a6f2d4; border-color: rgba(110,231,183,.2); }
+    .tag.optional { color: #c0dfff; border-color: rgba(79,172,254,.22); }
+
+    .permission-list { display: grid; gap: 10px; margin-top: 15px; }
+    .permission {
+      padding: 15px 16px;
+      border: 1px solid rgba(255,255,255,.065);
+      border-radius: 14px;
+      background: rgba(255,255,255,.02);
+    }
+    .permission code { display: inline-block; margin-bottom: 6px; }
+    .permission p { margin: 0; font-size: .9rem; }
+
+    .service-list { display: grid; gap: 11px; margin-top: 16px; }
+    .service {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.065);
+      background: rgba(255,255,255,.018);
+    }
+    .service strong { display: block; }
+    .service span { color: var(--soft); font-size: .84rem; }
+    .service a { font-size: .8rem; white-space: nowrap; }
+
+    .contact-card {
+      margin-top: 18px;
+      padding: 20px;
+      border: 1px solid rgba(79,172,254,.23);
+      border-radius: 17px;
+      background: linear-gradient(120deg, rgba(79,172,254,.08), rgba(139,124,255,.04));
+    }
+    .contact-card p { margin: 6px 0; }
+
+    footer {
+      padding: 0 0 52px;
+      color: #71859a;
+      font-size: .83rem;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { position: relative; top: auto; }
+      .toc nav { columns: 2; column-gap: 14px; }
+      .mini-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .shell { width: min(calc(100% - 22px), var(--max)); }
+      .hero { padding-top: 42px; }
+      h1 { font-size: clamp(2.25rem, 13vw, 3.45rem); }
+      .layout { padding-top: 26px; gap: 22px; }
+      section { padding: 20px; border-radius: 18px; }
+      .toc nav { columns: 1; }
+      .service { grid-template-columns: 1fr; gap: 6px; }
+      .privacy-callout { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+    @media print {
+      :root { color-scheme: light; }
+      body { background: #fff; color: #111; }
+      .hero { padding: 24px 0; }
+      .layout { display: block; padding-top: 10px; }
+      .toc { display: none; }
+      h1 span, h1, h2, h3, strong { color: #111 !important; -webkit-text-fill-color: #111; }
+      p, li, td, .lede, .brand-sub, .mini-card .desc, footer { color: #333 !important; }
+      section, .privacy-callout, .mini-card, .permission, .service, .contact-card {
+        background: #fff !important;
+        box-shadow: none !important;
+        border-color: #d9d9d9 !important;
+        break-inside: avoid;
+      }
+      a { color: #111; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#policy-content">Skip to privacy policy</a>
+
+  <header class="hero">
+    <div class="shell">
+      <div class="brand-row" aria-label="SONIQ">
+        <div class="mark" aria-hidden="true">
+          <div class="wave"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div>
+          <div class="brand-name">SONIQ</div>
+          <div class="brand-sub">Equalizer &amp; Bass Boost</div>
+        </div>
+      </div>
+
+      <div class="kicker"><span class="kicker-dot"></span> Privacy Policy</div>
+      <h1><span>Sound stays yours.</span></h1>
+      <p class="lede">
+        This Privacy Policy explains how <strong>SONIQ Equalizer &amp; Bass Boost</strong>
+        ("SONIQ", "the App", "we", "us", or "our") accesses, uses, stores, and shares
+        information when you use the Android application.
+      </p>
+
+      <div class="meta-row" aria-label="Policy metadata">
+        <div class="pill"><strong>Effective date:</strong> September 14, 2026</div>
+        <div class="pill"><strong>Package:</strong> com.equalizer.parametriceq</div>
+        <div class="pill"><strong>Platform:</strong> Android</div>
+      </div>
+
+      <div class="privacy-callout">
+        <div class="icon" aria-hidden="true">◉</div>
+        <div>
+          <strong>Your audio is processed on your device.</strong>
+          <p>
+            SONIQ uses Android audio APIs for real-time equalization and signal analysis.
+            The App does not create or save audio recordings, and it does not upload raw audio,
+            waveform data, or FFT/spectrum samples to our servers or Firebase.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell layout">
+    <aside class="toc" aria-label="Table of contents">
+      <p class="toc-title">On this page</p>
+      <nav>
+        <a href="#overview">1. Overview</a>
+        <a href="#audio">2. Audio privacy</a>
+        <a href="#data">3. Data we handle</a>
+        <a href="#permissions">4. Android permissions</a>
+        <a href="#analytics">5. Analytics</a>
+        <a href="#feedback">6. Feedback</a>
+        <a href="#notifications">7. Notifications</a>
+        <a href="#firebase">8. Firebase &amp; Google</a>
+        <a href="#local-storage">9. Local storage &amp; backup</a>
+        <a href="#sharing">10. Sharing</a>
+        <a href="#retention">11. Retention &amp; deletion</a>
+        <a href="#controls">12. Your controls &amp; rights</a>
+        <a href="#security">13. Security</a>
+        <a href="#children">14. Children</a>
+        <a href="#international">15. International processing</a>
+        <a href="#changes">16. Changes</a>
+        <a href="#contact">17. Contact</a>
+      </nav>
+    </aside>
+
+    <main id="policy-content">
+      <section id="overview">
+        <h2>1. Overview</h2>
+        <p>
+          SONIQ is an audio equalizer and sound-processing application. The App can apply audio
+          effects, manage presets and device-specific audio settings, analyze the current audio
+          output for adaptive features, show notifications, retrieve remote app configuration,
+          and let you optionally send feedback.
+        </p>
+        <p>
+          We follow a data-minimization approach: audio processing and most configuration data stay
+          on the device. Network services are used only for specific functions described in this Policy.
+        </p>
+
+        <div class="mini-grid">
+          <div class="mini-card">
+            <div class="label">Raw audio</div>
+            <div class="value">Not uploaded</div>
+            <div class="desc">Audio analysis is performed locally on the Android device.</div>
+          </div>
+          <div class="mini-card">
+            <div class="label">Usage analytics</div>
+            <div class="value">Off by default</div>
+            <div class="desc">Firebase Analytics is enabled only if you turn usage analytics on.</div>
+          </div>
+          <div class="mini-card">
+            <div class="label">Advertising</div>
+            <div class="value">No ad personalization</div>
+            <div class="desc">Analytics consent explicitly denies ad storage, ad user data, and ad personalization.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="audio" class="highlight">
+        <h2>2. Audio privacy</h2>
+        <p>
+          Audio privacy is central to SONIQ. The App uses Android's audio-effect framework and the
+          Android <strong>Visualizer</strong> API to analyze the device's current output mix for features
+          such as adaptive/dynamic equalization, Smart De-Harsh, spatial reactivity, level management,
+          and automatic headroom control.
+        </p>
+        <p>
+          Android requires the <code>RECORD_AUDIO</code> permission for access to certain Visualizer
+          capabilities. In SONIQ's current implementation, this permission is used for real-time
+          signal analysis associated with audio processing. SONIQ does not use this permission to
+          create or save audio recordings.
+        </p>
+        <ul>
+          <li>Raw audio samples are not written to app storage.</li>
+          <li>Raw audio samples are not sent to Firebase or another remote server.</li>
+          <li>Waveform and FFT/spectrum frames used by the audio engine are processed locally.</li>
+          <li>Feedback diagnostics do not include raw audio, waveform frames, or spectrum samples.</li>
+          <li>Usage analytics events do not contain the sound you are listening to.</li>
+        </ul>
+        <div class="note green">
+          Revoking <code>RECORD_AUDIO</code> may prevent or reduce functionality that depends on real-time
+          output analysis, while other equalizer functions may continue to work depending on the device.
+        </div>
+      </section>
+
+      <section id="data">
+        <h2>3. Data we access, collect, or store</h2>
+        <p>
+          In this Policy, "collect" generally means information transmitted off your device. Some
+          information is accessed only on-device and is not collected by us.
+        </p>
+
+        <div class="table-wrap" role="region" aria-label="Data handling summary" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>Data / information</th>
+                <th>When it is used</th>
+                <th>Purpose</th>
+                <th>Handling</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Audio signal / output analysis</strong></td>
+                <td>While audio-analysis features are active</td>
+                <td>Equalization, adaptive processing, meters, spatial and master processing</td>
+                <td><span class="tag local">On-device</span> Not uploaded or stored as a recording</td>
+              </tr>
+              <tr>
+                <td><strong>EQ settings, presets, preferences and device assignments</strong></td>
+                <td>When you configure SONIQ</td>
+                <td>Save and restore your setup</td>
+                <td><span class="tag local">Primarily local</span> May be included in Android backup, subject to your device/Google backup settings</td>
+              </tr>
+              <tr>
+                <td><strong>Usage and interaction analytics</strong></td>
+                <td>Only when you enable Usage Analytics</td>
+                <td>Understand feature use and improve the App</td>
+                <td><span class="tag optional">Optional</span> Firebase Analytics</td>
+              </tr>
+              <tr>
+                <td><strong>Feedback content</strong></td>
+                <td>Only when you submit feedback/problem reports</td>
+                <td>Respond to feedback, investigate problems, improve SONIQ</td>
+                <td><span class="tag optional">User initiated</span> Firebase Realtime Database</td>
+              </tr>
+              <tr>
+                <td><strong>Email address</strong></td>
+                <td>Only if you voluntarily include it with feedback</td>
+                <td>Contact you about your submission</td>
+                <td><span class="tag optional">Optional</span> Stored with that feedback submission</td>
+              </tr>
+              <tr>
+                <td><strong>Technical diagnostics</strong></td>
+                <td>Only if diagnostics are included with feedback</td>
+                <td>Troubleshoot audio/runtime compatibility</td>
+                <td><span class="tag optional">Optional</span> App/OS and audio-engine status metadata; no raw audio</td>
+              </tr>
+              <tr>
+                <td><strong>Push notification registration information</strong></td>
+                <td>When notifications are enabled and registration is permitted</td>
+                <td>Deliver app updates, announcements, and/or tips you selected</td>
+                <td>Firebase Cloud Messaging token / installation-related identifiers as required by FCM</td>
+              </tr>
+              <tr>
+                <td><strong>App / device integrity and standard service metadata</strong></td>
+                <td>When Firebase/Google services are used</td>
+                <td>App security, remote configuration, service delivery and abuse prevention</td>
+                <td>Processed by Google/Firebase as necessary for those services</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Information we do not intentionally collect</h3>
+        <p>
+          SONIQ does not intentionally collect your contacts, precise location, photos, videos,
+          SMS messages, call logs, payment-card numbers, passwords, or raw listening audio. The
+          current App does not provide a SONIQ user-account registration system.
+        </p>
+      </section>
+
+      <section id="permissions">
+        <h2>4. Android permissions</h2>
+        <p>
+          SONIQ requests or declares Android permissions only for app functionality. Availability and
+          runtime prompts can vary by Android version and device manufacturer.
+        </p>
+
+        <div class="permission-list">
+          <div class="permission">
+            <code>RECORD_AUDIO</code>
+            <p>Used by Android Visualizer-based real-time output analysis. SONIQ does not create or save audio recordings and does not upload raw audio.</p>
+          </div>
+          <div class="permission">
+            <code>MODIFY_AUDIO_SETTINGS</code>
+            <p>Allows SONIQ to interact with Android audio settings/effect infrastructure required for equalizer processing.</p>
+          </div>
+          <div class="permission">
+            <code>FOREGROUND_SERVICE</code> &amp; <code>FOREGROUND_SERVICE_SPECIAL_USE</code>
+            <p>Allows the audio-processing service to continue operating visibly in the foreground when background equalization is enabled.</p>
+          </div>
+          <div class="permission">
+            <code>POST_NOTIFICATIONS</code>
+            <p>Used for the foreground-service notification and, where you permit them, SONIQ update/announcement/tip notifications.</p>
+          </div>
+          <div class="permission">
+            <code>RECEIVE_BOOT_COMPLETED</code>
+            <p>Used only to support the optional "start after boot" behavior when you have enabled that setting.</p>
+          </div>
+          <div class="permission">
+            <code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code>
+            <p>May be used to help keep continuous audio processing reliable when you choose background operation. Battery-optimization controls remain managed by Android and your device settings.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="analytics">
+        <h2>5. Optional usage analytics</h2>
+        <p>
+          SONIQ includes Firebase Analytics, but analytics collection is <strong>disabled by default</strong>.
+          It is enabled only when you turn on the App's Usage Analytics setting. If you later disable it,
+          SONIQ stops future Firebase Analytics collection through the App and requests Firebase to reset
+          analytics data for the installation.
+        </p>
+        <p>When enabled, analytics may include events such as:</p>
+        <ul>
+          <li>screen views;</li>
+          <li>app-update check results;</li>
+          <li>banner impressions, dismissals, and actions;</li>
+          <li>notification preference changes, notification receipt, and notification opens;</li>
+          <li>whether a feedback submission succeeded or failed and whether diagnostics were included.</li>
+        </ul>
+        <p>
+          SONIQ's analytics configuration explicitly denies Firebase consent for
+          <strong>ad storage</strong>, <strong>ad user data</strong>, and <strong>ad personalization</strong>.
+          We do not use SONIQ analytics for personalized advertising.
+        </p>
+        <div class="note">
+          Feedback message text and optional feedback email are submitted to the feedback service, not as Firebase Analytics event parameters.
+        </div>
+      </section>
+
+      <section id="feedback">
+        <h2>6. Feedback and problem reports</h2>
+        <p>
+          If you choose to send feedback or report a problem, SONIQ transmits the submission to
+          Firebase Realtime Database. A submission can contain:
+        </p>
+        <ul>
+          <li>feedback/problem type, category, optional experience score, and the message you write;</li>
+          <li>your email address, only if you voluntarily provide one;</li>
+          <li>App version, version code, Android version, and API level;</li>
+          <li>a server-side submission timestamp;</li>
+          <li>optional diagnostics, only when included with the submission.</li>
+        </ul>
+        <p>
+          Optional diagnostics can include whether the audio service is running, whether a committed
+          setup exists, counts of presets/known devices/audio profiles, selected audio-source and
+          sample-rate/quality/latency information, engine lifecycle/health information, AudioEffect
+          availability/control/band-count status, and spatial-renderer status.
+        </p>
+        <p><strong>Diagnostics do not include raw audio, waveform samples, or FFT/spectrum frames.</strong></p>
+      </section>
+
+      <section id="notifications">
+        <h2>7. Notifications and Firebase Cloud Messaging</h2>
+        <p>
+          SONIQ can use Firebase Cloud Messaging (FCM) for app-update notifications, product
+          announcements, and tips/recommendations. Registration is synchronized with your notification
+          preferences and Android notification permission where that permission is required.
+        </p>
+        <p>
+          When push messaging is active, Firebase may process an FCM registration token,
+          installation-related identifiers, topic subscriptions, app/device information, IP address,
+          and other technical information required to route and secure message delivery. You can change
+          notification categories in SONIQ and can also revoke notification permission in Android settings.
+        </p>
+      </section>
+
+      <section id="firebase">
+        <h2>8. Firebase and Google services</h2>
+        <p>
+          SONIQ uses selected Google/Firebase services. These services may process standard technical
+          information such as IP address, app instance or installation identifiers, app/device details,
+          network information, security/integrity signals, and service-specific data necessary to provide
+          their functions. The exact information handled by Google can depend on Android, Firebase SDK,
+          device, region, and service configuration.
+        </p>
+
+        <div class="service-list">
+          <div class="service">
+            <div><strong>Firebase Analytics</strong><span>Optional usage analytics; disabled by default in SONIQ.</span></div>
+            <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy info ↗</a>
+          </div>
+          <div class="service">
+            <div><strong>Firebase Realtime Database</strong><span>Stores feedback/problem submissions you choose to send.</span></div>
+            <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy info ↗</a>
+          </div>
+          <div class="service">
+            <div><strong>Firebase Cloud Messaging</strong><span>Delivers notifications when enabled/permitted.</span></div>
+            <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy info ↗</a>
+          </div>
+          <div class="service">
+            <div><strong>Firebase Remote Config</strong><span>Retrieves remote app configuration such as update, banner, engagement, or cloud-control settings.</span></div>
+            <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy info ↗</a>
+          </div>
+          <div class="service">
+            <div><strong>Firebase App Check + Google Play Integrity</strong><span>Helps verify legitimate app requests and reduce abuse.</span></div>
+            <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy ↗</a>
+          </div>
+          <div class="service">
+            <div><strong>Google Play</strong><span>App distribution, paid-app transaction processing, Play Integrity, and in-app review flow.</span></div>
+            <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy ↗</a>
+          </div>
+        </div>
+
+        <p>
+          If you purchase SONIQ through Google Play, payment processing is performed by Google Play.
+          SONIQ does not receive your full payment-card details.
+        </p>
+      </section>
+
+      <section id="local-storage">
+        <h2>9. Local storage and Android backup</h2>
+        <p>
+          SONIQ stores operational and preference data in app-private storage so it can preserve your
+          setup. Depending on the feature, this can include equalizer settings, presets, working sessions,
+          committed audio state, device assignments/profiles, notification preferences, appearance and
+          accessibility settings, and other configuration information.
+        </p>
+        <p>
+          The App allows standard <strong>Android backup</strong>. Except for specific setup/onboarding state
+          excluded by SONIQ's backup rules, eligible app-private data may be backed up or transferred by
+          Android according to your device and Google account backup settings. Such backup is provided and
+          controlled by the Android/Google backup platform, not by a SONIQ account service.
+        </p>
+        <p>
+          You can generally remove local SONIQ data by using Android's app-storage controls or uninstalling
+          the App. Cloud backups may be retained or restored according to your Android/Google backup settings.
+        </p>
+      </section>
+
+      <section id="sharing">
+        <h2>10. When information is shared</h2>
+        <p>We do not sell or rent personal information. Information may be disclosed only in limited circumstances:</p>
+        <ul>
+          <li><strong>Service providers:</strong> Google/Firebase process data on our behalf or as their services require, as described above.</li>
+          <li><strong>At your direction:</strong> for example, when you intentionally submit feedback containing information you chose to provide.</li>
+          <li><strong>Legal and safety reasons:</strong> when reasonably necessary to comply with applicable law, legal process, or valid governmental requests, or to protect rights, safety, security, and prevent abuse.</li>
+          <li><strong>Business transfer:</strong> if the App or its developer business is involved in a merger, acquisition, restructuring, or asset transfer, data may be transferred subject to applicable law and this Policy or equivalent protections.</li>
+        </ul>
+        <p><strong>Raw listening audio is not shared because SONIQ does not collect it.</strong></p>
+      </section>
+
+      <section id="retention">
+        <h2>11. Data retention and deletion</h2>
+        <p>We retain information only for as long as reasonably necessary for the purposes described in this Policy.</p>
+        <ul>
+          <li><strong>Local settings and presets:</strong> remain on your device until changed, reset, app storage is cleared, or the App is uninstalled, subject to Android backup/restore behavior.</li>
+          <li><strong>Feedback submissions:</strong> are retained while reasonably needed to review, respond to, investigate, improve the App, maintain security, or meet legal obligations; they are deleted or anonymized when no longer reasonably necessary.</li>
+          <li><strong>Push messaging data:</strong> registration and topic information is managed through Firebase and may remain until registration is disabled/unregistered, the token expires, or Firebase removes it under its service lifecycle.</li>
+          <li><strong>Analytics:</strong> when you disable Usage Analytics, SONIQ stops future analytics collection through the App and calls Firebase's analytics reset function. Previously processed or aggregated analytics information may remain for the period configured or required by Google/Firebase.</li>
+          <li><strong>Google/Firebase operational data:</strong> is retained according to the applicable Google/Firebase service terms and retention practices.</li>
+        </ul>
+        <div class="note amber">
+          Because SONIQ currently has no SONIQ user account, there is no account-deletion flow. You may still request deletion of identifiable feedback or other data controlled by us using the contact method below. We may need enough information to locate the relevant submission.
+        </div>
+      </section>
+
+      <section id="controls">
+        <h2>12. Your privacy controls and rights</h2>
+        <p>You can control several privacy-related behaviors directly:</p>
+        <ul>
+          <li>leave <strong>Usage Analytics</strong> disabled (the default), enable it, or disable it again at any time;</li>
+          <li>choose which update/announcement/tip notification categories you want and manage Android notification permission;</li>
+          <li>decline or revoke <code>RECORD_AUDIO</code>, understanding that analysis-dependent audio features may be limited;</li>
+          <li>choose whether to send feedback at all;</li>
+          <li>omit your email address from feedback;</li>
+          <li>choose whether diagnostic information is included in feedback;</li>
+          <li>clear app storage or uninstall the App to remove local app data, subject to Android backup behavior.</li>
+        </ul>
+        <p>
+          Depending on where you live, privacy law may provide rights such as access, correction,
+          deletion, restriction, objection, portability, or withdrawal of consent. You may submit an
+          applicable privacy request through the developer contact mechanism described in Section 17.
+        </p>
+      </section>
+
+      <section id="security">
+        <h2>13. Security</h2>
+        <p>
+          We use reasonable technical and organizational safeguards appropriate to the information we
+          handle. App preferences and audio configuration are stored in Android app-private storage,
+          network-backed features use Google/Firebase SDKs and protected network transport, and Firebase
+          App Check with Google Play Integrity is used to help reduce unauthorized access and abuse.
+        </p>
+        <p>
+          No method of electronic transmission or storage can be guaranteed to be 100% secure. We therefore
+          cannot promise absolute security, but we work to limit data collection and exposure by design.
+        </p>
+      </section>
+
+      <section id="children">
+        <h2>14. Children's privacy</h2>
+        <p>
+          SONIQ is a general-purpose audio utility and is not designed to solicit personal information
+          from children. We do not knowingly use the App to collect personal information from children in
+          violation of applicable law. If you believe a child has provided personal information through a
+          feedback submission, contact us so we can review and, where appropriate, delete it.
+        </p>
+      </section>
+
+      <section id="international">
+        <h2>15. International processing</h2>
+        <p>
+          Google/Firebase services can process information on servers located in multiple countries.
+          As a result, information used by those services may be processed outside your country of residence.
+          Google states that it uses legal and security measures for international data handling as described
+          in its privacy documentation and applicable service terms.
+        </p>
+      </section>
+
+      <section id="changes">
+        <h2>16. Changes to this Privacy Policy</h2>
+        <p>
+          We may update this Policy when SONIQ's features, data practices, service providers, or legal
+          requirements change. When we make changes, we will revise the effective date at the top of this
+          page and, when appropriate, provide additional notice in the App or through the store listing.
+        </p>
+        <p>
+          The version of this Policy published with the current release should be read together with any
+          just-in-time permission or privacy disclosures shown by the App.
+        </p>
+      </section>
+
+      <section id="contact" class="highlight">
+        <h2>17. Developer and privacy contact</h2>
+        <p>
+          This Privacy Policy applies specifically to <strong>SONIQ Equalizer &amp; Bass Boost</strong>,
+          package <code>com.equalizer.parametriceq</code>. The developer/publisher shown on the App's
+          Google Play listing is responsible for this Policy and for privacy requests relating to data
+          under the developer's control.
+        </p>
+
+        <div class="contact-card">
+          <p><strong>Privacy inquiries, data-access requests, or deletion requests</strong></p>
+          <p>
+            Please use the developer contact email displayed under <strong>App support / Developer contact</strong>
+            on the official Google Play listing for SONIQ Equalizer &amp; Bass Boost.
+          </p>
+          <p>
+            Google Play listing:
+            <a href="https://play.google.com/store/apps/details?id=com.equalizer.parametriceq" rel="noopener noreferrer">SONIQ Equalizer &amp; Bass Boost ↗</a>
+          </p>
+        </div>
+
+        <p>
+          For deletion of a feedback submission, include enough non-sensitive detail for us to identify the
+          submission (for example, approximate submission date, feedback category, or the email address you
+          voluntarily included). Do not send passwords or unnecessary sensitive information in a privacy request.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>© 2026 SONIQ Equalizer &amp; Bass Boost</span>
+      <span>Privacy Policy · Effective September 14, 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
