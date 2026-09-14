@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>SONIQ Data Deletion Request</title>
+  <meta name="description" content="Request deletion of data associated with SONIQ Equalizer & Bass Boost.">
+  <style>
+    :root {
+      --bg: #080b12;
+      --panel: #101621;
+      --panel-2: #0d131d;
+      --text: #f5f7fb;
+      --muted: #aab4c3;
+      --line: rgba(255,255,255,.10);
+      --accent: #71e6ff;
+      --accent-2: #9a7cff;
+      --good: #83f3b2;
+      --shadow: 0 24px 70px rgba(0,0,0,.40);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(113,230,255,.10), transparent 30%),
+        radial-gradient(circle at 90% 15%, rgba(154,124,255,.11), transparent 30%),
+        linear-gradient(180deg, #070a10 0%, #0a0f18 58%, #070a10 100%);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: linear-gradient(145deg, rgba(16,22,33,.95), rgba(9,14,23,.92));
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -90px -110px auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(113,230,255,.22), rgba(154,124,255,.05) 55%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 12px;
+      border: 1px solid rgba(113,230,255,.25);
+      border-radius: 999px;
+      background: rgba(113,230,255,.07);
+      color: #c9f7ff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 18px rgba(113,230,255,.8);
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      max-width: 760px;
+      font-size: clamp(34px, 7vw, 60px);
+      line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 19px);
+    }
+
+    .app-name {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .primary-card {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 22px;
+      border: 1px solid rgba(113,230,255,.20);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(113,230,255,.07), rgba(154,124,255,.06));
+    }
+
+    .primary-card p { margin: 0; color: var(--muted); }
+    .email {
+      display: inline-block;
+      margin-top: 5px;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), #79b9ff 48%, var(--accent-2));
+      color: #071018;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(113,230,255,.16);
+      white-space: nowrap;
+    }
+    .button:hover { text-decoration: none; filter: brightness(1.05); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(16,22,33,.80);
+      box-shadow: 0 16px 45px rgba(0,0,0,.20);
+    }
+
+    .card.full { grid-column: 1 / -1; }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -.02em;
+    }
+    p { margin: 0 0 12px; }
+    p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+
+    ul, ol {
+      margin: 10px 0 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+    li + li { margin-top: 7px; }
+    strong { color: var(--text); }
+
+    .note {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--good);
+      border-radius: 12px;
+      background: rgba(131,243,178,.06);
+      color: #ccefd9;
+    }
+
+    .code {
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #090e16;
+      color: #dce5f1;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+
+    footer {
+      margin-top: 26px;
+      padding: 20px 4px 0;
+      color: #7f8a9b;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 22px, 980px); padding-top: 18px; }
+      .hero { padding: 26px 20px; border-radius: 22px; }
+      .primary-card { grid-template-columns: 1fr; }
+      .button { width: 100%; }
+      .grid { grid-template-columns: 1fr; }
+      .card.full { grid-column: auto; }
+      .card { padding: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="brand"><span class="brand-dot"></span> SONIQ Privacy</div>
+      <h1>Request deletion of your data</h1>
+      <p class="lead">
+        This page explains how users of <span class="app-name">SONIQ Equalizer &amp; Bass Boost</span>
+        can request deletion of data they voluntarily provide to the developer.
+      </p>
+
+      <div class="primary-card">
+        <div>
+          <p>Send your data deletion request to:</p>
+          <a class="email" href="mailto:unifyeq@gmail.com?subject=SONIQ%20Data%20Deletion%20Request">unifyeq@gmail.com</a>
+        </div>
+        <a class="button" href="mailto:unifyeq@gmail.com?subject=SONIQ%20Data%20Deletion%20Request">Email deletion request</a>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Data deletion information">
+      <article class="card">
+        <h2>What you can request to delete</h2>
+        <p class="muted">You may ask us to delete data that you voluntarily submitted through SONIQ, including:</p>
+        <ul>
+          <li>Feedback messages and other text submitted through the app.</li>
+          <li>An email address you optionally included with feedback.</li>
+          <li>Optional technical diagnostic information attached to a feedback submission.</li>
+          <li>Other information that can reasonably be linked to the feedback record you identify.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>How to submit a request</h2>
+        <ol>
+          <li>Email <strong>unifyeq@gmail.com</strong>.</li>
+          <li>Use the subject <strong>SONIQ Data Deletion Request</strong>.</li>
+          <li>Describe the data or feedback submission you want deleted.</li>
+          <li>Include enough information for us to locate the record, such as the email address used in the feedback or an approximate submission date.</li>
+        </ol>
+      </article>
+
+      <article class="card full">
+        <h2>Recommended request format</h2>
+        <div class="code">Subject: SONIQ Data Deletion Request
+
+Hello,
+I am requesting deletion of data I submitted through SONIQ Equalizer &amp; Bass Boost.
+
+Email used in the feedback (if any):
+Approximate date of submission:
+Details that may help identify the feedback:
+
+Please confirm when the applicable data has been deleted.</div>
+      </article>
+
+      <article class="card">
+        <h2>Verification</h2>
+        <p class="muted">
+          To protect users from unauthorized deletion requests, we may ask for limited information needed to verify that the requester is associated with the data being requested for deletion. Please do not send passwords, payment details, government IDs, or other unnecessary sensitive information.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Data not covered by this request</h2>
+        <p class="muted">
+          SONIQ does not require a user account. Audio used by SONIQ for equalization and signal analysis is processed on the device and is not uploaded as an audio file for storage by the developer. Data that is not retained by the developer cannot be deleted from developer storage.
+        </p>
+      </article>
+
+      <article class="card full">
+        <h2>Retention and legal exceptions</h2>
+        <p class="muted">
+          After we can reasonably identify the relevant record, we will delete applicable developer-controlled data associated with the request. Some information may be retained when necessary to comply with law, resolve disputes, prevent abuse, maintain security, or satisfy legitimate record-keeping obligations. Data handled solely by platform or service providers may also be subject to their own retention and deletion processes.
+        </p>
+        <div class="note">
+          SONIQ does not use this deletion process to delete a Google Play purchase record, Google account data, or other information controlled directly by Google or another platform provider.
+        </div>
+      </article>
+
+      <article class="card full">
+        <h2>Contact</h2>
+        <p class="muted">
+          For privacy questions or deletion requests related to SONIQ Equalizer &amp; Bass Boost, contact
+          <a href="mailto:unifyeq@gmail.com">unifyeq@gmail.com</a>.
+        </p>
+        <p class="muted"><strong>Last updated:</strong> September 14, 2026</p>
+      </article>
+    </section>
+
+    <footer>
+      © 2026 SONIQ Equalizer &amp; Bass Boost · Data Deletion Request
+    </footer>
+  </main>
+</body>
+</html>
